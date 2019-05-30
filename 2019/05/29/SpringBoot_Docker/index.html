@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SpringBoot | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Docker的作用及安装Docker是什么？ 在任何地方安全的建造、分享、运行你的应用程序 官方对 Docker 的定义是一个容器平台。简单来说，Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。开发人员可以利用 Docker 来消除协作编码时 “在我的电脑上可以正常工作” 的问题。 Docker 将应用程序与该程序的依赖，打包">
+  <meta name="description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
 <meta name="keywords" content="自学springboot之Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/SpringBoot_Docker/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Docker的作用及安装Docker是什么？ 在任何地方安全的建造、分享、运行你的应用程序 官方对 Docker 的定义是一个容器平台。简单来说，Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。开发人员可以利用 Docker 来消除协作编码时 “在我的电脑上可以正常工作” 的问题。 Docker 将应用程序与该程序的依赖，打包">
+<meta property="og:description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T11:55:41.533Z">
+<meta property="og:updated_time" content="2019-05-30T11:21:04.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot">
-<meta name="twitter:description" content="Docker的作用及安装Docker是什么？ 在任何地方安全的建造、分享、运行你的应用程序 官方对 Docker 的定义是一个容器平台。简单来说，Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。开发人员可以利用 Docker 来消除协作编码时 “在我的电脑上可以正常工作” 的问题。 Docker 将应用程序与该程序的依赖，打包">
+<meta name="twitter:description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,11 +179,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker的作用及安装"><a href="#Docker的作用及安装" class="headerlink" title="Docker的作用及安装"></a>Docker的作用及安装</h1><p>Docker是什么？</p>
-<p>在任何地方安全的建造、分享、运行你的应用程序</p>
-<p>官方对 Docker 的定义是一个容器平台。简单来说，<strong>Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。</strong>它是目前最流行的 Linux 容器解决方案。开发人员可以利用 Docker 来消除协作编码时 “在我的电脑上可以正常工作” 的问题。</p>
-<p>Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。</p>
-<p>总体来说，Docker 的接口相当简单，用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。</p>
+        <h1 id="Docker笔记整理"><a href="#Docker笔记整理" class="headerlink" title="Docker笔记整理"></a>Docker笔记整理</h1><h2 id="1-Docker是什么？"><a href="#1-Docker是什么？" class="headerlink" title="1.Docker是什么？"></a>1.Docker是什么？</h2><p>Docker是一个开源的应用容器引擎。</p>
+<p>Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。</p>
+<h2 id="2-核心概念"><a href="#2-核心概念" class="headerlink" title="2.核心概念"></a>2.核心概念</h2><p>Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。</p>
+<p>Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者其他工具使用Docker。</p>
+<p>Docker仓库（Registry）：Docker仓库用来保存镜像，可以理解为代码控制中的代码仓库。</p>
+<p>Docker镜像（images）：Docker镜像是用于创建Docker容器的模板。软件打包好的镜像，放在Docker仓库中（镜像启动以后就是一个容器）。</p>
+<p>Docker容器（Container）：容器是独立运行的一个或一组应用。</p>
+<p>使用Docker步骤：</p>
+<p>  1）安装Docker</p>
+<p>  2）去Docker仓库找到这个软件对应的镜像</p>
+<p>  3）使用Docker运行这个镜像，这个镜像就会生成一个Docker容器</p>
+<p>  4）对容器的启动停止，就是对软件的启动停止</p>
+<h3 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3.安装Docker"></a>3.安装Docker</h3><p>  1）安装虚拟机</p>
+<p>​       A.VMWare、VirtualBox</p>
+<p>​       B.导入虚拟机文件</p>
+<p>​       C.双击启动虚拟机</p>
+<p>​       D.连接虚拟机</p>
+<p>​       E.设置虚拟机网络</p>
+<p>​            设置好网络使用命令重启虚拟机网络</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+<p>​       F.查看linux的ip地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>  <strong>ps</strong>: Windows查看IP地址命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ipconfig</span><br></pre></td></tr></table></figure>
+<p>​      G.使用SmarTTY连接虚拟机</p>
 
       
 
@@ -265,6 +285,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/05/30/springboot缓存（1）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          springboot缓存（1）
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -286,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker的作用及安装"><span class="toc-number">1.</span> <span class="toc-text">Docker的作用及安装</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker笔记整理"><span class="toc-number">1.</span> <span class="toc-text">Docker笔记整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Docker是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.Docker是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-核心概念"><span class="toc-number">1.2.</span> <span class="toc-text">2.核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装Docker"><span class="toc-number">1.2.1.</span> <span class="toc-text">3.安装Docker</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -399,6 +433,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自学springboot之Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
             
             <div class="clearfix"></div>
