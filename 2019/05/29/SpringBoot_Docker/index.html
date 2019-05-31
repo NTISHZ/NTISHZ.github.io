@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SpringBoot | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
+  <meta name="description" content="Docker笔记整理Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。">
 <meta name="keywords" content="自学springboot之Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/SpringBoot_Docker/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
+<meta property="og:description" content="Docker笔记整理Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-30T11:21:04.983Z">
+<meta property="og:updated_time" content="2019-05-31T08:23:28.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot">
-<meta name="twitter:description" content="Docker笔记整理1.Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。 2.核心概念Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。 Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者">
+<meta name="twitter:description" content="Docker笔记整理Docker是什么？Docker是一个开源的应用容器引擎。 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,9 +179,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker笔记整理"><a href="#Docker笔记整理" class="headerlink" title="Docker笔记整理"></a>Docker笔记整理</h1><h2 id="1-Docker是什么？"><a href="#1-Docker是什么？" class="headerlink" title="1.Docker是什么？"></a>1.Docker是什么？</h2><p>Docker是一个开源的应用容器引擎。</p>
-<p>Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。</p>
-<h2 id="2-核心概念"><a href="#2-核心概念" class="headerlink" title="2.核心概念"></a>2.核心概念</h2><p>Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。</p>
+        <h1 id="Docker笔记整理"><a href="#Docker笔记整理" class="headerlink" title="Docker笔记整理"></a>Docker笔记整理</h1><h2 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h2><p>Docker是一个开源的应用容器引擎。</p>
+<p>Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像。<a id="more"></a></p>
+<h2 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h2><p>Docker主机（host）：安装了Docker程序的机器（Docker直接安装在操作系统之上）。</p>
 <p>Docker客户端（Client）：连接Docker主机进行操作。客户端通过命令行或者其他工具使用Docker。</p>
 <p>Docker仓库（Registry）：Docker仓库用来保存镜像，可以理解为代码控制中的代码仓库。</p>
 <p>Docker镜像（images）：Docker镜像是用于创建Docker容器的模板。软件打包好的镜像，放在Docker仓库中（镜像启动以后就是一个容器）。</p>
@@ -191,7 +191,7 @@
 <p>  2）去Docker仓库找到这个软件对应的镜像</p>
 <p>  3）使用Docker运行这个镜像，这个镜像就会生成一个Docker容器</p>
 <p>  4）对容器的启动停止，就是对软件的启动停止</p>
-<h3 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3.安装Docker"></a>3.安装Docker</h3><p>  1）安装虚拟机</p>
+<h3 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h3><p>  1）安装虚拟机</p>
 <p>​       A.VMWare、VirtualBox</p>
 <p>​       B.导入虚拟机文件</p>
 <p>​       C.双击启动虚拟机</p>
@@ -320,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker笔记整理"><span class="toc-number">1.</span> <span class="toc-text">Docker笔记整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Docker是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1.Docker是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-核心概念"><span class="toc-number">1.2.</span> <span class="toc-text">2.核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装Docker"><span class="toc-number">1.2.1.</span> <span class="toc-text">3.安装Docker</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker笔记整理"><span class="toc-number">1.</span> <span class="toc-text">Docker笔记整理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">Docker是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心概念"><span class="toc-number">1.2.</span> <span class="toc-text">核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Docker"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装Docker</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -433,6 +433,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自学springboot之Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">缓存的概念</a>
               </li>
              
               <li class="article-tag-list-item">
