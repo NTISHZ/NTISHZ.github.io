@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>springboot缓存(2) | Hexo</title>
+  <title>springboot缓存（1） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
-<meta name="keywords" content="Cacheable">
+  <meta name="description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
+<meta name="keywords" content="缓存的基本概念">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springboot缓存(2)">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/Springboot缓存（2）/index.html">
+<meta property="og:title" content="springboot缓存（1）">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/Springboot_Cache-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
+<meta property="og:description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png">
-<meta property="og:updated_time" content="2019-06-01T05:55:49.116Z">
+<meta property="og:updated_time" content="2019-05-31T08:27:39.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springboot缓存(2)">
-<meta name="twitter:description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
-<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png">
+<meta name="twitter:title" content="springboot缓存（1）">
+<meta name="twitter:description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,100 +159,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Springboot缓存（2）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Springboot_Cache-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      springboot缓存(2)
+      springboot缓存（1）
     </h1>
   
 
         
-        <a href="/2019/05/31/Springboot缓存（2）/" class="archive-article-date">
-  	<time datetime="2019-05-31T07:08:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-31</time>
+        <a href="/2019/05/30/Springboot_Cache-1/" class="archive-article-date">
+  	<time datetime="2019-05-30T08:11:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Springboot缓存抽象"><a href="#Springboot缓存抽象" class="headerlink" title="Springboot缓存抽象"></a>Springboot缓存抽象</h1><h2 id="缓存的原理（Cacheable）"><a href="#缓存的原理（Cacheable）" class="headerlink" title="缓存的原理（Cacheable）"></a>缓存的原理（Cacheable）</h2><p>缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。<a id="more"></a></p>
-<table>
+        <h1 id="Springboot缓存抽象"><a href="#Springboot缓存抽象" class="headerlink" title="Springboot缓存抽象"></a>Springboot缓存抽象</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。<a id="more"></a></p>
+<p>Cache接口为缓存的组件规范定义，包含缓存的各种操作集合；</p>
+<p>Cache接口下Spring提供了各种xxx.Cache的实现；如：RedisCache，EhCacheCache，ConcurrentMapCache等；</p>
+<p>每次调用需要缓存功能的方法时，Spring会检查指定参数的指定目标方法是否已经被调用过；如果有就直接从缓存中获取方法调用后的结果，如果没有就调用方法并缓存结果后返回给用户。下次调用直接从缓存中获取。</p>
+<p>ps：使用Spring缓存抽象时我们需要关注以下两点；</p>
+<p>​               1.确定方法需要被缓存以及他们的缓存策略</p>
+<p>​               2.从缓存中读取之前缓存存储的数据</p>
+<h2 id="重要概念及缓存注解"><a href="#重要概念及缓存注解" class="headerlink" title="重要概念及缓存注解"></a>重要概念及缓存注解</h2><table>
 <thead>
 <tr>
-<th>Cacheable的属性</th>
+<th style="text-align:left">概念</th>
 <th>解释</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>cacheNames/values</td>
-<td>指定缓存组件的名字；决定将方法的返回结果放在哪个缓存中，是数组的方式，可以指定多个缓存。</td>
+<td style="text-align:left">Cache</td>
+<td>缓存接口，定义缓存操作</td>
 </tr>
 <tr>
-<td>key</td>
-<td>缓存数据使用的key（缓存数据使用键值对的格式）：可以用它来指定。默认是使用方法参数的值 ，编写SpEL(表达式可看下图)；#id；参数id的值  #a0 #p0 #root.args[0]</td>
+<td style="text-align:left">CacheManager</td>
+<td>缓存管理器，CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。</td>
 </tr>
 <tr>
-<td>keyGenerator</td>
-<td>key的生成器；可以自己指定key的生成器的组件id；key/keyGenerator 二选一使用</td>
+<td style="text-align:left">@Cacheable</td>
+<td>主要针对方法配置，能够根据方法的请求参数对其结果进行缓存。</td>
 </tr>
 <tr>
-<td></td>
-<td>指定缓存管理器；或者cacheResolver指定获取解析器</td>
+<td style="text-align:left">@CacheEvict</td>
+<td>清空缓存</td>
 </tr>
 <tr>
-<td>condition</td>
-<td>指定符号条件的情况下才缓存</td>
+<td style="text-align:left">@CachePut</td>
+<td>保证方法被调用，又希望结构被缓存</td>
 </tr>
 <tr>
-<td></td>
-<td>否定缓存；当unless指定的条件为true，方法的返回值就不会被缓存；可以获取到结果进行判断。（#result可以获取方法的结果）</td>
+<td style="text-align:left">@EnableCaching</td>
+<td>开启基于注解的缓存</td>
 </tr>
 <tr>
-<td>sync</td>
-<td>是否使用异步模式</td>
+<td style="text-align:left">keyGenerator</td>
+<td>缓存数据时key的生成策略</td>
+</tr>
+<tr>
+<td style="text-align:left">serialize</td>
+<td>缓存数据时value序列化策略</td>
 </tr>
 </tbody>
 </table>
-<p>原理：</p>
-<p>​    1.自动配置类：CacheAutoConfiguration</p>
-<p>​    2.缓存的配置类：org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.EhCacheCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.HazeLcastCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.InfinispanCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.CouchbaseCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.GuavaCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration</p>
-<p>​                      org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration</p>
-<p>​    3.哪个配置默认生效：SimpleCacheConfiguration</p>
-<p>​    4.给容器中注册一个CacheManager：ConcurrentMapCacheManager</p>
-<p>​    5.可以获取和创建ConcurrentMaoCache类型的缓存组件；他的作用是将数据保存在ConcurrentMap中</p>
-<p>ps: 若查看控制台的自动配置报告可以在Applocation.properties配置文件中加一行代码</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug = true</span><br></pre></td></tr></table></figure>
-<p>运行流程：</p>
-<p>@Cacheable：</p>
-<p>​    1.方法运行之前，先去查询Cache（缓存组件），按照cacheNames指定名字获取；（CacheManager先获取相应的缓存），第一次获取缓存如果没有Cache组件会自动创建；</p>
-<p>​    2.去Cache中查找缓存的内容，使用一个key，默认就是方法的参数；</p>
-<p>​        key是按照某种策略生成的；默认是使用keyGenerator生成的，默认使用SimplekeyGenerator生成key；</p>
-<p>​                SimplekeyGenerator生成key的默认策略：</p>
-<p>​                            如果没有参数：key=new SimpleKey()；</p>
-<p>​                            如果有一个参数：key=参数的值</p>
-<p>​                            如果有多个参数：key=new SimpleKey(params);</p>
-<p>​    3.没有查到缓存就调用方法</p>
-<p>​    4.将目标方法返回的结果，放进缓存中</p>
-<p>总结：@Cacheable标注的方法执行之前先检查缓存中有没有这个数据，默认按照参数的值作为key去查询缓存，如果没有就运行方法并将结果放入缓存；以后再来调用就可以直接使用缓存中的数据。</p>
-<p>核心：</p>
-<p>​    1）使用CacheManger[ConcurrentMapCacheManager]按照名字得到Cache[ConcurrentMapCache]组件</p>
-<p>​    2）key使用keyGenerator生成的，默认是SimpleKeyGenerator</p>
-<p>SpEL表达式:</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png" alt></p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>导入的模块：Cache、Web、MySQL、Mybatis</p>
+<h3 id="搭建基本环境"><a href="#搭建基本环境" class="headerlink" title="搭建基本环境"></a>搭建基本环境</h3><p>1.导入数据库文件，创建department和employee表<br>  2.创建javaBean封装数据<br>  3.整合Mybatis操作数据库<br>     1.配置数据源信息</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">spring.datasource.url=jdbc:mysql://localhost:3306/spring_cache?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;serverTimezone=UTC</span></span><br><span class="line"><span class="string">spring.datasource.username=root</span></span><br><span class="line"><span class="string">spring.datasource.password=</span></span><br><span class="line"><span class="string">spring.datasource.type=com.mysql.cj.jdbc.MysqlConnectionPoolDataSource</span></span><br><span class="line"><span class="string">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="comment">#开启驼峰命名法</span></span><br><span class="line"><span class="string">mybatis.configuration.map-underscore-to-camel-case=true</span></span><br></pre></td></tr></table></figure>
+<p>​     2.使用注解版的Mybatis<br>​                @MapperScan指定需要扫描的mapper接口所在的包  </p>
+<h3 id="快速体验缓存"><a href="#快速体验缓存" class="headerlink" title="快速体验缓存"></a>快速体验缓存</h3><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>​    1.开启基于注解的缓存 @EnableCaching</p>
+<p>​    2.标注缓存注解</p>
+<p>​        @Cacheable</p>
+<p>​        @CacheEvict</p>
+<p>​        @CachePut</p>
+<p>ps:  可以通过下面的java语句在控制台输出SQL语句日志</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logging.level.com.zjg.cache.mapper（包的真名） =debug</span><br></pre></td></tr></table></figure>
 
       
 
@@ -268,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Cacheable</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">缓存的基本概念</a>
         		</li>
       		
 		</ul>
@@ -324,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/31/Springboot缓存（2）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/30/Springboot_Cache-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -338,18 +322,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/01/Springboot缓存（3）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/31/Springboot_Cache-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Springboot缓存（3）
+          springboot缓存(2)
         
       </div>
     </a>
   
   
-    <a href="/2019/05/30/Springboot缓存（1）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">springboot缓存（1）</div>
+    <a href="/2019/05/29/SpringBoot_Docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -376,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Springboot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">Springboot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存的原理（Cacheable）"><span class="toc-number">1.1.</span> <span class="toc-text">缓存的原理（Cacheable）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Springboot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">Springboot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要概念及缓存注解"><span class="toc-number">1.2.</span> <span class="toc-text">重要概念及缓存注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">1.3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建基本环境"><span class="toc-number">1.3.1.</span> <span class="toc-text">搭建基本环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速体验缓存"><span class="toc-number">1.3.2.</span> <span class="toc-text">快速体验缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤"><span class="toc-number">1.3.3.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
