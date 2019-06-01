@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>springboot缓存(2) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Springboot缓存抽象缓存的原理缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
-<meta name="keywords" content="缓存的概念">
+  <meta name="description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
+<meta name="keywords" content="Cacheable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot缓存(2)">
-<meta property="og:url" content="http://yoursite.com/2019/05/31/springboot缓存（2）/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/Springboot缓存（2）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Springboot缓存抽象缓存的原理缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
+<meta property="og:description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T08:27:43.997Z">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png">
+<meta property="og:updated_time" content="2019-06-01T05:55:49.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot缓存(2)">
-<meta name="twitter:description" content="Springboot缓存抽象缓存的原理缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
+<meta name="twitter:description" content="Springboot缓存抽象缓存的原理（Cacheable）缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。">
+<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,7 +161,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-springboot缓存（2）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Springboot缓存（2）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -171,7 +173,7 @@
   
 
         
-        <a href="/2019/05/31/springboot缓存（2）/" class="archive-article-date">
+        <a href="/2019/05/31/Springboot缓存（2）/" class="archive-article-date">
   	<time datetime="2019-05-31T07:08:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-31</time>
 </a>
         
@@ -179,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Springboot缓存抽象"><a href="#Springboot缓存抽象" class="headerlink" title="Springboot缓存抽象"></a>Springboot缓存抽象</h1><h2 id="缓存的原理"><a href="#缓存的原理" class="headerlink" title="缓存的原理"></a>缓存的原理</h2><p>缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。<a id="more"></a></p>
+        <h1 id="Springboot缓存抽象"><a href="#Springboot缓存抽象" class="headerlink" title="Springboot缓存抽象"></a>Springboot缓存抽象</h1><h2 id="缓存的原理（Cacheable）"><a href="#缓存的原理（Cacheable）" class="headerlink" title="缓存的原理（Cacheable）"></a>缓存的原理（Cacheable）</h2><p>缓存是指将方法运行结构进行缓存，以后再要相同的数据，直接重缓存中获取，不用调用方法。其中CacheManager管理多个Cach组件，对缓存的真正CRUD操作在Cache组件中，每一个缓存组件有自己唯一一个名字。<a id="more"></a></p>
 <table>
 <thead>
 <tr>
@@ -190,11 +192,11 @@
 <tbody>
 <tr>
 <td>cacheNames/values</td>
-<td>指定缓存组件的名字</td>
+<td>指定缓存组件的名字；决定将方法的返回结果放在哪个缓存中，是数组的方式，可以指定多个缓存。</td>
 </tr>
 <tr>
 <td>key</td>
-<td>缓存数据使用的key（缓存数据使用键值对的格式）：可以用它来指定。默认是使用方法参数的值 ，编写SpEL；#id；参数id的值  #a0 #p0 #root.args[0]</td>
+<td>缓存数据使用的key（缓存数据使用键值对的格式）：可以用它来指定。默认是使用方法参数的值 ，编写SpEL(表达式可看下图)；#id；参数id的值  #a0 #p0 #root.args[0]</td>
 </tr>
 <tr>
 <td>keyGenerator</td>
@@ -218,6 +220,41 @@
 </tr>
 </tbody>
 </table>
+<p>原理：</p>
+<p>​    1.自动配置类：CacheAutoConfiguration</p>
+<p>​    2.缓存的配置类：org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.EhCacheCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.HazeLcastCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.InfinispanCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.CouchbaseCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.GuavaCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration</p>
+<p>​                      org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration</p>
+<p>​    3.哪个配置默认生效：SimpleCacheConfiguration</p>
+<p>​    4.给容器中注册一个CacheManager：ConcurrentMapCacheManager</p>
+<p>​    5.可以获取和创建ConcurrentMaoCache类型的缓存组件；他的作用是将数据保存在ConcurrentMap中</p>
+<p>ps: 若查看控制台的自动配置报告可以在Applocation.properties配置文件中加一行代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug = true</span><br></pre></td></tr></table></figure>
+<p>运行流程：</p>
+<p>@Cacheable：</p>
+<p>​    1.方法运行之前，先去查询Cache（缓存组件），按照cacheNames指定名字获取；（CacheManager先获取相应的缓存），第一次获取缓存如果没有Cache组件会自动创建；</p>
+<p>​    2.去Cache中查找缓存的内容，使用一个key，默认就是方法的参数；</p>
+<p>​        key是按照某种策略生成的；默认是使用keyGenerator生成的，默认使用SimplekeyGenerator生成key；</p>
+<p>​                SimplekeyGenerator生成key的默认策略：</p>
+<p>​                            如果没有参数：key=new SimpleKey()；</p>
+<p>​                            如果有一个参数：key=参数的值</p>
+<p>​                            如果有多个参数：key=new SimpleKey(params);</p>
+<p>​    3.没有查到缓存就调用方法</p>
+<p>​    4.将目标方法返回的结果，放进缓存中</p>
+<p>总结：@Cacheable标注的方法执行之前先检查缓存中有没有这个数据，默认按照参数的值作为key去查询缓存，如果没有就运行方法并将结果放入缓存；以后再来调用就可以直接使用缓存中的数据。</p>
+<p>核心：</p>
+<p>​    1）使用CacheManger[ConcurrentMapCacheManager]按照名字得到Cache[ConcurrentMapCache]组件</p>
+<p>​    2）key使用keyGenerator生成的，默认是SimpleKeyGenerator</p>
+<p>SpEL表达式:</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/imgSpEl.png" alt></p>
 
       
 
@@ -231,7 +268,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">缓存的概念</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Cacheable</a>
         		</li>
       		
 		</ul>
@@ -287,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/31/springboot缓存（2）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/31/Springboot缓存（2）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,8 +338,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/06/01/Springboot缓存（3）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Springboot缓存（3）
+        
+      </div>
+    </a>
   
-    <a href="/2019/05/30/springboot缓存（1）/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2019/05/30/Springboot缓存（1）/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">springboot缓存（1）</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -330,7 +376,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Springboot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">Springboot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存的原理"><span class="toc-number">1.1.</span> <span class="toc-text">缓存的原理</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Springboot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">Springboot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存的原理（Cacheable）"><span class="toc-number">1.1.</span> <span class="toc-text">缓存的原理（Cacheable）</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -446,11 +492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">缓存的概念</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
+                <a href="javascript:void(0)" class="js-tag color5">Cacheable</a>
               </li>
             
             <div class="clearfix"></div>
