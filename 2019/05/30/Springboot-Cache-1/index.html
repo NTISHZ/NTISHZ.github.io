@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Springboot_Cache-1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
+  <meta name="description" content="SpringBoot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
 <meta name="keywords" content="缓存的基本概念">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Springboot_Cache-1">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/Springboot-Cache-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
+<meta property="og:description" content="SpringBoot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T06:36:03.339Z">
+<meta property="og:updated_time" content="2019-06-01T12:08:52.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot_Cache-1">
-<meta name="twitter:description" content="Springboot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
+<meta name="twitter:description" content="SpringBoot缓存抽象基本概念Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Springboot缓存抽象"><a href="#Springboot缓存抽象" class="headerlink" title="Springboot缓存抽象"></a>Springboot缓存抽象</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。<a id="more"></a></p>
+        <h1 id="SpringBoot缓存抽象"><a href="#SpringBoot缓存抽象" class="headerlink" title="SpringBoot缓存抽象"></a>SpringBoot缓存抽象</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>Spring从3.1开始定义了org.springframework.cache.Cache和org.springframework.cache.CacheManager接口来同意不同的缓存技术（Spring也支持JCache即JSR-107）。<a id="more"></a></p>
 <p>Cache接口为缓存的组件规范定义，包含缓存的各种操作集合；</p>
 <p>Cache接口下Spring提供了各种xxx.Cache的实现；如：RedisCache，EhCacheCache，ConcurrentMapCache等；</p>
 <p>每次调用需要缓存功能的方法时，Spring会检查指定参数的指定目标方法是否已经被调用过；如果有就直接从缓存中获取方法调用后的结果，如果没有就调用方法并缓存结果后返回给用户。下次调用直接从缓存中获取。</p>
@@ -322,11 +322,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/31/Springboot-Cache-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/02/Scrapy入门/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Springboot_Cache-2
+          Scrapy入门
         
       </div>
     </a>
@@ -360,7 +360,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Springboot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">Springboot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要概念及缓存注解"><span class="toc-number">1.2.</span> <span class="toc-text">重要概念及缓存注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">1.3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建基本环境"><span class="toc-number">1.3.1.</span> <span class="toc-text">搭建基本环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速体验缓存"><span class="toc-number">1.3.2.</span> <span class="toc-text">快速体验缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤"><span class="toc-number">1.3.3.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot缓存抽象"><span class="toc-number">1.</span> <span class="toc-text">SpringBoot缓存抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重要概念及缓存注解"><span class="toc-number">1.2.</span> <span class="toc-text">重要概念及缓存注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">1.3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建基本环境"><span class="toc-number">1.3.1.</span> <span class="toc-text">搭建基本环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速体验缓存"><span class="toc-number">1.3.2.</span> <span class="toc-text">快速体验缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤"><span class="toc-number">1.3.3.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -472,15 +472,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自学springboot之Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Cacheable</a>
               </li>
             
             <div class="clearfix"></div>
