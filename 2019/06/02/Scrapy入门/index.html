@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Scrapy入门 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Scrapy入门Scrapy运行原理 scrapy框架的工作流程：1.首先Spiders">
+  <meta name="description" content="Scrapy入门Scrapy运行原理">
 <meta name="keywords" content="爬虫入门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scrapy入门">
 <meta property="og:url" content="http://yoursite.com/2019/06/02/Scrapy入门/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Scrapy入门Scrapy运行原理 scrapy框架的工作流程：1.首先Spiders">
+<meta property="og:description" content="Scrapy入门Scrapy运行原理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png">
 <meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601191455.png">
 <meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190602155934.png">
-<meta property="og:updated_time" content="2019-06-03T11:19:18.710Z">
+<meta property="og:updated_time" content="2019-06-03T11:53:45.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scrapy入门">
-<meta name="twitter:description" content="Scrapy入门Scrapy运行原理 scrapy框架的工作流程：1.首先Spiders">
+<meta name="twitter:description" content="Scrapy入门Scrapy运行原理">
 <meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -184,19 +184,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Scrapy入门"><a href="#Scrapy入门" class="headerlink" title="Scrapy入门"></a>Scrapy入门</h1><h2 id="Scrapy运行原理"><a href="#Scrapy运行原理" class="headerlink" title="Scrapy运行原理"></a>Scrapy运行原理</h2><p><img src="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png" alt></p>
-<p>scrapy框架的工作流程：1.首先Spiders<a id="more"></a>（爬虫文件）将需要发送请求的url(requests)经ScrapyEngine（引擎）交                          给Scheduler（调度器）。</p>
-<p>　　　　　　　　　　    2.Scheduler（排序，入队）处理后，经ScrapyEngine（引擎），                          DownloaderMiddlewares(可选，主要有User_Agent, Proxy代理)交给Downloader。</p>
-<p>　　　　　　　　　　    3.Downloader向互联网发送请求，并接收下载响应（response）。将响应                         （response）经ScrapyEngine（引擎），SpiderMiddlewares(可选)交给Spiders。</p>
-<p>　　　　　　　　　　    4.Spiders（爬虫文件处理）response，提取数据并将数据经ScrapyEngine交给                          ItemPipeline保存（可以是本地，可以是数据库）。 提取url重新经ScrapyEngine交给                            Scheduler（调度器）进行下一个循环。直到无Url请求程序停止结束。</p>
-<p>简化图：</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190601191455.png" alt></p>
-<h3 id="Scrapy安装"><a href="#Scrapy安装" class="headerlink" title="Scrapy安装"></a>Scrapy安装</h3><p>​    *pip install scrapy –&gt;VC++14.0 Twisted</p>
-<p>​        解决方法：离线安装 pip install xxx.whl</p>
-<p>​    *scrapy bencn 运行的时候 会报错 –&gt; win32</p>
-<p>​        解决方法：pip install pywin32</p>
-<h3 id="Scrapy创建项目"><a href="#Scrapy创建项目" class="headerlink" title="Scrapy创建项目"></a>Scrapy创建项目</h3><p>采集目标：采集西刺网的ip代理 包括 IP PORT</p>
-<p>1.创建项目：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject XXX（项目名）</span><br></pre></td></tr></table></figure>
+<a id="more"></a>scrapy框架的工作流程：1.首先Spiders（爬虫文件）将需要发送请求的url(requests)经ScrapyEngine（引擎）交                          给Scheduler（调度器）。<br><br>　　　　　　　　　　    2.Scheduler（排序，入队）处理后，经ScrapyEngine（引擎），                          DownloaderMiddlewares(可选，主要有User_Agent, Proxy代理)交给Downloader。<br><br>　　　　　　　　　　    3.Downloader向互联网发送请求，并接收下载响应（response）。将响应                         （response）经ScrapyEngine（引擎），SpiderMiddlewares(可选)交给Spiders。<br><br>　　　　　　　　　　    4.Spiders（爬虫文件处理）response，提取数据并将数据经ScrapyEngine交给                          ItemPipeline保存（可以是本地，可以是数据库）。 提取url重新经ScrapyEngine交给                            Scheduler（调度器）进行下一个循环。直到无Url请求程序停止结束。<br><br><br><br>简化图：<br><br><img src="http://psd6l8vl0.bkt.clouddn.com/20190601191455.png" alt><br><br><br><br>### Scrapy安装<br><br>​    <em>pip install scrapy –&gt;VC++14.0 Twisted<br><br>​        解决方法：离线安装 pip install xxx.whl<br><br>​    </em>scrapy bencn 运行的时候 会报错 –&gt; win32<br><br>​        解决方法：pip install pywin32<br><br>### Scrapy创建项目<br><br>采集目标：采集西刺网的ip代理 包括 IP PORT<br><br>1.创建项目：<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject XXX（项目名）</span><br></pre></td></tr></table></figure>
 <p>2.创建爬虫类，并且继承scrapy.Spider</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider 爬虫名字 网站域名</span><br></pre></td></tr></table></figure>
 <p>注意：</p>
@@ -315,8 +303,8 @@
     </a>
   
   
-    <a href="/2019/05/30/Springboot-Cache-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Springboot_Cache-1</div>
+    <a href="/2019/06/01/SpringBoot-Cache-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot-Cache-3</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -343,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scrapy入门"><span class="toc-number">1.</span> <span class="toc-text">Scrapy入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scrapy运行原理"><span class="toc-number">1.1.</span> <span class="toc-text">Scrapy运行原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy安装"><span class="toc-number">1.1.1.</span> <span class="toc-text">Scrapy安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy创建项目"><span class="toc-number">1.1.2.</span> <span class="toc-text">Scrapy创建项目</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scrapy入门"><span class="toc-number">1.</span> <span class="toc-text">Scrapy入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scrapy运行原理"><span class="toc-number">1.1.</span> <span class="toc-text">Scrapy运行原理</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -463,11 +451,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自学springboot之Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自学springboot之Docker</a>
               </li>
             
             <div class="clearfix"></div>
