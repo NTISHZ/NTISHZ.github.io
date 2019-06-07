@@ -6,15 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Redis学习第一天 | Hexo</title>
+  <title>Redis学习-5 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Redis学习第一天/index.html">
+  <meta name="description" content="Redis的数据类型Redis无序集合（Set）Set简介Redis的Set是String类型的无序集合。">
+<meta name="keywords" content="Redis数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习-5">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/Redis学习-5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Redis的数据类型Redis无序集合（Set）Set简介Redis的Set是String类型的无序集合。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf914ef185d132362.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf9150fb821f76184.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf9153fc20f296076.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf9161f0d43a42146.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf916661aae248059.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf916dfa40ca88321.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf91752ab34755293.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf91ac0023d399459.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa20c20646887721.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa2163a17b336595.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa220e06bf920896.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa22a453ec412104.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa222fad93b17191.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa469d98e4948704.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa46b7eb23130358.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa4b5169fda77583.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa4cf5a880720941.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa47c3716c295363.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa4d33c450699616.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa4fda32c7e39619.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa4fef733d273942.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/07/5cfa5161ec57a86225.png">
+<meta property="og:updated_time" content="2019-06-07T12:17:32.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Redis学习-5">
+<meta name="twitter:description" content="Redis的数据类型Redis无序集合（Set）Set简介Redis的Set是String类型的无序集合。">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/06/5cf914ef185d132362.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,60 +182,227 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis学习-5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/Redis学习-1/" class="archive-article-date">
-  	<time datetime="2019-06-03T11:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/Redis学习-1/">Redis学习-1</a>
+    <h1 class="article-title" itemprop="name">
+      Redis学习-5
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/06/Redis学习-5/" class="archive-article-date">
+  	<time datetime="2019-06-06T11:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis的数据类型"><a href="#Redis的数据类型" class="headerlink" title="Redis的数据类型"></a>Redis的数据类型</h1><h2 id="Redis无序集合（Set）"><a href="#Redis无序集合（Set）" class="headerlink" title="Redis无序集合（Set）"></a>Redis无序集合（Set）</h2><h3 id="Set简介"><a href="#Set简介" class="headerlink" title="Set简介"></a>Set简介</h3><p>Redis的Set是String类型的无序集合。<a id="more"></a>集合成员是唯一的，这就意味着集合不能出现重复的数据。Redis中集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+<p>Set类似于java中的Hashtable</p>
+<h3 id="Set命令"><a href="#Set命令" class="headerlink" title="Set命令"></a>Set命令</h3><p>1.<strong>赋值语法</strong></p>
+<p>SADD key member1 [member2] ：向集合添加一个或多个成员</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf914ef185d132362.png" alt></p>
+<p>2.<strong>取值语法</strong></p>
+<p>SCARD key ：获取集合的成员数</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf9150fb821f76184.png" alt></p>
+<p>SMEMBERS key ：返回集合中的所有成员</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf9153fc20f296076.png" alt></p>
+<p>SlSMEMBER key member ：判断member元素是否是集合key的成员（开发中：检验是否存在判断）</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf9161f0d43a42146.png" alt></p>
+<p>SRANDMEMBER key [count] ：返回集合中一个或多个随机数</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf916661aae248059.png" alt></p>
+<p>3.<strong>删除语法</strong></p>
+<p>SREM key member1 [member2] ：移除集合中的一个或多个成员</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf916dfa40ca88321.png" alt></p>
+<p>SPOP key [count] ：移除并返回集合中的一个随机元素</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf91752ab34755293.png" alt></p>
+<p>SMOVE source destination member ：将member从source集合移动到destination集合。</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf91ac0023d399459.png" alt></p>
+<p>4.<strong>差集语法</strong> </p>
+<p>SDIFF key1 [key2] ：返回给定所有集合的差集（左侧）</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa20c20646887721.png" alt></p>
+<p>SDIFFSTORE destination key1 [key2] ：返回给定所有集合的差集并存储在destination中</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa2163a17b336595.png" alt></p>
+<p>5.<strong>交集语法</strong></p>
+<p>SINTER key1 [key2] ：返回给定所有集合的交集（共有数据）</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa220e06bf920896.png" alt></p>
+<p>SINTERSTORE destination key1 [key2] ：返回给定所有集合的交集并存储在destination中</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa22a453ec412104.png" alt></p>
+<p>6.<strong>并集语法</strong></p>
+<p>SUNION key1 [key2] ：返回所有给定集合的并集</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa222fad93b17191.png" alt></p>
+<p>SUNIONSTORE destination key1 [key2] ：所有给定集合的并集存储在destination集合中</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>常应用于：对两个集合键的数据[计算]进行交集、并集、差集运算</p>
+<p>1.以非常方便的实现如共同关注、共同喜好、二度好友等功能，对上面的所有集合操作，你还可使用不同的命令选择将结果返回给客户端还是存集到一个新的集合中。</p>
+<p>2.利用唯一性，可以统计访问网站的所有独立IP</p>
+<h2 id="Redis有序集合（Zset）"><a href="#Redis有序集合（Zset）" class="headerlink" title="Redis有序集合（Zset）"></a>Redis有序集合（Zset）</h2><h3 id="Zset简介"><a href="#Zset简介" class="headerlink" title="Zset简介"></a>Zset简介</h3><p>1.Redis有序集合和集合一样也是string类型元素的集合，且不允许重复的成员。</p>
+<p>2.不同的是每个元素都会关联一个double类型的分数，Redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
+<p>3.有序集合的成员是唯一的，但分数（score）却可以重复</p>
+<p>4.集合是通过哈希表实现的，所以添加，删除，查找的复杂度都是O(1)。</p>
+<p>Redis的ZSet是有序，且不重复的</p>
+<h3 id="Zset命令"><a href="#Zset命令" class="headerlink" title="Zset命令"></a>Zset命令</h3><p>1.<strong>赋值语法</strong></p>
+<p>ZADD key score1 member1[score2 member2] ：向有序集合添加一个或多个成员，或者更新已存在成员的分数。</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa469d98e4948704.png" alt></p>
+<p>2.<strong>取值语法</strong></p>
+<p>ZCARD key ：获取有序集合的成员数</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa46b7eb23130358.png" alt></p>
+<p>ZCOUNT key min max ：计算在有序集合中指定区间分数的成员数</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa4b5169fda77583.png" alt></p>
+<p>ZRANK key member ：返回有序集合中指定成员的索引</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa4cf5a880720941.png" alt></p>
+<p>ZRANGE key start stop [withscores] ：通过索引区间返回有序集合合成指定区间内的成员（低到高）</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa47c3716c295363.png" alt></p>
+<p>ZREVRANGE key start stop [WITHSCORES] ：返回有序集合中指定区间的成员，通过索引，分数从高到底</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa4d33c450699616.png" alt></p>
+<p>3.<strong>删除语法</strong></p>
+<p>1.ZREM key member [member] ：移除有序集合中的一个或多个元素</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa4fda32c7e39619.png" alt></p>
+<p>2.ZREMRANGEBYRANK key start stop ：移除有序集合中给定的排名区间的所有成员（第一名是0）</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa4fef733d273942.png" alt></p>
+<p>3.ZREMRANGEBYSCORE key min max ：移除有序集合中给定的分数区间的所有成员</p>
+<p><img src="https://i.loli.net/2019/06/07/5cfa5161ec57a86225.png" alt></p>
+<p>4.del key ：移除集合</p>
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><p>常用于：排行榜</p>
+<p>1.比如twitter的public tiaeline可以发表时间作为score来存储，这样获取时就是自大按时间排好序的。</p>
+<p>2.比如一个存储全班同学成绩的Sorted Set，其集合value可以是同学的学号，而score就可以是其考试得分，这样在数据插入集合的时候，就已经进行了天然的排序。</p>
+<p>3.还可以用Sorted Set来做带权重的队列，比如普通消息的score为1，重要消息的score为2，然后工作线程可以选择按score的倒序来获取工作任务。让重要的任务优秀执行。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis学习第一天</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Redis数据类型</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/06/Redis学习-5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/06/05/Redis学习-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis学习-4</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis的数据类型"><span class="toc-number">1.</span> <span class="toc-text">Redis的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis无序集合（Set）"><span class="toc-number">1.1.</span> <span class="toc-text">Redis无序集合（Set）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set简介"><span class="toc-number">1.1.1.</span> <span class="toc-text">Set简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set命令"><span class="toc-number">1.1.2.</span> <span class="toc-text">Set命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">1.1.3.</span> <span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis有序集合（Zset）"><span class="toc-number">1.2.</span> <span class="toc-text">Redis有序集合（Zset）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Zset简介"><span class="toc-number">1.2.1.</span> <span class="toc-text">Zset简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Zset命令"><span class="toc-number">1.2.2.</span> <span class="toc-text">Zset命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">应用场景</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +425,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

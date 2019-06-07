@@ -6,15 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Redis学习第一天 | Hexo</title>
+  <title>Redis学习-3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Redis学习第一天/index.html">
+  <meta name="description" content="Redis的数据类型1.Redis字符串（String）String简介string是redis最基本的类型，一个keys对应一个value。">
+<meta name="keywords" content="Redis的数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习-3">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/Redis学习-3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Redis的数据类型1.Redis字符串（String）String简介string是redis最基本的类型，一个keys对应一个value。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604212149.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604213600.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604213130.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604215712.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604220656.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604221628.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605085949.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604222834.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605090353.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605090652.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100640.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100617.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100710.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100756.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100822.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605102819.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605103936.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605104026.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605104130.png">
+<meta property="og:updated_time" content="2019-06-06T12:03:51.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Redis学习-3">
+<meta name="twitter:description" content="Redis的数据类型1.Redis字符串（String）String简介string是redis最基本的类型，一个keys对应一个value。">
+<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,60 +182,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis学习-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/Redis学习-1/" class="archive-article-date">
-  	<time datetime="2019-06-03T11:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/Redis学习-1/">Redis学习-1</a>
+    <h1 class="article-title" itemprop="name">
+      Redis学习-3
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/04/Redis学习-3/" class="archive-article-date">
+  	<time datetime="2019-06-04T12:44:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis的数据类型"><a href="#Redis的数据类型" class="headerlink" title="Redis的数据类型"></a>Redis的数据类型</h1><h2 id="1-Redis字符串（String）"><a href="#1-Redis字符串（String）" class="headerlink" title="1.Redis字符串（String）"></a>1.Redis字符串（String）</h2><h3 id="String简介"><a href="#String简介" class="headerlink" title="String简介"></a>String简介</h3><p>string是redis最基本的类型，一个keys对应一个value。<a id="more"></a></p>
+<p>string类型是二进制安全的，意思是redis的string可以包含任何数据。比如jpg图片或者序列化的对象。</p>
+<p>string类型是Redis最基本的数据类型，一个键最大能存储512</p>
+<p>MB。</p>
+<p><strong>二进制安全是指，在传输数据时，保证二进制数据的信息安全，也就是不被篡改、破译等，如果被攻击，能够及时检测出来</strong></p>
+<p>二进制安全特点：</p>
+<p>​    1.编码、解码发生在客户端完成，执行效率高</p>
+<p>​    2.不需要频繁的编解码，不会出现乱码</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png" alt></p>
+<h3 id="String命令"><a href="#String命令" class="headerlink" title="String命令"></a>String命令</h3><p><strong>赋值语法</strong></p>
+<p>1.SET KEY_NAME VALUE ：Redis SET命令用于设置给定key的值。如果key已经存储值，SET就覆盖旧值，且无视类型。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604212149.png" alt></p>
+<p>2.SETNX key value（解决分布式锁 方案之一） ：只有在key不存在是设置key的值。setnx（Set if Not eXists）命令在指定key不存在时，为key设置指定的值。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604213600.png" alt></p>
+<p>3.NSET key value [key value…] ：同时设置一个或者多个key-value对。</p>
+<p><strong>取值语法</strong></p>
+<p>1.GET KEY_NAME ：Redis GET命令用于获取指定key的值。如果key不存在，返回nil。如果key存储的值不使字符串类型，返回一个错误。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604213130.png" alt></p>
+<p>2.GETRANGE key start end ：用于获取存储在指定key中字符串的子字符串。字符串的截取范围start和end两个偏移量决定（包括start和end在内）。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604215712.png" alt></p>
+<p>3.GETSET KEY_NAME VALUE ： getset命令用于设置指定key的值，并返回key的旧值，当key不存在时，返回nil。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604220656.png" alt></p>
+<p>4.STRLEN key ：返回key所储存的字符串长度。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604221628.png" alt></p>
+<p><strong>删除语法</strong></p>
+<p>1.DEL KEY_Name ：删除指定的key，如果存在，返回值数字类型。</p>
+<p><strong>自增/自减</strong></p>
+<p>1.INCR KEY_Name ：Incr命令将key中存储的数字值增1.如果key不存在，那么key的值会被初始化为0，如何在执行INCR操作。</p>
+<p>INCRBY KEY_NAME  增量值 ：Incrby命令将key中储存的数字加上指定的增量值。<br><img src="http://psd6l8vl0.bkt.clouddn.com/20190605085949.png" alt></p>
+<p>2.DECR KEY_Name或DECYBY KEY_NAME ：decr命令将key中存储的数字值减1.如果key不存在，那么key的值会被初始化为0，如何在执行DECR操作。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604222834.png" alt></p>
+<p>​         <img src="http://psd6l8vl0.bkt.clouddn.com/20190605090353.png" alt><br>3.APPEND KEY_NAME VALUE : Append 命令用于为指定的key追加至末</p>
+<p>尾，如果不存在，为其赋值。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605090652.png" alt></p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>1.String类型通常用于保存单个字符串或JSON字符串数据</p>
+<p>2.因String是二进制安全，所以可以把一个图片文件内容作为字符串来存储</p>
+<p>3.计数器（常规key-value缓存应用）</p>
+<p>INCR等指令本身就具有原子操作的特性，所以可以利用Redis的INCR、INCRBY、DECR、DECRBY等指令来实现原子计数的效果。</p>
+<h2 id="2-Redis哈希（Hash）"><a href="#2-Redis哈希（Hash）" class="headerlink" title="2.Redis哈希（Hash）"></a>2.Redis哈希（Hash）</h2><h3 id="哈希简介"><a href="#哈希简介" class="headerlink" title="哈希简介"></a>哈希简介</h3><p>Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。Redis中每个hash可以存储2^32-1键值对（40多亿），可以看成具有key和value的MAP容器。该类型非常适合于存储对象的信息。</p>
+<h3 id="哈希命令"><a href="#哈希命令" class="headerlink" title="哈希命令"></a>哈希命令</h3><p><strong>赋值命令</strong></p>
+<p>1.HSET KEY FIELD VALUE ：为指定的key，设定field/value</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png" alt></p>
+<p>2.HMSET KEY FIELD VALUE [FIELD VALUE] ：同时将多个field-value（域-值）对设置到哈希表key中</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100640.png" alt></p>
+<p><strong>取值命令</strong></p>
+<p>1.HGET KEY FIELD ：获取存储在HASH中的值，根据FIELD得到VALUE</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png" alt></p>
+<p>2.HMGET key field [field1] ：获取key所有给定字段的值</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100617.png" alt></p>
+<p>3.HGETALL key ：返回HASH表中所有的字段和值</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100710.png" alt></p>
+<p>4.HKEYS key ：获取所以哈希表中的字段</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100756.png" alt></p>
+<p>4.HLEN ：获取哈希表中字段的数量</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100822.png" alt></p>
+<p><strong>删除语法</strong></p>
+<p>1.HDEL KEY field1 [field2] ：删除一个或多个HASH表字段</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605102819.png" alt></p>
+<p><strong>其他语法</strong></p>
+<p>1.HSETNX key field value ：只有字段field不存在时，设置哈希字段的值</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605103936.png" alt></p>
+<p>2.HINCRBY key field increment ：为哈希key中指定字段的整数值加上增量increment</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605104026.png" alt></p>
+<p>3.HINCRBYFLOAT key field increment ：为哈希key中指定字段的整数值加上增量increment</p>
+<p>4.HEXISTES key filed ：查看哈希表key中，指定字段是否存在</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605104130.png" alt></p>
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><p>Hash的应用场景：（存储一个用户信息对象数据）</p>
+<p>1.产用于存储一个对象</p>
+<p>2.为什么不用string存储一个对象</p>
+<p>hash是最接近关系数据库结构的数据类型，可以将数据库一条记录或程序中一个对象转换为hashmap存放在Redis中。Redis的Hash实际是内部存储的Value为一个HashMap，并提供了直接存取这个Map成员的接口。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis学习第一天</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis的数据类型</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/04/Redis学习-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/05/Redis学习-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Redis学习-4
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/06/04/SpringBoot-Docker-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SpringBoot-Docker-2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis的数据类型"><span class="toc-number">1.</span> <span class="toc-text">Redis的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Redis字符串（String）"><span class="toc-number">1.1.</span> <span class="toc-text">1.Redis字符串（String）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String简介"><span class="toc-number">1.1.1.</span> <span class="toc-text">String简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String命令"><span class="toc-number">1.1.2.</span> <span class="toc-text">String命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">1.1.3.</span> <span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Redis哈希（Hash）"><span class="toc-number">1.2.</span> <span class="toc-text">2.Redis哈希（Hash）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希简介"><span class="toc-number">1.2.1.</span> <span class="toc-text">哈希简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希命令"><span class="toc-number">1.2.2.</span> <span class="toc-text">哈希命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">应用场景</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +435,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

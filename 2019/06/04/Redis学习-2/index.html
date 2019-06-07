@@ -6,15 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Redis学习第一天 | Hexo</title>
+  <title>Redis学习-2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Redis学习第一天/index.html">
+  <meta name="description" content="Redis命令Redis命令描述Redis命令用户在redis服务器上执行操作。">
+<meta name="keywords" content="Redis命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习-2">
+<meta property="og:url" content="http://yoursite.com/2019/06/04/Redis学习-2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Redis命令Redis命令描述Redis命令用户在redis服务器上执行操作。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210637.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210850.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603211354.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603211211.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603212956.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603213707.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214239.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214407.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214614.png">
+<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214918.png">
+<meta property="og:updated_time" content="2019-06-04T13:22:53.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Redis学习-2">
+<meta name="twitter:description" content="Redis命令Redis命令描述Redis命令用户在redis服务器上执行操作。">
+<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,60 +171,204 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis学习-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/Redis学习-1/" class="archive-article-date">
-  	<time datetime="2019-06-03T11:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/Redis学习-1/">Redis学习-1</a>
+    <h1 class="article-title" itemprop="name">
+      Redis学习-2
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/04/Redis学习-2/" class="archive-article-date">
+  	<time datetime="2019-06-04T05:50:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h1><h2 id="Redis命令描述"><a href="#Redis命令描述" class="headerlink" title="Redis命令描述"></a>Redis命令描述</h2><p>Redis命令用户在redis服务器上执行操作。<a id="more"></a></p>
+<p>要在Redis服务器上执行命令需要一个Redis客户端。</p>
+<p>Redis支持五种数据类型：String（字符串），hash（哈希），list（列表），set（集合）及zset（sorted set：有序集合）等。</p>
+<h3 id="Redis键key"><a href="#Redis键key" class="headerlink" title="Redis键key"></a>Redis键key</h3><p>Redis键命令用于管理redis的键</p>
+<p>1.DEL key ：用于在key存在时，删除key。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png" alt></p>
+<p>2.DUMP key ：序列化给定key，并返回被序列化的值。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210637.png" alt></p>
+<p>3.EXISTS key ：检查给定key是否存在。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210850.png" alt></p>
+<p>4.EXPIRE key seconds ：为给定key设置过期时间（以秒计），-1表示永久，-2表示无效。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603211354.png" alt></p>
+<p>5.TTL key ：以秒为单位，返回给定key的剩余生成时间（TTL，time to live）。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603211211.png" alt></p>
+<p>6.PEXPIRE key milliseconds : 设置key的过期时间以毫秒计。</p>
+<p>7.PTL key ： 以毫秒为单位返回key的剩余的过期时间</p>
+<p>8.PERSIST key : 移除key的过期时间，key将持久保持。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603212956.png" alt></p>
+<p>9.KEYS pattern ：查找所以符合给定模式（pattern）的key。</p>
+<p>keys  通配符         获取所有与pattern匹配的key，返回所有与该匹配的key。</p>
+<p>通配符 ：</p>
+<p>​        *    代表所以</p>
+<p>​        ？    代表一个字符</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603213707.png" alt></p>
+<p>10.RANDOMKEY ：从当前数据库中随机返回一个key。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214239.png" alt></p>
+<p>11.RENAME key newkey ：修改key的值。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214407.png" alt></p>
+<p>12.MOVE key db ：将当前数据库的key移动到给定的数据库db当中。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214614.png" alt></p>
+<p>13.TYPE key ：返回key所储存的值得类型。</p>
+<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214918.png" alt></p>
+<h3 id="Key的命名建议"><a href="#Key的命名建议" class="headerlink" title="Key的命名建议"></a>Key的命名建议</h3><p>Redis单个key存入512大小</p>
+<p>1.key不要太长，经历不要超过1024字节，太长了不仅消耗内存，而且会降低查找的效率；</p>
+<p>2.key也不要太短，太短的话，key的可读行会降低；</p>
+<p>3.在一个项目中，key最好使用统一的命令模式，例如：users：123：paswword</p>
+<p>4.key名称区分大小写</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis学习第一天</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Redis命令</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/04/Redis学习-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/04/SpringBoot-Docker-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringBoot-Docker-2
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/06/03/Redis学习-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis学习-1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis命令"><span class="toc-number">1.</span> <span class="toc-text">Redis命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis命令描述"><span class="toc-number">1.1.</span> <span class="toc-text">Redis命令描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis键key"><span class="toc-number">1.1.1.</span> <span class="toc-text">Redis键key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Key的命名建议"><span class="toc-number">1.1.2.</span> <span class="toc-text">Key的命名建议</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +391,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
