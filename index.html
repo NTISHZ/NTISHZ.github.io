@@ -398,75 +398,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在Docker上搭建环境"><a href="#在Docker上搭建环境" class="headerlink" title="在Docker上搭建环境"></a>在Docker上搭建环境</h1><h2 id="Docker的基本操作"><a href="#Docker的基本操作" class="headerlink" title="Docker的基本操作"></a>Docker的基本操作</h2><h3 id="1-启动Docker镜像"><a href="#1-启动Docker镜像" class="headerlink" title="1.启动Docker镜像"></a>1.启动Docker镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604113208.png" alt></p>
-<h3 id="2-搜索MySQL镜像"><a href="#2-搜索MySQL镜像" class="headerlink" title="2.搜索MySQL镜像"></a>2.搜索MySQL镜像</h3><p>默认去Docker Hub仓库搜索MySQL镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search mysql</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604113444.png" alt></p>
-<p>Name ：镜像名</p>
-<p>Description ：对镜像的描述</p>
-<p>Starts ： 有多少人下载过</p>
-<p>Offic ：表示该镜像是否为官方的</p>
-<h3 id="3-下载（拉取）镜像"><a href="#3-下载（拉取）镜像" class="headerlink" title="3.下载（拉取）镜像"></a>3.下载（拉取）镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql（镜像）:tag(tag是可选的，tag表示标签，多为软件版本，默认为latest)</span><br></pre></td></tr></table></figure>
-<p><strong><em>docker下载加速</em></strong></p>
-<p>进入root超级用户模式，配置加速器。命令如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.得到一个Mirror的地址，将该地址配置在Docker Daemon的启动脚本中</span><br><span class="line">curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://4e70ba5d.m.daocloud.io</span><br><span class="line">cat /etc/docker/daemon.json</span><br><span class="line">2.重启Docker</span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-<p><img src="C:\Users\HZ\AppData\Roaming\Typora\typora-user-images\1559630772261.png" alt="1559630772261"></p>
-<p><strong><em>查看已下载镜像</em></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604145604.png" alt></p>
-<p><strong><em>删除镜像</em></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi IMAGE ID</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604150750.png" alt></p>
-<h3 id="4-容器操作"><a href="#4-容器操作" class="headerlink" title="4.容器操作"></a>4.容器操作</h3><p>软件镜像—-运行镜像—-产生—-个容器；</p>
-<p>步骤：</p>
-<p>1.<strong>搜索镜像</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search tomcat</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604152404.png" alt></p>
-<p>2.<strong>拉取镜像</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604152632.png" alt></p>
-<p>3.<strong>根据镜像启动容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name container-name -d image-name：tag</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604153624.png" alt></p>
-<p>4.<strong>查看正在运行的docker的容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604153523.png" alt></p>
-<p>5.<strong>停止运行中的容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop container-id</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604154427.png" alt></p>
-<p>6.<strong>查看所有的容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a (查看所有的）</span><br><span class="line">docker ps    (查看运行中的)</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604154815.png" alt></p>
-<p>7.<strong>启动容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start container-id</span><br></pre></td></tr></table></figure>
-<p>8.<strong>删除容器</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm container-id</span><br></pre></td></tr></table></figure>
-<p>删除的容器一定要处在停止状态</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604155026.png" alt></p>
-<p>9.<strong>端口映射</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8888:8080 tomcat</span><br><span class="line">-d                   -d ： 后台运行</span><br><span class="line">-p：6379:6379        -p ：主机端口映射到容器内部的端口</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604155845.png" alt></p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604160442.png" alt></p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604160404.png" alt></p>
-<p>若是不能访问，可以通过以下命令查看防火墙状态：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service firewalld status</span><br></pre></td></tr></table></figure>
-<p>10.查看Docker容器日志</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs container-id/container-name</span><br></pre></td></tr></table></figure>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604160952.png" alt></p>
-<p><a href="https://docs.docker.com/engine/reference/commandline/docker/" target="_blank" rel="noopener">更多命令</a></p>
-<h2 id="在Docker搭建MySQL"><a href="#在Docker搭建MySQL" class="headerlink" title="在Docker搭建MySQL"></a>在Docker搭建MySQL</h2><h3 id="1-搭建MySQL"><a href="#1-搭建MySQL" class="headerlink" title="1.搭建MySQL"></a>1.搭建MySQL</h3><p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604164640.png" alt></p>
-<p>注意：</p>
-<p>mysql8 之前的版本中加密规则是mysql_native_password,而在mysql8之后,加密规则是caching_sha2_password。</p>
-<h3 id="2-几个其他的高级操作"><a href="#2-几个其他的高级操作" class="headerlink" title="2.几个其他的高级操作"></a>2.几个其他的高级操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker run --name some-mysql -v /my/custom:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag</span><br></pre></td></tr></table></figure>
-<p>-v ：把主机的/my/custom文件夹挂载到mysqldocker容器的/etc/mysql/conf.d文件里。改mysql的配置文件就只需要把mysql配置文件放在主机的指定目录下。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</span><br></pre></td></tr></table></figure>
-<p>–character-set-server=utf8mb4 –collation-server=utf8mb4_unicode_ci ：指定mysql的一些参数</p>
-
+        <h1 id="在Docker上搭建环境"><a href="#在Docker上搭建环境" class="headerlink" title="在Docker上搭建环境"></a>在Docker上搭建环境</h1><h2 id="Docker的基本操作"><a href="#Docker的基本操作" class="headerlink" title="Docker的基本操作"></a>Docker的基本操作</h2><h3 id="1-启动Docker镜像"><a href="#1-启动Docker镜像" class="headerlink" title="1.启动Docker镜像"></a>1.启动Docker镜像
+        
       
 
       
-    </div>
+    </h3></div>
     <div class="article-info article-info-index">
       
       
@@ -1056,7 +993,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,7 +1001,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,14 +1026,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
             
             <div class="clearfix"></div>
