@@ -16,33 +16,33 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Redis的数据类型1.Redis字符串（String）String简介string是redis最基本的类型，一个keys对应一个value。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604212149.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604213600.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604213130.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604215712.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604220656.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604221628.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605085949.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604222834.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605090353.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605090652.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100640.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100617.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100710.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100756.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605100822.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605102819.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605103936.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605104026.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190605104130.png">
-<meta property="og:updated_time" content="2019-06-06T12:03:51.509Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1d2e74a1d44589.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1d117eb0862158.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1cf6d011418925.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1cdf9ec5783510.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1caf1546416799.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1c9869ff298956.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1c747d82794281.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1c518a6d668664.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1c27cbecc54668.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1bf1759ab33516.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1bd8e6d5926314.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1bbba43bd47763.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1ba2e0ba372053.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1b06e3f5333244.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1af2c4a9517451.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1ad1c56fe13775.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1ac843e2355148.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1ab93dcd791068.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1aab66a2e38827.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1a434441795110.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd19d0e0cc797410.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd186c927ab19663.png">
+<meta property="og:updated_time" content="2019-06-09T14:52:47.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis学习-3">
 <meta name="twitter:description" content="Redis的数据类型1.Redis字符串（String）String简介string是redis最基本的类型，一个keys对应一个value。">
-<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/09/5cfd1d2e74a1d44589.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -210,32 +210,33 @@
 <p>二进制安全特点：</p>
 <p>​    1.编码、解码发生在客户端完成，执行效率高</p>
 <p>​    2.不需要频繁的编解码，不会出现乱码</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604211612.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1d2e74a1d44589.png" alt></p>
 <h3 id="String命令"><a href="#String命令" class="headerlink" title="String命令"></a>String命令</h3><p><strong>赋值语法</strong></p>
 <p>1.SET KEY_NAME VALUE ：Redis SET命令用于设置给定key的值。如果key已经存储值，SET就覆盖旧值，且无视类型。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604212149.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1d117eb0862158.png" alt></p>
 <p>2.SETNX key value（解决分布式锁 方案之一） ：只有在key不存在是设置key的值。setnx（Set if Not eXists）命令在指定key不存在时，为key设置指定的值。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604213600.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1cf6d011418925.png" alt></p>
 <p>3.NSET key value [key value…] ：同时设置一个或者多个key-value对。</p>
 <p><strong>取值语法</strong></p>
 <p>1.GET KEY_NAME ：Redis GET命令用于获取指定key的值。如果key不存在，返回nil。如果key存储的值不使字符串类型，返回一个错误。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604213130.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1cdf9ec5783510.png" alt></p>
 <p>2.GETRANGE key start end ：用于获取存储在指定key中字符串的子字符串。字符串的截取范围start和end两个偏移量决定（包括start和end在内）。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604215712.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1caf1546416799.png" alt></p>
 <p>3.GETSET KEY_NAME VALUE ： getset命令用于设置指定key的值，并返回key的旧值，当key不存在时，返回nil。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604220656.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1c9869ff298956.png" alt></p>
 <p>4.STRLEN key ：返回key所储存的字符串长度。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604221628.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1c747d82794281.png" alt></p>
 <p><strong>删除语法</strong></p>
 <p>1.DEL KEY_Name ：删除指定的key，如果存在，返回值数字类型。</p>
 <p><strong>自增/自减</strong></p>
 <p>1.INCR KEY_Name ：Incr命令将key中存储的数字值增1.如果key不存在，那么key的值会被初始化为0，如何在执行INCR操作。</p>
-<p>INCRBY KEY_NAME  增量值 ：Incrby命令将key中储存的数字加上指定的增量值。<br><img src="http://psd6l8vl0.bkt.clouddn.com/20190605085949.png" alt></p>
+<p>INCRBY KEY_NAME  增量值 ：Incrby命令将key中储存的数字加上指定的增量值。</p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1c518a6d668664.png" alt></p>
 <p>2.DECR KEY_Name或DECYBY KEY_NAME ：decr命令将key中存储的数字值减1.如果key不存在，那么key的值会被初始化为0，如何在执行DECR操作。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190604222834.png" alt></p>
-<p>​         <img src="http://psd6l8vl0.bkt.clouddn.com/20190605090353.png" alt><br>3.APPEND KEY_NAME VALUE : Append 命令用于为指定的key追加至末</p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1c27cbecc54668.png" alt></p>
+<p>​     <img src="https://i.loli.net/2019/06/09/5cfd1bf1759ab33516.png" alt><br>3.APPEND KEY_NAME VALUE : Append 命令用于为指定的key追加至末</p>
 <p>尾，如果不存在，为其赋值。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605090652.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1bd8e6d5926314.png" alt></p>
 <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>1.String类型通常用于保存单个字符串或JSON字符串数据</p>
 <p>2.因String是二进制安全，所以可以把一个图片文件内容作为字符串来存储</p>
 <p>3.计数器（常规key-value缓存应用）</p>
@@ -243,31 +244,31 @@
 <h2 id="2-Redis哈希（Hash）"><a href="#2-Redis哈希（Hash）" class="headerlink" title="2.Redis哈希（Hash）"></a>2.Redis哈希（Hash）</h2><h3 id="哈希简介"><a href="#哈希简介" class="headerlink" title="哈希简介"></a>哈希简介</h3><p>Redis hash是一个string类型的field和value的映射表，hash特别适合用于存储对象。Redis中每个hash可以存储2^32-1键值对（40多亿），可以看成具有key和value的MAP容器。该类型非常适合于存储对象的信息。</p>
 <h3 id="哈希命令"><a href="#哈希命令" class="headerlink" title="哈希命令"></a>哈希命令</h3><p><strong>赋值命令</strong></p>
 <p>1.HSET KEY FIELD VALUE ：为指定的key，设定field/value</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1bbba43bd47763.png" alt></p>
 <p>2.HMSET KEY FIELD VALUE [FIELD VALUE] ：同时将多个field-value（域-值）对设置到哈希表key中</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100640.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1ba2e0ba372053.png" alt></p>
 <p><strong>取值命令</strong></p>
 <p>1.HGET KEY FIELD ：获取存储在HASH中的值，根据FIELD得到VALUE</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100345.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1b06e3f5333244.png" alt></p>
 <p>2.HMGET key field [field1] ：获取key所有给定字段的值</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100617.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1af2c4a9517451.png" alt></p>
 <p>3.HGETALL key ：返回HASH表中所有的字段和值</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100710.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1ad1c56fe13775.png" alt></p>
 <p>4.HKEYS key ：获取所以哈希表中的字段</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100756.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1ac843e2355148.png" alt></p>
 <p>4.HLEN ：获取哈希表中字段的数量</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605100822.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1ab93dcd791068.png" alt></p>
 <p><strong>删除语法</strong></p>
 <p>1.HDEL KEY field1 [field2] ：删除一个或多个HASH表字段</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605102819.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1aab66a2e38827.png" alt></p>
 <p><strong>其他语法</strong></p>
 <p>1.HSETNX key field value ：只有字段field不存在时，设置哈希字段的值</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605103936.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1a434441795110.png" alt></p>
 <p>2.HINCRBY key field increment ：为哈希key中指定字段的整数值加上增量increment</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605104026.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd19d0e0cc797410.png" alt></p>
 <p>3.HINCRBYFLOAT key field increment ：为哈希key中指定字段的整数值加上增量increment</p>
 <p>4.HEXISTES key filed ：查看哈希表key中，指定字段是否存在</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190605104130.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd186c927ab19663.png" alt></p>
 <h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><p>Hash的应用场景：（存储一个用户信息对象数据）</p>
 <p>1.产用于存储一个对象</p>
 <p>2.为什么不用string存储一个对象</p>
@@ -365,8 +366,8 @@
     </a>
   
   
-    <a href="/2019/06/04/SpringBoot-Docker-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SpringBoot-Docker-2</div>
+    <a href="/2019/06/04/Redis学习-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis学习-2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -505,6 +506,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
@@ -521,11 +530,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">在Docker上搭建环境</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,15 +538,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML的基础操作</a>
               </li>
             
             <div class="clearfix"></div>

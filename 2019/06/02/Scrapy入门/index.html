@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Scrapy入门Scrapy运行原理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601191455.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190602155934.png">
-<meta property="og:updated_time" content="2019-06-03T11:53:45.316Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd24977d13043084.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd24a96e99a73300.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd24bf38a9b15604.png">
+<meta property="og:updated_time" content="2019-06-09T15:25:03.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scrapy入门">
 <meta name="twitter:description" content="Scrapy入门Scrapy运行原理">
-<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/09/5cfd24977d13043084.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -183,8 +183,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Scrapy入门"><a href="#Scrapy入门" class="headerlink" title="Scrapy入门"></a>Scrapy入门</h1><h2 id="Scrapy运行原理"><a href="#Scrapy运行原理" class="headerlink" title="Scrapy运行原理"></a>Scrapy运行原理</h2><p><img src="http://psd6l8vl0.bkt.clouddn.com/20190601192016.png" alt></p>
-<a id="more"></a>scrapy框架的工作流程：1.首先Spiders（爬虫文件）将需要发送请求的url(requests)经ScrapyEngine（引擎）交                          给Scheduler（调度器）。<br><br>　　　　　　　　　　    2.Scheduler（排序，入队）处理后，经ScrapyEngine（引擎），                          DownloaderMiddlewares(可选，主要有User_Agent, Proxy代理)交给Downloader。<br><br>　　　　　　　　　　    3.Downloader向互联网发送请求，并接收下载响应（response）。将响应                         （response）经ScrapyEngine（引擎），SpiderMiddlewares(可选)交给Spiders。<br><br>　　　　　　　　　　    4.Spiders（爬虫文件处理）response，提取数据并将数据经ScrapyEngine交给                          ItemPipeline保存（可以是本地，可以是数据库）。 提取url重新经ScrapyEngine交给                            Scheduler（调度器）进行下一个循环。直到无Url请求程序停止结束。<br><br><br><br>简化图：<br><br><img src="http://psd6l8vl0.bkt.clouddn.com/20190601191455.png" alt><br><br><br><br>### Scrapy安装<br><br>​    <em>pip install scrapy –&gt;VC++14.0 Twisted<br><br>​        解决方法：离线安装 pip install xxx.whl<br><br>​    </em>scrapy bencn 运行的时候 会报错 –&gt; win32<br><br>​        解决方法：pip install pywin32<br><br>### Scrapy创建项目<br><br>采集目标：采集西刺网的ip代理 包括 IP PORT<br><br>1.创建项目：<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject XXX（项目名）</span><br></pre></td></tr></table></figure>
+        <h1 id="Scrapy入门"><a href="#Scrapy入门" class="headerlink" title="Scrapy入门"></a>Scrapy入门</h1><h2 id="Scrapy运行原理"><a href="#Scrapy运行原理" class="headerlink" title="Scrapy运行原理"></a>Scrapy运行原理</h2><p><img src="https://i.loli.net/2019/06/09/5cfd24977d13043084.png" alt></p>
+<a id="more"></a>scrapy框架的工作流程：1.首先Spiders（爬虫文件）将需要发送请求的url(requests)经ScrapyEngine（引擎）交                          给Scheduler（调度器）。<br><br>　　　　　　　　　　    2.Scheduler（排序，入队）处理后，经ScrapyEngine（引擎），                          DownloaderMiddlewares(可选，主要有User_Agent, Proxy代理)交给Downloader。<br><br>　　　　　　　　　　    3.Downloader向互联网发送请求，并接收下载响应（response）。将响应                         （response）经ScrapyEngine（引擎），SpiderMiddlewares(可选)交给Spiders。<br><br>　　　　　　　　　　    4.Spiders（爬虫文件处理）response，提取数据并将数据经ScrapyEngine交给                          ItemPipeline保存（可以是本地，可以是数据库）。 提取url重新经ScrapyEngine交给                            Scheduler（调度器）进行下一个循环。直到无Url请求程序停止结束。<br><br><br><br>简化图：<br><br><img src="https://i.loli.net/2019/06/09/5cfd24a96e99a73300.png" alt><br><br><br><br>### Scrapy安装<br><br>​    <em>pip install scrapy –&gt;VC++14.0 Twisted<br><br>​        解决方法：离线安装 pip install xxx.whl<br><br>​    </em>scrapy bencn 运行的时候 会报错 –&gt; win32<br><br>​        解决方法：pip install pywin32<br><br>### Scrapy创建项目<br><br>采集目标：采集西刺网的ip代理 包括 IP PORT<br><br>1.创建项目：<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject XXX（项目名）</span><br></pre></td></tr></table></figure>
 <p>2.创建爬虫类，并且继承scrapy.Spider</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy genspider 爬虫名字 网站域名</span><br></pre></td></tr></table></figure>
 <p>注意：</p>
@@ -204,7 +204,7 @@
 <p>4.运行爬虫（在scrapy.cfg文件夹中打开cmd窗口）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl 爬虫名字</span><br></pre></td></tr></table></figure>
 <p>5.部分结果：</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190602155934.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd24bf38a9b15604.png" alt></p>
 <p>补充：</p>
 <p>​    翻页操作</p>
 <p>​        （1）start_urls = [‘<a href="https://www.xicidaili.com/nn/{page}&#39;" target="_blank" rel="noopener">https://www.xicidaili.com/nn/{page}&#39;</a> for page in range(1,3685)]</p>
@@ -443,6 +443,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
@@ -459,11 +467,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">在Docker上搭建环境</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +475,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML的基础操作</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="SpringBoot缓存抽象@CachePut：及调用方法，又更新缓存数据；同步更新缓存适用情况：修改了数据库的某个数据，同时又更新缓存；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601215203.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190602141406.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190602141526.png">
-<meta property="og:updated_time" content="2019-06-03T11:53:29.952Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd21dc8691977172.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd21cd6a63596451.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd21b94d99b41851.png">
+<meta property="og:updated_time" content="2019-06-09T15:12:49.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot-Cache-3">
 <meta name="twitter:description" content="SpringBoot缓存抽象@CachePut：及调用方法，又更新缓存数据；同步更新缓存适用情况：修改了数据库的某个数据，同时又更新缓存；">
-<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190601215203.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/09/5cfd21dc8691977172.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,7 +190,7 @@
 <p>注意点：</p>
 <p>​    如果只设置@CachePut(value=”emp”)，虽然能够更新数据成功，但是他会采用自己默认的参数值(#employee)；调用getEmp方法得到的数据仍然是更新之前的。如果想要更新缓存块内的数据，需要给CachePut加一个key值(key=”#employee.id”或者key=”#result.id”)且key的需要与Cacheable的key值一致。</p>
 <p>​    Cacheable的key值不能用#result.id；因为Cacheable方法运行实现了两步，第一步在目标方案运行之前按照一个key去检查缓存，所以在方法没运行之前，我们就要的到这个key，当没有这个key的时候才会去执行该方法。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190601215203.png" alt>)</p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd21dc8691977172.png" alt></p>
 <h2 id="CacheEvict：缓存清除"><a href="#CacheEvict：缓存清除" class="headerlink" title="@CacheEvict：缓存清除"></a>@CacheEvict：缓存清除</h2><table>
 <thead>
 <tr>
@@ -213,9 +213,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Caching定义复杂的缓存规则"><a href="#Caching定义复杂的缓存规则" class="headerlink" title="@Caching定义复杂的缓存规则"></a>@Caching定义复杂的缓存规则</h3><p><img src="http://psd6l8vl0.bkt.clouddn.com/20190602141406.png" alt></p>
+<h3 id="Caching定义复杂的缓存规则"><a href="#Caching定义复杂的缓存规则" class="headerlink" title="@Caching定义复杂的缓存规则"></a>@Caching定义复杂的缓存规则</h3><p><img src="https://i.loli.net/2019/06/09/5cfd21cd6a63596451.png" alt></p>
 <p>调用Caching接口</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190602141526.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd21b94d99b41851.png" alt></p>
 <p>PS：可以在类前声明@CacheConfig(cacheNames=”emp”)；抽取缓存的公共配置；这样在该类中可以避免重复定义缓存块的名字。</p>
 
       
@@ -450,6 +450,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
@@ -466,11 +474,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">在Docker上搭建环境</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,15 +482,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML的基础操作</a>
               </li>
             
             <div class="clearfix"></div>

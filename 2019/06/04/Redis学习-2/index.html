@@ -16,22 +16,22 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Redis命令Redis命令描述Redis命令用户在redis服务器上执行操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210637.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210850.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603211354.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603211211.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603212956.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603213707.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214239.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214407.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214614.png">
-<meta property="og:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603214918.png">
-<meta property="og:updated_time" content="2019-06-04T13:22:53.517Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1f56767b990109.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1f42a81de64306.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1f304e88956974.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1f1b72cdb24882.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1eff7196660775.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1eddb69f337199.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1ecb55ced29114.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1eba6c2bc74743.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1e8d901f292798.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1e69a5fd681608.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/09/5cfd1e5642ce825798.png">
+<meta property="og:updated_time" content="2019-06-09T15:01:50.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis学习-2">
 <meta name="twitter:description" content="Redis命令Redis命令描述Redis命令用户在redis服务器上执行操作。">
-<meta name="twitter:image" content="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/09/5cfd1f56767b990109.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -196,33 +196,32 @@
 <p>Redis支持五种数据类型：String（字符串），hash（哈希），list（列表），set（集合）及zset（sorted set：有序集合）等。</p>
 <h3 id="Redis键key"><a href="#Redis键key" class="headerlink" title="Redis键key"></a>Redis键key</h3><p>Redis键命令用于管理redis的键</p>
 <p>1.DEL key ：用于在key存在时，删除key。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210422.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1f56767b990109.png" alt></p>
 <p>2.DUMP key ：序列化给定key，并返回被序列化的值。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210637.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1f42a81de64306.png" alt></p>
 <p>3.EXISTS key ：检查给定key是否存在。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603210850.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1f304e88956974.png" alt></p>
 <p>4.EXPIRE key seconds ：为给定key设置过期时间（以秒计），-1表示永久，-2表示无效。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603211354.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1f1b72cdb24882.png" alt></p>
 <p>5.TTL key ：以秒为单位，返回给定key的剩余生成时间（TTL，time to live）。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603211211.png" alt></p>
-<p>6.PEXPIRE key milliseconds : 设置key的过期时间以毫秒计。</p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1eff7196660775.png" alt>6.PEXPIRE key milliseconds : 设置key的过期时间以毫秒计。</p>
 <p>7.PTL key ： 以毫秒为单位返回key的剩余的过期时间</p>
 <p>8.PERSIST key : 移除key的过期时间，key将持久保持。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603212956.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1eddb69f337199.png" alt></p>
 <p>9.KEYS pattern ：查找所以符合给定模式（pattern）的key。</p>
 <p>keys  通配符         获取所有与pattern匹配的key，返回所有与该匹配的key。</p>
 <p>通配符 ：</p>
 <p>​        *    代表所以</p>
 <p>​        ？    代表一个字符</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603213707.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1ecb55ced29114.png" alt></p>
 <p>10.RANDOMKEY ：从当前数据库中随机返回一个key。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214239.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1eba6c2bc74743.png" alt></p>
 <p>11.RENAME key newkey ：修改key的值。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214407.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1e8d901f292798.png" alt></p>
 <p>12.MOVE key db ：将当前数据库的key移动到给定的数据库db当中。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214614.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1e69a5fd681608.png" alt></p>
 <p>13.TYPE key ：返回key所储存的值得类型。</p>
-<p><img src="http://psd6l8vl0.bkt.clouddn.com/20190603214918.png" alt></p>
+<p><img src="https://i.loli.net/2019/06/09/5cfd1e5642ce825798.png" alt></p>
 <h3 id="Key的命名建议"><a href="#Key的命名建议" class="headerlink" title="Key的命名建议"></a>Key的命名建议</h3><p>Redis单个key存入512大小</p>
 <p>1.key不要太长，经历不要超过1024字节，太长了不仅消耗内存，而且会降低查找的效率；</p>
 <p>2.key也不要太短，太短的话，key的可读行会降低；</p>
@@ -311,11 +310,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/04/SpringBoot-Docker-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/04/Redis学习-3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SpringBoot-Docker-2
+          Redis学习-3
         
       </div>
     </a>
@@ -461,6 +460,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
@@ -477,11 +484,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">在Docker上搭建环境</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,15 +492,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+                <a href="javascript:void(0)" class="js-tag color4">XML的基础操作</a>
               </li>
             
             <div class="clearfix"></div>
