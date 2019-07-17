@@ -156,28 +156,114 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-SpringBoot与任务-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AiStarDemo2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/SpringBoot与任务-1/">SpringBoot与任务-1</a>
+      <a class="article-title" href="/2019/07/17/AiStarDemo2/">AiStarDemo2</a>
     </h1>
   
 
         
-        <a href="/2019/06/17/SpringBoot与任务-1/" class="archive-article-date">
-  	<time datetime="2019-06-17T11:35:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
+        <a href="/2019/07/17/AiStarDemo2/" class="archive-article-date">
+  	<time datetime="2019-07-17T00:14:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringBoot与任务"><a href="#SpringBoot与任务" class="headerlink" title="SpringBoot与任务"></a>SpringBoot与任务</h1><h2 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h2>
-        
+        <h1 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h1><ul>
+<li><p>局部变量</p>
+<p>出现在方法体中的,或者方法的声明中的变量 - 局部变量</p>
+</li>
+<li><p>全局变量</p>
+</li>
+</ul>
+<h1 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h1><p>仅仅存在于它所在的{}中.</p>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>不可变的量</p>
+<p>命名 - 全部采用大写,并且出现多个单词使用下划线隔开.</p>
+<p>对应在API手册中的字段.</p>
+<p>语法:</p>
+<p>final - 关键字,修饰符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> MAX_DAY = <span class="number">1</span>;</span><br><span class="line">MAX_DAY = <span class="number">20</span>;<span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
+<p>应用场景:为了提高程序的可读性.</p>
+<h1 id="运算符-快速过"><a href="#运算符-快速过" class="headerlink" title="运算符[快速过]"></a>运算符[快速过]</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - * =  +=  -= /= %= *=</span><br></pre></td></tr></table></figure>
+<p>/ - 取整   10/3 = 3</p>
+<p>% - 取余[模] 10%3 = 1</p>
+<p>/和%应用场景:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">可以用来取出某个数字任何一位上面的数字</span><br><span class="line"><span class="keyword">int</span> year = <span class="number">2019</span>;</span><br><span class="line">System.out.println(<span class="string">"千位:"</span>+year/<span class="number">1000</span>%<span class="number">10</span>);<span class="comment">//2</span></span><br><span class="line">System.out.println(<span class="string">"百位:"</span>+year/<span class="number">100</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"十位:"</span>+year/<span class="number">10</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"个位:"</span>+year%<span class="number">10</span>);<span class="comment">//9</span></span><br></pre></td></tr></table></figure>
+<p>+=</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">a+=<span class="number">1</span>;<span class="comment">//a = a + 1;//可能会进行窄化操作</span></span><br><span class="line"><span class="comment">//short题目</span></span><br></pre></td></tr></table></figure>
+<p>++和– </p>
+<ul>
+<li><p>前++和前–</p>
+<p>++出现在变量的前面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//++i;//i = i + 1;</span></span><br><span class="line"><span class="keyword">int</span> result = ++i;<span class="comment">//通过表达式进行赋值</span></span><br><span class="line"><span class="comment">//i = ?     2</span></span><br><span class="line"><span class="comment">//result = ? 2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>后++和后–</p>
+<p>++出现在变量的后边</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i= <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> result = i++;<span class="comment">//i++ -&gt; i = i + 1</span></span><br><span class="line"><span class="comment">//i = ?    2</span></span><br><span class="line"><span class="comment">//result = ?  1</span></span><br></pre></td></tr></table></figure>
+<p>总结:前++代表的是变量i和++i表达式的结果都会自增1</p>
+<p>​         后++代表的是变量i会自增1,并且将i自增之前的值先赋值给了变量result</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = a++ + ++a + --b + b--;</span><br><span class="line"><span class="keyword">int</span> result = c-- + a-- + c++;</span><br><span class="line"><span class="comment">//result = ?</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt; &gt;= &lt;= != ==</span><br></pre></td></tr></table></figure>
+<p>比较之后的结果是boolean类型</p>
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>通常是用来进行计算的.但是可以用来进行连接判断条件的[不推荐使用]</p>
+<p>位运算符的性能是最高的.</p>
+<p>笔试题:请您以最高性能的方式计算出2的3次方!</p>
+<ul>
+<li><p>&amp; - 按位与 </p>
+<p>都是1,结果才是1</p>
+<p>10 &amp; 8 = 8</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">8</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>| - 按位或</p>
+<p>只要出现1个1,结果就是1</p>
+<p>10 | 8 = 10</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>异或^</p>
+<p>相同为0,不同为1 </p>
+<p>10 ^ 8 = 2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>10 ^ 8 ^ 8 = </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">--------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>总结:一个数连续异或同一个数俩次,结果是它本身!!!</p>
+<p>应用场景:加密和解密.</p>
+<p>笔试题:</p>
+<p>交换俩个变量的值?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1. 传统的方式 - 使用第三方变量</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//        int temp = a;</span></span><br><span class="line">    <span class="comment">//        a = b;</span></span><br><span class="line">    <span class="comment">//        b = temp;</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//不允许使用第三方变量</span></span><br><span class="line">    <span class="comment">//总结:一个数连续异或同一个数俩次,结果是它本身!!!</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20</span></span><br><span class="line">    <span class="comment">// b = a ^ b;//b = 10 ^ 20 ^ 20 = 10</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20 ^ 10 = 20</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//自创的</span></span><br><span class="line">    <span class="comment">//b = 10^20^20 = 10</span></span><br><span class="line">    b = a^(a=b)^b;</span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="string">"a:"</span>+a);<span class="comment">//20</span></span><br><span class="line">    System.out.println(<span class="string">"b:"</span>+b);<span class="comment">//10</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>负数的二进制表现形式</p>
+<p>负数在计算机中是以补码的形式!</p>
+<p><strong>正数的原码,补码,反码都是它本身!</strong></p>
+<p>Java中的数据都是有符号的,最高位代表符号位,1代表的是负数,0代表的是正数!</p>
+<p><strong>针对负数:</strong></p>
+<p>补码 = 反码 + 1;</p>
+<p>反码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反]</p>
+<p>补码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反] + 1</p>
+</li>
+</ul>
+<p>​     -10的二进制?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~java</span><br></pre></td></tr></table></figure>
+<p>-10的原码:10000000 00000000 00000000 00001010<br>-10的反码:11111111 11111111 11111111 11110101</p>
+<pre><code>+                                       1
+------------------------------------------
+     11111111 11111111 11111111 11110110
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~</span><br></pre></td></tr></table></figure>
+<p>取反的符号~</p>
+<p>~9 = ~00000000 00000000 00000000 0000100 1</p>
+<p>​          11111111  11111111 1111111111110110</p>
+<p><strong>-10 = ~9 - 总结出: ~x = -(x+1)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; - 左位移</span><br><span class="line"><span class="number">2</span>&lt;&lt;<span class="number">2</span> = <span class="number">8</span></span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; 无符号的位移,移动多少位,那么就在最高位补几个<span class="number">0</span></span><br><span class="line"></span><br><span class="line">-<span class="number">10</span>&gt;&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt;&gt; <span class="number">2</span></span><br><span class="line">          <span class="number">0011111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> - &gt;二进制-&gt;十进制</span><br><span class="line">          =<span class="number">1073741821</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; 带符号的位移.移动多少位,那么最高位就是补几个符号位!</span><br><span class="line">-<span class="number">10</span>&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt; <span class="number">2</span></span><br><span class="line">    	 <span class="number">1111111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> = ~<span class="number">2</span> = -<span class="number">3</span></span><br><span class="line">    	 </span><br><span class="line">         <span class="number">0000000000</span> <span class="number">000</span>...   ....     <span class="number">000010</span> = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -190,7 +276,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">任务简介</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
         		</li>
       		
 		</ul>
@@ -200,7 +286,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/17/SpringBoot与任务-1/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/17/AiStarDemo2/">Read More >></a>
         </p>
       
 
@@ -230,32 +316,252 @@
 
 
   
-    <article id="post-SpringBoot高级-检索-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-AiStarDemo1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/17/SpringBoot高级-检索-3/">SpringBoot高级-检索-3</a>
+      <a class="article-title" href="/2019/07/15/AiStarDemo1/">AiStarDemo1</a>
     </h1>
   
 
         
-        <a href="/2019/06/17/SpringBoot高级-检索-3/" class="archive-article-date">
-  	<time datetime="2019-06-17T06:37:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
+        <a href="/2019/07/15/AiStarDemo1/" class="archive-article-date">
+  	<time datetime="2019-07-15T04:51:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="整合ElasticSearch测试"><a href="#整合ElasticSearch测试" class="headerlink" title="整合ElasticSearch测试"></a>整合ElasticSearch测试</h1><p>SpringBoot默认使用SpringData ElasticSearch模块进行操作
-        
+        <h1 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h1><ul>
+<li>前身是oak语言[原因是商标被提前注册了]</li>
+<li>java之父 - James Gosling 詹姆斯,高斯林</li>
+<li>2009年被oracle公司[甲骨文]收购</li>
+<li>是1995年5月23日正式推出</li>
+</ul>
+<h2 id="发展方向"><a href="#发展方向" class="headerlink" title="发展方向"></a>发展方向</h2><ul>
+<li>传统的web开发</li>
+<li>分布式的微服务</li>
+<li>大数据</li>
+</ul>
+<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p><a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html</a></p>
+<p>JDK版本1.1[96年推出] - JDK1.4 - JDK5.0[巨变] -… - JDK8.x</p>
+<ul>
+<li>安装路径不要出现中文</li>
+<li>所有的路径中不要出现特殊的字符[比如Program Files(x86)].</li>
+<li>保证jdk1.8.0_66和jre1.8.0_66俩个目录必须要在同一个目录中.</li>
+</ul>
+<h2 id="JDK目录结构"><a href="#JDK目录结构" class="headerlink" title="JDK目录结构"></a>JDK目录结构</h2><ul>
+<li>bin - 存放java的开发工具</li>
+<li>db - 100%利用java语言开发的derdy,开源的关系型数据库</li>
+<li>include - 存放的是c的一些头文件[JVM就是采用C语言实现的]</li>
+<li>jre - java程序运行时需要的环境的根目录</li>
+<li>lib - 存放java程序开发需要的核心的类库</li>
+<li>src.zip - 归档的java的源代码.</li>
+</ul>
+<h1 id="人机交互的方式"><a href="#人机交互的方式" class="headerlink" title="人机交互的方式"></a>人机交互的方式</h1><ul>
+<li><p>CLI - Command Line Interface - 命令行方式[DOS系统Disk Opera System - 磁盘操作系统]</p>
+<p>DOS命令</p>
+</li>
+<li><p>GUI - Graphic User Interface - 图形化用户界面方式[傻瓜式操作,基于鼠标操作]</p>
+</li>
+</ul>
+<h2 id="JDK的环境变量的配置"><a href="#JDK的环境变量的配置" class="headerlink" title="JDK的环境变量的配置"></a>JDK的环境变量的配置</h2><p>打开终端 - cmd - 输入notepad的时候,就是欧通过CLI的方式唤醒打开记事本的程序.</p>
+<p>当执行这个命令的时候,windows操作系统会优先到当前目录中去寻找是否存在该命令notepad.exe</p>
+<p><strong>那么windows操作系统会继续到系统的环境变量中的path中配置的路径中从左到右的顺序进行查找</strong>.</p>
+<p>如果存在,则顺利执行,否则抛出错误</p>
+<h2 id="系统的环境变量"><a href="#系统的环境变量" class="headerlink" title="系统的环境变量"></a>系统的环境变量</h2><p>右击计算机 - 属性 - 高级 - 环境变量 - 系统变量</p>
+<p>直接通过终端输入path命令.</p>
+<h2 id="具体的步骤"><a href="#具体的步骤" class="headerlink" title="具体的步骤"></a>具体的步骤</h2><p>在系统变量区域进行如下配置:</p>
+<ul>
+<li><p>新建</p>
+<p>变量名:JAVA_HOME</p>
+<p>变量值:D:\Program Files\Java\jdk1.8.0_66</p>
+</li>
+<li><p>找到path,点击编辑 - 推荐放在最左边或者最上边.</p>
+<p>%JAVA_HOME%\bin;</p>
+</li>
+</ul>
+<p>注意点:一旦环境变量修改之后,那么终端一定是需要重启之后才会有效果的.</p>
+<h3 id="检测配置成功"><a href="#检测配置成功" class="headerlink" title="检测配置成功"></a>检测配置成功</h3><p>通过终端在任何一个目录中输入java -version</p>
+<h1 id="Java三个体系"><a href="#Java三个体系" class="headerlink" title="Java三个体系"></a>Java三个体系</h1><ul>
+<li>JavaSE - Java Standard Edition - Java标准版</li>
+<li>JavaEE - Java Enterprise Edition - Java企业版[不是一门具体的技术,而是一套技术的规范]</li>
+<li>JavaME - Java Micro Edition - Java微型版</li>
+</ul>
+<h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK,JRE,JVM"></a>JDK,JRE,JVM</h1><p>JRE - Java Runtime Environment - Java运行时环境,针对使用java程序的用户.</p>
+<p>​      - JRE中包含了程序执行时需要的核心的内库以及JVM.</p>
+<p>JDK - Java Developement Kit - Java开发工具包 - 针对程序员使用的.</p>
+<p>​         因为JDK中包含开发工具以及JRE.</p>
+<p>JVM - Java Vitrual Machine - Java虚拟机[跨平台的核心] - Java程序并不是直接在操作系统上执行的,而是在jvm上面执行的.</p>
+<h1 id="语言的分类"><a href="#语言的分类" class="headerlink" title="语言的分类"></a>语言的分类</h1><p>C - 编译型语言 - 执行效率比较高</p>
+<p>​    - “中文书” - 一次性翻译成 - “日本书”</p>
+<p>Java - 解释型语言</p>
+<p>​    - 配一个”翻译官”,只要日本人需要看,就随时翻译.</p>
+<h1 id="Java程序的执行原理"><a href="#Java程序的执行原理" class="headerlink" title="Java程序的执行原理"></a>Java程序的执行原理</h1><p>所有的文件的编码统一使用utf-8格式的.</p>
+<p>编写 - 编译 - 执行</p>
+<ul>
+<li>源码 - 放在.java为后缀的文件</li>
+</ul>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ul>
+<li><p>编写</p>
+</li>
+<li><p>进入到.java文件所在的目录中,执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
+<p>会出现一个.class字节码文件</p>
+</li>
+<li><p>运行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java HelloWorld</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>.java源文件 - 经过jdk中的编译器编译成了.class字节码文件 - 经过jvm中的解释器,逐行解释 - 解释成底层的机器语言[二进制].</p>
+<h2 id="跨平台性"><a href="#跨平台性" class="headerlink" title="跨平台性"></a>跨平台性</h2><p>注意:java语言是跨平台[与平台无关性] - 一次编译,多次执行.</p>
+<p>JVM不跨平台的.每个操作系统都是拥有自己独立的一个jvm的.</p>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>命名[工程的名称,类的名称,包的名称,变量的名称,方法的名称等]</p>
+<h2 id="关于类的命名规则"><a href="#关于类的命名规则" class="headerlink" title="关于类的命名规则"></a>关于类的命名规则</h2><ul>
+<li><p>类名必须要保证和.java文件的名称高度保持一致.</p>
+</li>
+<li><p>类名推荐使用大驼峰命名规则[首字母要求大写,其余单词的每个首字母也要大写,其余字母全部采用小写,比如HelloWorld]</p>
+</li>
+<li><p>类名由数字,字母,下划线或者$符号组成,但是不能由数字开头.</p>
+</li>
+<li><p>类名不能是java的关键字.[java赋予了单词具有语法的意义的单词]</p>
+<p>public class void main byte short int long double float char boolean final try if while do..while..</p>
+</li>
+<li><p>类名不能是java中的保留的关键字[goto , const]</p>
+</li>
+<li><p>类名不能是以下三个字面量,true,false,null</p>
+</li>
+<li><p>类名可以使用中文,但是不推荐使用,原因是中文可能会出现乱码.</p>
+</li>
+<li><p>类名不推荐使用中文的拼音.</p>
+</li>
+<li><p>类名不能是java的内置的对象类型</p>
+</li>
+<li><p>类名提倡”见名知意”.</p>
+</li>
+</ul>
+<h1 id="HelloWorld案例"><a href="#HelloWorld案例" class="headerlink" title="HelloWorld案例"></a>HelloWorld案例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:本类用来演示:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/15 0015</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//使用class来定义一个类</span></span><br><span class="line">    <span class="comment">//程序的主入口 - main方法</span></span><br><span class="line">    <span class="comment">//psvm</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//tab不要随便使用 - 编辑器 - 需要设置tab相当于四个空格[手动设置]</span></span><br><span class="line">        <span class="comment">//具体的执行的程序 - 比如向控制台输出一句话</span></span><br><span class="line">        <span class="comment">//sout</span></span><br><span class="line">        <span class="comment">//PrintStream out = System.out;</span></span><br><span class="line">        <span class="comment">//out.println("HelloWorld");</span></span><br><span class="line">        System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="包的概念"><a href="#包的概念" class="headerlink" title="包的概念"></a>包的概念</h1><p>包就是用来管理类文件的,包之于类的作用就是相当于目录之于文件的作用.</p>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
+<li><p>个人发布的,但是非独立完成的.</p>
+<p>indi.发起者的名称.项目的名称.模块名称</p>
+</li>
+<li><p>个人发布的,并且是个人独立完成的</p>
+<p>pers.个人名称.项目的名称.模块的名称</p>
+</li>
+<li><p>个人的,并且是私有的,没有对外公开的</p>
+<p>priv.个人名称.项目名称.模块名称</p>
+</li>
+<li><p>团队的项目</p>
+<p>team.团队名称.项目名称.模块名称</p>
+</li>
+<li><p><strong>公司的项目</strong></p>
+<p>公司域名倒置.项目代号.模块名称</p>
+<p><a href="http://www.aistar.tech" target="_blank" rel="noopener">www.aistar.tech</a></p>
+<p>tech.aistar.corejava.day01</p>
+</li>
+</ul>
+<p><strong>必须全部采用小写字母,并且以.隔开.每个部分在磁盘中都是对应一个具体的目录</strong></p>
+<p>千万不要使用java开头</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.corejava.day01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>此处的HelloWorld仅仅是类的名称的简称</p>
+</li>
+<li><p><strong>类的全限定名[类的全称] - 包名.类名</strong></p>
+<p>此处的HelloWorld的类的全称是tech.aistar.corejava.day01.HelloWorld</p>
+</li>
+</ul>
+<h1 id="关于Java的内置的包"><a href="#关于Java的内置的包" class="headerlink" title="关于Java的内置的包"></a>关于Java的内置的包</h1><p>java.xx开头的</p>
+<ul>
+<li>java.lang - java语言的核心包[System类就是在这个包中]</li>
+<li>java.util - java的工具包[java封装的一些工具类的存在的包]</li>
+<li>java.io - java的io相关的api所在的包</li>
+<li>java.net - socket存放的位置</li>
+<li>java.text - java格式化相关的处理类所在的包</li>
+<li><p>java.sql - 操作db相关的api</p>
+<p>javax.xx开头的 - java的拓展的包</p>
+</li>
+</ul>
+<h1 id="关于输出"><a href="#关于输出" class="headerlink" title="关于输出"></a>关于输出</h1><ol>
+<li>System.out.println() - 输出完毕之后,换行</li>
+<li>System.out.print() - 输出完毕之后,不换行</li>
+</ol>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
+<li>\n - 输出完毕之后再进行换行,并且光标是停在下一行的起始位置.</li>
+<li>\r - 回车,输出完毕之后,光标是停在当前行的起始的位置.</li>
+</ul>
+<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>\</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
+<li><p>单行注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">//TODO</span></span><br><span class="line"><span class="comment">//具体的单行注释</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多行注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 注释2</span></span><br><span class="line"><span class="comment">* 注释3</span></span><br><span class="line"><span class="comment">* 注释4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>共同点:都是对具体的某行[多行]的代码进行注释的</p>
+</li>
+</ul>
+<ul>
+<li><p>文档注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 加在类上 - 对类的作用的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 加在方法上 - 对方法的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 可以通过javadoc.exe命令来生成文档树</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>编程从变量开始!编程的核心就是对Data数据进行CRUD操作.</p>
+<p>数据存储的介质?</p>
+<ul>
+<li>内存 - 读取效率比较高,但是容易丢失![并没有进行持久化操作]</li>
+<li>文件</li>
+<li>关系型数据库和非关系型数据库</li>
+</ul>
+<p>用什么东西存放?</p>
+<p>java中使用的是数据类型和变量[或者常量]来存储</p>
+<p>总结:变量就是用来在内存中存放数据的”容器”.</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>数据类型 变量名 [= 初始值];</p>
+<ul>
+<li><p>基本数据类型 - 八大种</p>
+<p>|            |              |               |                    | 默认值[OO属性才能去看] |<br>| ———- | ———— | ————- | —————— | ———————- |<br>| byte       | 字节         | 1字节占8位    | -128~127           | 0                      |<br>| short      | 短整型       | 2个字节占16位 | -2^15 ~2^15-1      | 0                      |<br>| int        | 整型         | 4个字节占32位 | -2^31~2^31-1       | 0                      |<br>| long       | 长整型       | 8个字节占64位 | -2^63~2^63-1       | 0                      |<br>| float      | 单精度浮点数 | 4个字节占32位 | 1.4*10^-45~3.8E38  | 0.0                    |<br>| <strong>double</strong> | 双精度浮点数 | 8个字节占64位 | 4.9E-324~1.798E308 | 0.0                    |<br>| char       | 字符         | 2个字节16位   | 0~65535            | ‘\u0000’               |<br>| boolean    | 布尔类型     | 1个字节8位    | true/false         | false                  |</p>
+</li>
+</ul>
+<h2 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h2><p>标识符命名 - 变量 - 参考类名[大驼峰改成小驼峰,studentName]</p>
+<h2 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;<span class="comment">//将整数10赋值给一个int类型的变量a里面</span></span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">20</span>;</span><br><span class="line"><span class="comment">//==永远比较的是内存地址</span></span><br><span class="line">System.out.println(a == b);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>背后 - 在内存中是如何进行存放的?</p>
+<p>JVM简单分成栈,堆,方法区…</p>
+<p>所有的基本的数据类型存放在栈里面 - 读取效率非常高[优点],一旦确定了,那么它的空间大小就确定了 - “以空间换时间”</p>
+<p>当程序执行到int a = 10的时候,那么就会在栈里面,开辟一块区域[int],保存10这个数字.变量本质上是10这个数字在栈里面的内存地址.</p>
+<p>当程序执行到int b = 10;会优先到JVM的栈里面去看看有没有10.直接将b指向10的空间..</p>
+<h2 id="变量赋值的方式"><a href="#变量赋值的方式" class="headerlink" title="变量赋值的方式"></a>变量赋值的方式</h2><ul>
+<li><p>定义变量的同时进行赋值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>先定义或者声明一个变量,然后进行赋值[初始化]</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="comment">//变量在使用之前,一定要先进行赋值操作.</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">a = <span class="number">20</span>;</span><br><span class="line">System.out.println(a);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过合法的表达式进行赋值</p>
+<p>表达式 - 由变量或者常量或者字面量以及运算符组成的合法的语句.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> result = a + b;</span><br><span class="line"><span class="keyword">int</span> z = <span class="number">10</span> + b;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过链式赋值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x,y,z = <span class="number">100</span>;<span class="comment">//此处的x,y并没有被赋值,只有z被赋值了.</span></span><br><span class="line">x=y=<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过方法进行赋值[先不了解].</p>
+</li>
+</ul>
+<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><p>在java中,看到一个整数,默认的都是int类型</p>
+<p>看到一个小数,默认的都是double类型.</p>
+<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>低字节的数据类型可以自动转换成高字节的数据类型.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 因为100是在byte类型的范围</span></span><br><span class="line"><span class="comment">//2. 因为100是一个字面量 - JVM就可以精确确定它必然是在byte范围</span></span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">100</span>;<span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line"><span class="comment">//由于t是一个变量,JVM只会认为t是可以在int类型区间内变化的量</span></span><br><span class="line"><span class="comment">//不能精确判断出变量t究竟有没有超出byte类型的范围</span></span><br><span class="line"><span class="keyword">byte</span> a = t;<span class="comment">//error - 需要进行类型的强制转换!</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. 各个类型的范围</span><br><span class="line"><span class="number">2</span>. 字面量和变量的区别!</span><br></pre></td></tr></table></figure>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>高字节的数据类型转换成低字节的数据类型的时候,会有精度的丢失,需要进行强制类型转换.</p>
+<p>小数据类型 变量 = (小数据类型)大的数据类型的变量或者字面量.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t = <span class="number">128</span>;</span><br><span class="line"><span class="keyword">byte</span> a = (<span class="keyword">byte</span>)t;</span><br><span class="line">System.out.println(a);<span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -264,7 +570,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">整合ElasticSearch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java简介</a>
         		</li>
       		
 		</ul>
@@ -274,7 +580,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/17/SpringBoot高级-检索-3/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/15/AiStarDemo1/">Read More >></a>
         </p>
       
 
@@ -304,27 +610,27 @@
 
 
   
-    <article id="post-学期作业-XML实验报告" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-哈希表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/16/学期作业-XML实验报告/">学期作业-XML实验报告</a>
+      <a class="article-title" href="/2019/07/13/Java数据结构复习-哈希表/">Java数据结构复习-哈希表</a>
     </h1>
   
 
         
-        <a href="/2019/06/16/学期作业-XML实验报告/" class="archive-article-date">
-  	<time datetime="2019-06-16T08:32:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
+        <a href="/2019/07/13/Java数据结构复习-哈希表/" class="archive-article-date">
+  	<time datetime="2019-07-13T08:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="XML实验报告"><a href="#XML实验报告" class="headerlink" title="XML实验报告"></a><strong>XML实验报告</strong></h1><h2 id="实验一：XML文件的编辑"><a href="#实验一：XML文件的编辑" class="headerlink" title="实验一：XML文件的编辑"></a>实验一：XML文件的编辑</h2>
+        <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><h2 id="哈希表的基本介绍"><a href="#哈希表的基本介绍" class="headerlink" title="哈希表的基本介绍"></a>哈希表的基本介绍</h2>
         
       
 
@@ -338,7 +644,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XML的基础操作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
         		</li>
       		
 		</ul>
@@ -348,7 +654,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/16/学期作业-XML实验报告/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/13/Java数据结构复习-哈希表/">Read More >></a>
         </p>
       
 
@@ -378,27 +684,27 @@
 
 
   
-    <article id="post-SpringBoot高级-检索-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-查找算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/13/SpringBoot高级-检索-2/">SpringBoot高级-检索-2</a>
+      <a class="article-title" href="/2019/07/11/Java数据结构复习-查找算法/">Java数据结构复习-查找算法</a>
     </h1>
   
 
         
-        <a href="/2019/06/13/SpringBoot高级-检索-2/" class="archive-article-date">
-  	<time datetime="2019-06-13T13:16:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
+        <a href="/2019/07/11/Java数据结构复习-查找算法/" class="archive-article-date">
+  	<time datetime="2019-07-11T07:17:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringBoot与检索"><a href="#SpringBoot与检索" class="headerlink" title="SpringBoot与检索"></a>SpringBoot与检索</h1><p>Elasticsearch<a href="https://www.elastic.co/guide/cn/index.html" target="_blank" rel="noopener">文档链接</a></p>
+        <h1 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h1><h2 id="顺序（线性）查找"><a href="#顺序（线性）查找" class="headerlink" title="顺序（线性）查找"></a>顺序（线性）查找</h2>
         
       
 
@@ -412,7 +718,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">检索简介</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">查找算法</a>
         		</li>
       		
 		</ul>
@@ -422,7 +728,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/13/SpringBoot高级-检索-2/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/11/Java数据结构复习-查找算法/">Read More >></a>
         </p>
       
 
@@ -452,26 +758,113 @@
 
 
   
-    <article id="post-SpringBoot高级-检索-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-排序-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/08/Java数据结构复习-排序-2/">Java数据结构复习-排序-2</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/08/Java数据结构复习-排序-2/" class="archive-article-date">
+  	<time datetime="2019-07-08T04:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: SpringBoot高级-检索-1<br>date: 2019-06-12 20:11:16<br>tags: ElasticSearch</p>
-<h1 id="SpringBoot与检索"><a href="#SpringBoot与检索" class="headerlink" title="SpringBoot与检索"></a>SpringBoot与检索</h1><h2 id="检索简介"><a href="#检索简介" class="headerlink" title="检索简介"></a>检索简介</h2><p>开源的ElasticSearch是目前全文搜索引擎的首选。
-        
+        <h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>冒泡排序(Bubble Sorting)的基本思想是：通过对待排序序列从前向后(从下标较小的元素开始)，依次比较相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就像水底下的气泡一样逐渐向上冒。</p>
+<p>因为排序的过程中，各元素不断接近自己的位置，<strong>如果一趟比较下来没有进行过交换，就说明序列有序</strong>，因此要在排序过程中设置一个标志flag判断元素是否进行过交换。从而减少不必要的比较。</p>
+<h3 id="冒泡排序规则"><a href="#冒泡排序规则" class="headerlink" title="冒泡排序规则"></a>冒泡排序规则</h3><ol>
+<li>一共进行数组大小-1次的大循环</li>
+<li>每一趟排序的次数在逐渐的减少</li>
+<li>如果我们发现在某趟排序中，没有发生一次交换，可以提前结束这个冒泡排序，这个就是优化。</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DubbleSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123;<span class="number">3</span>,<span class="number">9</span>,-<span class="number">1</span>,<span class="number">10</span>,<span class="number">20</span>&#125;;</span><br><span class="line">        <span class="comment">//测试冒泡排序</span></span><br><span class="line">        bubbleSort(arr);</span><br><span class="line">        System.out.println(<span class="string">"排序后"</span>);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将冒泡排序算法，封装成一个方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;  <span class="comment">//临时变量</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;       <span class="comment">//标识变量，表示是否进行过交换</span></span><br><span class="line">        <span class="comment">//冒泡的时间复杂度O(n^2)</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++)&#123;</span><br><span class="line">                <span class="comment">//如果前面的数比后面的数打，则交换</span></span><br><span class="line">                <span class="keyword">if</span> (arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                    flag = <span class="keyword">true</span>;</span><br><span class="line">                    temp = arr[j];</span><br><span class="line">                    arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (flag == <span class="keyword">false</span>)&#123;     <span class="comment">//在一趟排序中，一次都没有发生</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                flag = <span class="keyword">false</span>;       <span class="comment">//重置flag，进行下次判断</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2.选择排序"></a>2.选择排序</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>选择排序也属于内部排序，是从欲排序的数据中，按指定的规则选出某一元素，再依规定交换位置后达到排序的目的。</p>
+<h3 id="选择排序规则"><a href="#选择排序规则" class="headerlink" title="选择排序规则"></a>选择排序规则</h3><ol>
+<li><p>选择排序一共有数组大小-1轮排序</p>
+</li>
+<li><p>每1轮排序，又是一个循环，循环的规则（代码）</p>
+<p>（1）先假定当前这个数是最小数</p>
+<p>（2）然后和后面的每个数进行比较，如果发现有比当前数更小的数，就重新确定最小数，并得到下标</p>
+<p>（3）当遍历到数组的最后时，就得到本轮最小数和下标</p>
+<p>（4）交换</p>
+</li>
+</ol>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">101</span>,<span class="number">34</span>,<span class="number">119</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        selectSort(arr);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//选择排序</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span> [] arr)</span></span>&#123;</span><br><span class="line">        <span class="comment">//原始的数组：        101，34，119，1</span></span><br><span class="line">        <span class="comment">//先简单 --&gt; 再复杂，就是可以把一个复杂的算法，拆分成简单的问题-》逐步解决</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> minIndex = i;</span><br><span class="line">            <span class="keyword">int</span> min = arr[minIndex];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;arr.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (min&gt;arr[j])&#123;    <span class="comment">//说明假定的最小值，并不是最小</span></span><br><span class="line">                    min = arr[j];   <span class="comment">//重置min</span></span><br><span class="line">                    minIndex = j;   <span class="comment">//重置minIndex</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//将最小值，放在arr[i],即交换</span></span><br><span class="line">            <span class="keyword">if</span>(minIndex!=i)&#123;</span><br><span class="line">                arr[minIndex] = arr[i];</span><br><span class="line">                arr[i]=min;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><h3 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>插入式排序属于内部排序法，是对于欲排序的元素以插入的方式找寻该元素的适当位置，以达到排序的目的。</p>
+<h3 id="插入排序的思路"><a href="#插入排序的思路" class="headerlink" title="插入排序的思路"></a>插入排序的思路</h3><p>插入排序(Insertion Sorting)的基本思想是：把n个待排序的元素看成为一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含有n-1个元素，排序过程中，每次从无序表中取出第一个元素，把它的排序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。</p>
+<h3 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">101</span>,<span class="number">34</span>,<span class="number">119</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        insertSort(arr);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入排序</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            <span class="comment">//定义待插入的数</span></span><br><span class="line">            <span class="keyword">int</span> insertVal = arr[i];</span><br><span class="line">            <span class="keyword">int</span> insertIndex = i-<span class="number">1</span>;    <span class="comment">//即arr[1]的前面这个数的下标</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//给insertVal 找到插入的位置</span></span><br><span class="line">            <span class="comment">//1.insertIndex&gt;=0保证在给insertVal找插入位置，不越界</span></span><br><span class="line">            <span class="comment">//2.insertVal&lt;arr[insertIndex] 带插入的数，还没有找到插入的位置</span></span><br><span class="line">            <span class="comment">//3.就需要将arr[insertIndex]后移</span></span><br><span class="line">            <span class="keyword">while</span>(insertIndex&gt;=<span class="number">0</span>&amp;&amp;insertVal&lt;arr[insertIndex])&#123;</span><br><span class="line">                arr[insertIndex+<span class="number">1</span>] =arr[insertIndex];</span><br><span class="line">                insertIndex--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//当退出while循环时，说明插入位置找到，insertIndex+1</span></span><br><span class="line">           <span class="keyword">if</span> (insertIndex+<span class="number">1</span>!=i)&#123;</span><br><span class="line">                arr[insertIndex+<span class="number">1</span>] = insertVal;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-希尔排序"><a href="#4-希尔排序" class="headerlink" title="4.希尔排序"></a>4.希尔排序</h2><h3 id="基本介绍-3"><a href="#基本介绍-3" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>希尔排序是希尔（Donald Shell）于1959年提出的一种排序算法。希尔排序也是一种<strong>插入排序</strong>，他是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序。</p>
+<h3 id="希尔排序的基本思想"><a href="#希尔排序的基本思想" class="headerlink" title="希尔排序的基本思想"></a>希尔排序的基本思想</h3><p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键字越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
+<h3 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShellSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">8</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        shellSort2(arr);<span class="comment">//移位式</span></span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> gap =arr.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap/=<span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i =gap;i&lt;arr.length;i++)&#123;</span><br><span class="line">                <span class="comment">//遍历各组中所有的元素（共gap组，每组有个元素），步长gap</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = i-gap;j&gt;=<span class="number">0</span>;j=j-gap)&#123;</span><br><span class="line">                    <span class="comment">//如果当前元素大于加上步长后的元素，就交换</span></span><br><span class="line">                    <span class="keyword">if</span> (arr[j]&gt;arr[j+gap])&#123;</span><br><span class="line">                        temp = arr[j+gap];</span><br><span class="line">                        arr[j+gap] = arr[j];</span><br><span class="line">                        arr[j] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//对交换式的希尔排序进行优化——&gt;移位法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort2</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp =<span class="number">0</span>;</span><br><span class="line">           <span class="comment">//增量gap，并逐步的缩小增量</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> gap =arr.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap/=<span class="number">2</span>)&#123;</span><br><span class="line">               <span class="comment">//从第gap个元素，逐个对其所在的组进行插入排序</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i =gap;i&lt;arr.length;i++)&#123;</span><br><span class="line">                    <span class="keyword">int</span> j =i-gap;</span><br><span class="line">                    temp = arr[i];</span><br><span class="line">                        <span class="keyword">while</span>(j&gt;=<span class="number">0</span>&amp;&amp;temp&lt;arr[j])&#123;</span><br><span class="line">                            <span class="comment">//移动</span></span><br><span class="line">                            arr[j+gap]=arr[j];</span><br><span class="line">                            j = j-gap;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//当退出while后，就给temp找到差入的位置</span></span><br><span class="line">                        arr[j+gap]=temp;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h2><h3 id="基本介绍-4"><a href="#基本介绍-4" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>快速排序（QuickSort）是对冒泡排序的一种改进。基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<h3 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;-<span class="number">9</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">23</span>,-<span class="number">567</span>,<span class="number">70</span>,-<span class="number">1</span>,<span class="number">900</span>,<span class="number">46</span>&#125;;</span><br><span class="line">        quickSort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l =left;    <span class="comment">//左下标</span></span><br><span class="line">        <span class="keyword">int</span> r = right;  <span class="comment">//右下标</span></span><br><span class="line">        <span class="comment">//pivot 中轴</span></span><br><span class="line">        <span class="keyword">int</span> pivot = arr[(left+right)/<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;       <span class="comment">//临时变量，交换时使用</span></span><br><span class="line">        <span class="comment">//while循环的目的是让比pivot值小的放到左边</span></span><br><span class="line">        <span class="comment">//比pivot值大的放到右边</span></span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">            <span class="comment">//在pivot的左边一直找，找到大于等于pivot值，才退出</span></span><br><span class="line">            <span class="keyword">while</span>(arr[l]&lt;pivot)&#123;</span><br><span class="line">                l+=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//在pivot的左边一直找，找到小于于等于pivot值，才退出</span></span><br><span class="line">            <span class="keyword">while</span> (arr[r]&gt;pivot)&#123;</span><br><span class="line">                r-=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果l&gt;=r说明pivot左右两边的值，已经按照左边全部是小于等于pivot的值</span></span><br><span class="line">            <span class="comment">//而右边全部是大于等于pivot的值</span></span><br><span class="line">            <span class="keyword">if</span> (l&gt;=r)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//交换</span></span><br><span class="line">            temp = arr[l];</span><br><span class="line">            arr[l] = arr[r];</span><br><span class="line">            arr[r] = temp;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//如果交换完后，发现arr[l] == pivot值 相等 r--，前移一步</span></span><br><span class="line">            <span class="keyword">if</span>(arr[l] == pivot)&#123;</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//如果交换完后，发现arr[r] == pivot值 相等 l++，前移一步</span></span><br><span class="line">            <span class="keyword">if</span>(arr[r] == pivot)&#123;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果l==r，必须l++，r--，否则栈溢出</span></span><br><span class="line">        <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">            l++;</span><br><span class="line">            r--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//向左递归</span></span><br><span class="line">        <span class="keyword">if</span> (left&lt;r)&#123;</span><br><span class="line">            quickSort(arr,left,r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(right&gt;l)&#123;</span><br><span class="line">            quickSort(arr,l,right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-归并排序"><a href="#6-归并排序" class="headerlink" title="6.归并排序"></a>6.归并排序</h2><h3 id="基本介绍-5"><a href="#基本介绍-5" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治将问题分（divide）成一些小的问题如何递归求解，而治（conquer）的阶段则将分的阶段得到的各种答案“修补”在一起，即分而治之）</p>
+<h3 id="代码实现-5"><a href="#代码实现-5" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergetSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">8</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">2</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> temp[] = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];       <span class="comment">//归并排序需要一个额外空间</span></span><br><span class="line">        mergeSort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>,temp);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//分+合方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> right,<span class="keyword">int</span>[] temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;   <span class="comment">//中间索引</span></span><br><span class="line">            <span class="comment">//向左递归进行分解</span></span><br><span class="line">            mergeSort(arr,left,mid,temp);</span><br><span class="line">            <span class="comment">//向右递归</span></span><br><span class="line">            mergeSort(arr,mid+<span class="number">1</span>,right,temp);</span><br><span class="line">            <span class="comment">//到合并</span></span><br><span class="line">            merge(arr,left,mid,right,temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//合并的方法</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> arr   排序的元素数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> left  左边有序序列的初始索引</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> mid   中间索引</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> right    右边索引</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> temp  做中转的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> mid,<span class="keyword">int</span> right,<span class="keyword">int</span>[] temp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = left;   <span class="comment">//初始化i；左边有序序列的初始化索引</span></span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;    <span class="comment">//初始化j；右边有序序列的初始索引</span></span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;  <span class="comment">//指向temp数组的当前索引</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//先把左右两边（有序）的数据按照规则填充到temp数组</span></span><br><span class="line">        <span class="comment">//直到左右两边的有序序列，有一边处理完毕为止</span></span><br><span class="line">        <span class="keyword">while</span> (i&lt;=mid&amp;&amp;j&lt;=right)&#123; <span class="comment">//继续</span></span><br><span class="line">            <span class="keyword">if</span>(arr[i]&lt;=arr[j])&#123;</span><br><span class="line">                <span class="comment">//如果左边的有序序列的当前元素，小于等于右边有序序列的当前元素</span></span><br><span class="line">                <span class="comment">//即将左边的当前元素，拷贝到temp数组</span></span><br><span class="line">                <span class="comment">//然后t++，i++</span></span><br><span class="line">                temp[t] = arr[i];</span><br><span class="line">                t++;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;      <span class="comment">//反之，将右边有序序列的当前元素，填充到temp数组</span></span><br><span class="line">                temp[t] = arr[j];</span><br><span class="line">                t++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把有剩余数据的一边的数据依次全部填充到temp</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid)&#123;  <span class="comment">//左边的有序序列还有剩余的元素，就全部填充到temp</span></span><br><span class="line">            temp[t] = arr[i];</span><br><span class="line">            t++;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (j&lt;=right)&#123;    <span class="comment">//右边的有序序列还有剩余的元素，就全部填充到temp</span></span><br><span class="line">            temp[t] = arr[j];</span><br><span class="line">            t++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将temp数组的元素拷贝到arr</span></span><br><span class="line">        t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tempLeft = left;</span><br><span class="line">        <span class="keyword">while</span> (tempLeft&lt;=right)&#123;    <span class="comment">//第一次合并tempLeft = 0；right = 1</span></span><br><span class="line">            arr[tempLeft] = temp[t];</span><br><span class="line">            t++;</span><br><span class="line">            tempLeft++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-基数排序"><a href="#7-基数排序" class="headerlink" title="7.基数排序"></a>7.基数排序</h2><h3 id="基本介绍-6"><a href="#基本介绍-6" class="headerlink" title="基本介绍"></a>基本介绍</h3><ol>
+<li>基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或bin sort，顾名思义，他是通过键值的各个位的值，将要排序的元素分配至某些“桶”中，达到排序的作用。</li>
+<li>基数排序法是属于稳定性的排序，基数排序法的是效率高的稳定性排序法</li>
+<li>基数排序（Radix Sort）是桶排序的扩展</li>
+<li>基数排序是1887年赫尔曼·何乐礼发明的。它是这样实现的：将整数按位切割成不同的数字，如何按每个位数分别比较。</li>
+</ol>
+<h3 id="基数排序的基本思想"><a href="#基数排序的基本思想" class="headerlink" title="基数排序的基本思想"></a>基数排序的基本思想</h3><p>将所有待比较数值统一为同样的位数长度，数位较短的数前面补零，然后。从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后，数列就变成一个有序序列。</p>
+<h3 id="逐步分析"><a href="#逐步分析" class="headerlink" title="逐步分析"></a>逐步分析</h3><p>数值的初始状态：arr={53,3,542,748,14,214}</p>
+<p>第一轮排序：</p>
+<ol>
+<li>将每个元素的个位数取出，然后在看这个数应该放在哪个对应的桶（一个一维数组）</li>
+<li>按照这个桶的顺序（一维数组的下标依次取出数据，放入原来数组）</li>
+</ol>
+<p>数组的第一轮排序：arr={542,53,3,14,214,748}</p>
+<p>第二轮排序：</p>
+<ol>
+<li>将每个元素的十位数取出，然后看这个数应该放在哪个对应的桶（一个一维数组）</li>
+<li>按照这个桶的顺序（一维数组的下标依次取出，放入原数组）</li>
+</ol>
+<p>数组的第二轮排序：arr={3,14,214,542,748,53}</p>
+<p>第三轮排序：</p>
+<ol>
+<li>将每个元素的百位数取出，然后看这个数应该放在哪个对应的桶（一个一维数组）</li>
+<li>按照这个桶的顺序（一维数组的下标依次取出，放入原数组）</li>
+</ol>
+<p>数组的第二轮排序：arr={3,14,53,214,543,748}</p>
+<h3 id="代码实现-6"><a href="#代码实现-6" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RadixSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123;<span class="number">53</span>,<span class="number">3</span>,<span class="number">542</span>,<span class="number">748</span>,<span class="number">14</span>,<span class="number">214</span>&#125;;</span><br><span class="line">        radixSort(arr);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//基数排序方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">radixSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//得到数组中最大的数的位数</span></span><br><span class="line">        <span class="keyword">int</span> max = arr[<span class="number">0</span>];   <span class="comment">//假设第一位就是最大数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">1</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i]&gt;max)&#123;</span><br><span class="line">                max = arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//得到最大数是几位数</span></span><br><span class="line">        <span class="keyword">int</span> maxLength = (max+<span class="string">""</span>).length();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//二维数组包含10个一维数组</span></span><br><span class="line">        <span class="comment">//为了防止在放入数的时候，数据溢出，则每个一维数组（桶），大小定为arr.length</span></span><br><span class="line">        <span class="comment">//很明显，基数排序就是使用空间换时间的经典算法</span></span><br><span class="line">        <span class="keyword">int</span>[][] bucket = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>][arr.length];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//为了记录每个桶中，实际存放了多少个数据，我们定义一个一维数组来记录各个桶每次放入的数据个数</span></span><br><span class="line">        <span class="comment">//bucketElementCounts[0]，记录的就是bucket桶放入数据的个数</span></span><br><span class="line">        <span class="keyword">int</span>[] bucketElementCounts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>,n =<span class="number">1</span>;i&lt;maxLength;i++,n*=<span class="number">10</span>)&#123;</span><br><span class="line">            <span class="comment">//针对每个元素的对应为进行排序处理，第一次是个位，第二次是十位，第三次是百位</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;arr.length;j++)&#123;</span><br><span class="line">                <span class="comment">//取出每个元素对应位的值</span></span><br><span class="line">                <span class="keyword">int</span> digitOfElement = arr[j]/n%<span class="number">10</span>;</span><br><span class="line">                <span class="comment">//放入到对应的桶中</span></span><br><span class="line">                bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];</span><br><span class="line">                bucketElementCounts[digitOfElement]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)</span></span><br><span class="line">            <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//遍历每一个桶，将桶中的数据，放入到原数组</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k =<span class="number">0</span>;k&lt;bucketElementCounts.length;k++)&#123;</span><br><span class="line">                <span class="comment">//如果桶中有数据，我们才放入到原数组</span></span><br><span class="line">                <span class="keyword">if</span>(bucketElementCounts[k]!=<span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="comment">//循环该桶即第k个桶（即第k个一维数组），放入</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> l =<span class="number">0</span>;l&lt;bucketElementCounts[k];l++)&#123;</span><br><span class="line">                        <span class="comment">//取出元素放入arr</span></span><br><span class="line">                        arr[index] = bucket[k][l];</span><br><span class="line">                        index++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//第一轮处理后，需要将每个bucketElementCounts[k]=0；</span></span><br><span class="line">                bucketElementCounts[k] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        for (int j =0;j&lt;arr.length;j++)&#123;</span></span><br><span class="line"><span class="comment">//            int digitOfElement = arr[j]%10;</span></span><br><span class="line"><span class="comment">//            //放入到对应的桶中</span></span><br><span class="line"><span class="comment">//            bucket[digitOfElement][bucketElementCounts[digitOfElement]] = arr[j];</span></span><br><span class="line"><span class="comment">//            bucketElementCounts[digitOfElement]++;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        //按照这个桶的顺序(一维数组的下标依次取出数据，放入原来数组)</span></span><br><span class="line"><span class="comment">//        int index = 0;</span></span><br><span class="line"><span class="comment">//        //遍历每一个桶，将桶中的数据，放入到原数组</span></span><br><span class="line"><span class="comment">//        for(int k =0;k&lt;bucketElementCounts.length;k++)&#123;</span></span><br><span class="line"><span class="comment">//            //如果桶中有数据，我们才放入到原数组</span></span><br><span class="line"><span class="comment">//            if(bucketElementCounts[k]!=0)&#123;</span></span><br><span class="line"><span class="comment">//                //循环该桶即第k个桶（即第k个一维数组），放入</span></span><br><span class="line"><span class="comment">//                for (int l =0;l&lt;bucketElementCounts[k];l++)&#123;</span></span><br><span class="line"><span class="comment">//                    //取出元素放入arr</span></span><br><span class="line"><span class="comment">//                    arr[index] = bucket[k][l];</span></span><br><span class="line"><span class="comment">//                    index++;</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//            //第一轮处理后，需要将每个bucketElementCounts[k]=0；</span></span><br><span class="line"><span class="comment">//            bucketElementCounts[k] = 0;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="基数排序说明"><a href="#基数排序说明" class="headerlink" title="基数排序说明"></a>基数排序说明</h3><ol>
+<li>基数排序是对传统桶排序的扩展，速度很快</li>
+<li>基数排序是对经典的空间换时间的方式，占用内存很大，当对海量数据排序时，容易造成OutOfMemoryError。</li>
+<li>基数排序是稳定的。[注：假定在待排序的记录序列中，存在多个具有相同关键字的记录，若进过排序，这些记录的相对次序保持不变，即在元序列中，r[i]=r[j]，且r[i]在r[j]之前，而在排序后的序列中，r[i]扔在r[j]之前，则称这种排序算法是稳定的；否则称为不稳定的]</li>
+<li>有负数的数组，不要用技术排序来进行排序</li>
+</ol>
+
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">冒泡排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/12/SpringBoot高级-检索-1/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/08/Java数据结构复习-排序-2/">Read More >></a>
         </p>
       
 
@@ -501,27 +894,27 @@
 
 
   
-    <article id="post-SpringBoot高级-消息-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/SpringBoot高级-消息-5/">SpringBoot高级-消息-5</a>
+      <a class="article-title" href="/2019/07/07/Java数据结构复习-排序/">Java数据结构复习-排序</a>
     </h1>
   
 
         
-        <a href="/2019/06/12/SpringBoot高级-消息-5/" class="archive-article-date">
-  	<time datetime="2019-06-12T11:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
+        <a href="/2019/07/07/Java数据结构复习-排序/" class="archive-article-date">
+  	<time datetime="2019-07-07T01:50:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="AmqpAdmin管理组件"><a href="#AmqpAdmin管理组件" class="headerlink" title="AmqpAdmin管理组件"></a>AmqpAdmin管理组件</h1><h2 id="RabbitMQ系统管理功能组件"><a href="#RabbitMQ系统管理功能组件" class="headerlink" title="RabbitMQ系统管理功能组件"></a>RabbitMQ系统管理功能组件</h2>
+        <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h2 id="排序算法介绍"><a href="#排序算法介绍" class="headerlink" title="排序算法介绍"></a>排序算法介绍</h2>
         
       
 
@@ -535,7 +928,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">AmqpAdmin管理组件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		
 		</ul>
@@ -545,7 +938,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/12/SpringBoot高级-消息-5/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/07/Java数据结构复习-排序/">Read More >></a>
         </p>
       
 
@@ -575,32 +968,32 @@
 
 
   
-    <article id="post-Java数据结构复习-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-递归-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/Java数据结构复习-1/">Java数据结构复习-1</a>
+      <a class="article-title" href="/2019/07/06/Java数据结构复习-递归-2/">Java数据结构复习-递归-2</a>
     </h1>
   
 
         
-        <a href="/2019/06/11/Java数据结构复习-1/" class="archive-article-date">
-  	<time datetime="2019-06-11T15:27:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+        <a href="/2019/07/06/Java数据结构复习-递归-2/" class="archive-article-date">
+  	<time datetime="2019-07-06T06:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p><strong>数据结构包括：线性结构和非线性结构</strong>
+        <h1 id="递归-八皇后问题-回溯算法"><a href="#递归-八皇后问题-回溯算法" class="headerlink" title="递归-八皇后问题(回溯算法)"></a>递归-八皇后问题(回溯算法)</h1><h4 id="八皇后问题介绍"><a href="#八皇后问题介绍" class="headerlink" title="八皇后问题介绍"></a>八皇后问题介绍</h4>
         
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -609,7 +1002,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">八皇后问题</a>
         		</li>
       		
 		</ul>
@@ -619,7 +1012,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/Java数据结构复习-1/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/06/Java数据结构复习-递归-2/">Read More >></a>
         </p>
       
 
@@ -649,27 +1042,27 @@
 
 
   
-    <article id="post-SpringBoot高级-消息-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-递归" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/11/SpringBoot高级-消息-4/">SpringBoot高级-消息-4</a>
+      <a class="article-title" href="/2019/07/05/Java数据结构复习-递归/">Java数据结构复习-递归</a>
     </h1>
   
 
         
-        <a href="/2019/06/11/SpringBoot高级-消息-4/" class="archive-article-date">
-  	<time datetime="2019-06-11T02:21:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
+        <a href="/2019/07/05/Java数据结构复习-递归/" class="archive-article-date">
+  	<time datetime="2019-07-05T06:27:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="整合RabbitMQ"><a href="#整合RabbitMQ" class="headerlink" title="整合RabbitMQ"></a>整合RabbitMQ</h1><h3 id="导入spring-boot-starter-amqp"><a href="#导入spring-boot-starter-amqp" class="headerlink" title="导入spring-boot-starter-amqp"></a>导入spring-boot-starter-amqp</h3>
+        <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="递归简介-Recursion"><a href="#递归简介-Recursion" class="headerlink" title="递归简介(Recursion)"></a>递归简介(Recursion)</h2>
         
       
 
@@ -683,7 +1076,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">整合SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
         		</li>
       		
 		</ul>
@@ -693,7 +1086,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/11/SpringBoot高级-消息-4/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/05/Java数据结构复习-递归/">Read More >></a>
         </p>
       
 
@@ -723,27 +1116,27 @@
 
 
   
-    <article id="post-SpringBoot高级-消息-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-中缀转后缀" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/10/SpringBoot高级-消息-3/">SpringBoot高级-消息-3</a>
+      <a class="article-title" href="/2019/07/04/Java数据结构复习-中缀转后缀/">Java数据结构复习-中缀转后缀</a>
     </h1>
   
 
         
-        <a href="/2019/06/10/SpringBoot高级-消息-3/" class="archive-article-date">
-  	<time datetime="2019-06-10T11:42:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
+        <a href="/2019/07/04/Java数据结构复习-中缀转后缀/" class="archive-article-date">
+  	<time datetime="2019-07-04T09:17:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="RabbitMQ安装"><a href="#RabbitMQ安装" class="headerlink" title="RabbitMQ安装"></a>RabbitMQ安装</h1><h2 id="配置RabbitMQ环境"><a href="#配置RabbitMQ环境" class="headerlink" title="配置RabbitMQ环境"></a>配置RabbitMQ环境</h2><h3 id="1-安装RabbitMQ镜像"><a href="#1-安装RabbitMQ镜像" class="headerlink" title="1.安装RabbitMQ镜像"></a>1.安装RabbitMQ镜像</h3>
+        <h1 id="中缀转后缀表达式"><a href="#中缀转后缀表达式" class="headerlink" title="中缀转后缀表达式"></a>中缀转后缀表达式</h1>
         
       
 
@@ -757,7 +1150,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RabbitMQ安装</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">中缀转后缀表达式</a>
         		</li>
       		
 		</ul>
@@ -767,7 +1160,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/10/SpringBoot高级-消息-3/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/04/Java数据结构复习-中缀转后缀/">Read More >></a>
         </p>
       
 
@@ -797,32 +1190,32 @@
 
 
   
-    <article id="post-SpringBoot高级-消息-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java数据结构复习-栈的表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/09/SpringBoot高级-消息-2/">SpringBoot高级-消息-2</a>
+      <a class="article-title" href="/2019/07/02/Java数据结构复习-栈的表达式/">Java数据结构复习-栈的表达式</a>
     </h1>
   
 
         
-        <a href="/2019/06/09/SpringBoot高级-消息-2/" class="archive-article-date">
-  	<time datetime="2019-06-09T06:27:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-09</time>
+        <a href="/2019/07/02/Java数据结构复习-栈的表达式/" class="archive-article-date">
+  	<time datetime="2019-07-02T04:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringBoot消息"><a href="#SpringBoot消息" class="headerlink" title="SpringBoot消息"></a>SpringBoot消息</h1><h2 id="RabbitMQ简介"><a href="#RabbitMQ简介" class="headerlink" title="RabbitMQ简介"></a>RabbitMQ简介</h2><p>RabbitMQ是一个由erlang开发的AMQP（Advanved Message Queue Orotocol）的开源实现。
+        <h1 id="栈的表达式"><a href="#栈的表达式" class="headerlink" title="栈的表达式"></a>栈的表达式</h1><h2 id="前缀表达式"><a href="#前缀表达式" class="headerlink" title="前缀表达式"></a>前缀表达式</h2>
         
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -831,7 +1224,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">RabbitMQ简介</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">前缀 中缀 后缀表达式</a>
         		</li>
       		
 		</ul>
@@ -841,7 +1234,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/09/SpringBoot高级-消息-2/">Read More >></a>
+          <a class="article-more-a" href="/2019/07/02/Java数据结构复习-栈的表达式/">Read More >></a>
         </p>
       
 
@@ -873,7 +1266,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -968,7 +1361,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">中缀转后缀表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">前缀 中缀 后缀表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">八皇后问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -980,11 +1405,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
+                <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,7 +1433,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring Security</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,11 +1453,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,15 +1465,51 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">监控管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
