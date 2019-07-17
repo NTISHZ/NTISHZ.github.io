@@ -177,97 +177,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h1><ul>
-<li><p>局部变量</p>
-<p>出现在方法体中的,或者方法的声明中的变量 - 局部变量</p>
-</li>
-<li><p>全局变量</p>
-</li>
-</ul>
-<h1 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h1><p>仅仅存在于它所在的{}中.</p>
-<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>不可变的量</p>
-<p>命名 - 全部采用大写,并且出现多个单词使用下划线隔开.</p>
-<p>对应在API手册中的字段.</p>
-<p>语法:</p>
-<p>final - 关键字,修饰符</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> MAX_DAY = <span class="number">1</span>;</span><br><span class="line">MAX_DAY = <span class="number">20</span>;<span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
-<p>应用场景:为了提高程序的可读性.</p>
-<h1 id="运算符-快速过"><a href="#运算符-快速过" class="headerlink" title="运算符[快速过]"></a>运算符[快速过]</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - * =  +=  -= /= %= *=</span><br></pre></td></tr></table></figure>
-<p>/ - 取整   10/3 = 3</p>
-<p>% - 取余[模] 10%3 = 1</p>
-<p>/和%应用场景:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">可以用来取出某个数字任何一位上面的数字</span><br><span class="line"><span class="keyword">int</span> year = <span class="number">2019</span>;</span><br><span class="line">System.out.println(<span class="string">"千位:"</span>+year/<span class="number">1000</span>%<span class="number">10</span>);<span class="comment">//2</span></span><br><span class="line">System.out.println(<span class="string">"百位:"</span>+year/<span class="number">100</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"十位:"</span>+year/<span class="number">10</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"个位:"</span>+year%<span class="number">10</span>);<span class="comment">//9</span></span><br></pre></td></tr></table></figure>
-<p>+=</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">a+=<span class="number">1</span>;<span class="comment">//a = a + 1;//可能会进行窄化操作</span></span><br><span class="line"><span class="comment">//short题目</span></span><br></pre></td></tr></table></figure>
-<p>++和– </p>
-<ul>
-<li><p>前++和前–</p>
-<p>++出现在变量的前面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//++i;//i = i + 1;</span></span><br><span class="line"><span class="keyword">int</span> result = ++i;<span class="comment">//通过表达式进行赋值</span></span><br><span class="line"><span class="comment">//i = ?     2</span></span><br><span class="line"><span class="comment">//result = ? 2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>后++和后–</p>
-<p>++出现在变量的后边</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i= <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> result = i++;<span class="comment">//i++ -&gt; i = i + 1</span></span><br><span class="line"><span class="comment">//i = ?    2</span></span><br><span class="line"><span class="comment">//result = ?  1</span></span><br></pre></td></tr></table></figure>
-<p>总结:前++代表的是变量i和++i表达式的结果都会自增1</p>
-<p>​         后++代表的是变量i会自增1,并且将i自增之前的值先赋值给了变量result</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = a++ + ++a + --b + b--;</span><br><span class="line"><span class="keyword">int</span> result = c-- + a-- + c++;</span><br><span class="line"><span class="comment">//result = ?</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt; &gt;= &lt;= != ==</span><br></pre></td></tr></table></figure>
-<p>比较之后的结果是boolean类型</p>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>通常是用来进行计算的.但是可以用来进行连接判断条件的[不推荐使用]</p>
-<p>位运算符的性能是最高的.</p>
-<p>笔试题:请您以最高性能的方式计算出2的3次方!</p>
-<ul>
-<li><p>&amp; - 按位与 </p>
-<p>都是1,结果才是1</p>
-<p>10 &amp; 8 = 8</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">8</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>| - 按位或</p>
-<p>只要出现1个1,结果就是1</p>
-<p>10 | 8 = 10</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>异或^</p>
-<p>相同为0,不同为1 </p>
-<p>10 ^ 8 = 2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>10 ^ 8 ^ 8 = </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">--------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
-<p>总结:一个数连续异或同一个数俩次,结果是它本身!!!</p>
-<p>应用场景:加密和解密.</p>
-<p>笔试题:</p>
-<p>交换俩个变量的值?</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1. 传统的方式 - 使用第三方变量</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//        int temp = a;</span></span><br><span class="line">    <span class="comment">//        a = b;</span></span><br><span class="line">    <span class="comment">//        b = temp;</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//不允许使用第三方变量</span></span><br><span class="line">    <span class="comment">//总结:一个数连续异或同一个数俩次,结果是它本身!!!</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20</span></span><br><span class="line">    <span class="comment">// b = a ^ b;//b = 10 ^ 20 ^ 20 = 10</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20 ^ 10 = 20</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//自创的</span></span><br><span class="line">    <span class="comment">//b = 10^20^20 = 10</span></span><br><span class="line">    b = a^(a=b)^b;</span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="string">"a:"</span>+a);<span class="comment">//20</span></span><br><span class="line">    System.out.println(<span class="string">"b:"</span>+b);<span class="comment">//10</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>负数的二进制表现形式</p>
-<p>负数在计算机中是以补码的形式!</p>
-<p><strong>正数的原码,补码,反码都是它本身!</strong></p>
-<p>Java中的数据都是有符号的,最高位代表符号位,1代表的是负数,0代表的是正数!</p>
-<p><strong>针对负数:</strong></p>
-<p>补码 = 反码 + 1;</p>
-<p>反码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反]</p>
-<p>补码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反] + 1</p>
-</li>
-</ul>
-<p>​     -10的二进制?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~java</span><br></pre></td></tr></table></figure>
-<p>-10的原码:10000000 00000000 00000000 00001010<br>-10的反码:11111111 11111111 11111111 11110101</p>
-<pre><code>+                                       1
-------------------------------------------
-     11111111 11111111 11111111 11110110
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~</span><br></pre></td></tr></table></figure>
-<p>取反的符号~</p>
-<p>~9 = ~00000000 00000000 00000000 0000100 1</p>
-<p>​          11111111  11111111 1111111111110110</p>
-<p><strong>-10 = ~9 - 总结出: ~x = -(x+1)</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; - 左位移</span><br><span class="line"><span class="number">2</span>&lt;&lt;<span class="number">2</span> = <span class="number">8</span></span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; 无符号的位移,移动多少位,那么就在最高位补几个<span class="number">0</span></span><br><span class="line"></span><br><span class="line">-<span class="number">10</span>&gt;&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt;&gt; <span class="number">2</span></span><br><span class="line">          <span class="number">0011111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> - &gt;二进制-&gt;十进制</span><br><span class="line">          =<span class="number">1073741821</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; 带符号的位移.移动多少位,那么最高位就是补几个符号位!</span><br><span class="line">-<span class="number">10</span>&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt; <span class="number">2</span></span><br><span class="line">    	 <span class="number">1111111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> = ~<span class="number">2</span> = -<span class="number">3</span></span><br><span class="line">    	 </span><br><span class="line">         <span class="number">0000000000</span> <span class="number">000</span>...   ....     <span class="number">000010</span> = <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
+<li><p>局部变量
+        
       
 
       
-    </div>
+    </p></li></ul></div>
     <div class="article-info article-info-index">
       
       
@@ -337,231 +252,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h1><ul>
-<li>前身是oak语言[原因是商标被提前注册了]</li>
-<li>java之父 - James Gosling 詹姆斯,高斯林</li>
-<li>2009年被oracle公司[甲骨文]收购</li>
-<li>是1995年5月23日正式推出</li>
-</ul>
-<h2 id="发展方向"><a href="#发展方向" class="headerlink" title="发展方向"></a>发展方向</h2><ul>
-<li>传统的web开发</li>
-<li>分布式的微服务</li>
-<li>大数据</li>
-</ul>
-<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p><a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html</a></p>
-<p>JDK版本1.1[96年推出] - JDK1.4 - JDK5.0[巨变] -… - JDK8.x</p>
-<ul>
-<li>安装路径不要出现中文</li>
-<li>所有的路径中不要出现特殊的字符[比如Program Files(x86)].</li>
-<li>保证jdk1.8.0_66和jre1.8.0_66俩个目录必须要在同一个目录中.</li>
-</ul>
-<h2 id="JDK目录结构"><a href="#JDK目录结构" class="headerlink" title="JDK目录结构"></a>JDK目录结构</h2><ul>
-<li>bin - 存放java的开发工具</li>
-<li>db - 100%利用java语言开发的derdy,开源的关系型数据库</li>
-<li>include - 存放的是c的一些头文件[JVM就是采用C语言实现的]</li>
-<li>jre - java程序运行时需要的环境的根目录</li>
-<li>lib - 存放java程序开发需要的核心的类库</li>
-<li>src.zip - 归档的java的源代码.</li>
-</ul>
-<h1 id="人机交互的方式"><a href="#人机交互的方式" class="headerlink" title="人机交互的方式"></a>人机交互的方式</h1><ul>
-<li><p>CLI - Command Line Interface - 命令行方式[DOS系统Disk Opera System - 磁盘操作系统]</p>
-<p>DOS命令</p>
-</li>
-<li><p>GUI - Graphic User Interface - 图形化用户界面方式[傻瓜式操作,基于鼠标操作]</p>
-</li>
-</ul>
-<h2 id="JDK的环境变量的配置"><a href="#JDK的环境变量的配置" class="headerlink" title="JDK的环境变量的配置"></a>JDK的环境变量的配置</h2><p>打开终端 - cmd - 输入notepad的时候,就是欧通过CLI的方式唤醒打开记事本的程序.</p>
-<p>当执行这个命令的时候,windows操作系统会优先到当前目录中去寻找是否存在该命令notepad.exe</p>
-<p><strong>那么windows操作系统会继续到系统的环境变量中的path中配置的路径中从左到右的顺序进行查找</strong>.</p>
-<p>如果存在,则顺利执行,否则抛出错误</p>
-<h2 id="系统的环境变量"><a href="#系统的环境变量" class="headerlink" title="系统的环境变量"></a>系统的环境变量</h2><p>右击计算机 - 属性 - 高级 - 环境变量 - 系统变量</p>
-<p>直接通过终端输入path命令.</p>
-<h2 id="具体的步骤"><a href="#具体的步骤" class="headerlink" title="具体的步骤"></a>具体的步骤</h2><p>在系统变量区域进行如下配置:</p>
-<ul>
-<li><p>新建</p>
-<p>变量名:JAVA_HOME</p>
-<p>变量值:D:\Program Files\Java\jdk1.8.0_66</p>
-</li>
-<li><p>找到path,点击编辑 - 推荐放在最左边或者最上边.</p>
-<p>%JAVA_HOME%\bin;</p>
-</li>
-</ul>
-<p>注意点:一旦环境变量修改之后,那么终端一定是需要重启之后才会有效果的.</p>
-<h3 id="检测配置成功"><a href="#检测配置成功" class="headerlink" title="检测配置成功"></a>检测配置成功</h3><p>通过终端在任何一个目录中输入java -version</p>
-<h1 id="Java三个体系"><a href="#Java三个体系" class="headerlink" title="Java三个体系"></a>Java三个体系</h1><ul>
-<li>JavaSE - Java Standard Edition - Java标准版</li>
-<li>JavaEE - Java Enterprise Edition - Java企业版[不是一门具体的技术,而是一套技术的规范]</li>
-<li>JavaME - Java Micro Edition - Java微型版</li>
-</ul>
-<h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK,JRE,JVM"></a>JDK,JRE,JVM</h1><p>JRE - Java Runtime Environment - Java运行时环境,针对使用java程序的用户.</p>
-<p>​      - JRE中包含了程序执行时需要的核心的内库以及JVM.</p>
-<p>JDK - Java Developement Kit - Java开发工具包 - 针对程序员使用的.</p>
-<p>​         因为JDK中包含开发工具以及JRE.</p>
-<p>JVM - Java Vitrual Machine - Java虚拟机[跨平台的核心] - Java程序并不是直接在操作系统上执行的,而是在jvm上面执行的.</p>
-<h1 id="语言的分类"><a href="#语言的分类" class="headerlink" title="语言的分类"></a>语言的分类</h1><p>C - 编译型语言 - 执行效率比较高</p>
-<p>​    - “中文书” - 一次性翻译成 - “日本书”</p>
-<p>Java - 解释型语言</p>
-<p>​    - 配一个”翻译官”,只要日本人需要看,就随时翻译.</p>
-<h1 id="Java程序的执行原理"><a href="#Java程序的执行原理" class="headerlink" title="Java程序的执行原理"></a>Java程序的执行原理</h1><p>所有的文件的编码统一使用utf-8格式的.</p>
-<p>编写 - 编译 - 执行</p>
-<ul>
-<li>源码 - 放在.java为后缀的文件</li>
-</ul>
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ul>
-<li><p>编写</p>
-</li>
-<li><p>进入到.java文件所在的目录中,执行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
-<p>会出现一个.class字节码文件</p>
-</li>
-<li><p>运行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java HelloWorld</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>.java源文件 - 经过jdk中的编译器编译成了.class字节码文件 - 经过jvm中的解释器,逐行解释 - 解释成底层的机器语言[二进制].</p>
-<h2 id="跨平台性"><a href="#跨平台性" class="headerlink" title="跨平台性"></a>跨平台性</h2><p>注意:java语言是跨平台[与平台无关性] - 一次编译,多次执行.</p>
-<p>JVM不跨平台的.每个操作系统都是拥有自己独立的一个jvm的.</p>
-<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>命名[工程的名称,类的名称,包的名称,变量的名称,方法的名称等]</p>
-<h2 id="关于类的命名规则"><a href="#关于类的命名规则" class="headerlink" title="关于类的命名规则"></a>关于类的命名规则</h2><ul>
-<li><p>类名必须要保证和.java文件的名称高度保持一致.</p>
-</li>
-<li><p>类名推荐使用大驼峰命名规则[首字母要求大写,其余单词的每个首字母也要大写,其余字母全部采用小写,比如HelloWorld]</p>
-</li>
-<li><p>类名由数字,字母,下划线或者$符号组成,但是不能由数字开头.</p>
-</li>
-<li><p>类名不能是java的关键字.[java赋予了单词具有语法的意义的单词]</p>
-<p>public class void main byte short int long double float char boolean final try if while do..while..</p>
-</li>
-<li><p>类名不能是java中的保留的关键字[goto , const]</p>
-</li>
-<li><p>类名不能是以下三个字面量,true,false,null</p>
-</li>
-<li><p>类名可以使用中文,但是不推荐使用,原因是中文可能会出现乱码.</p>
-</li>
-<li><p>类名不推荐使用中文的拼音.</p>
-</li>
-<li><p>类名不能是java的内置的对象类型</p>
-</li>
-<li><p>类名提倡”见名知意”.</p>
-</li>
-</ul>
-<h1 id="HelloWorld案例"><a href="#HelloWorld案例" class="headerlink" title="HelloWorld案例"></a>HelloWorld案例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:本类用来演示:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/15 0015</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//使用class来定义一个类</span></span><br><span class="line">    <span class="comment">//程序的主入口 - main方法</span></span><br><span class="line">    <span class="comment">//psvm</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//tab不要随便使用 - 编辑器 - 需要设置tab相当于四个空格[手动设置]</span></span><br><span class="line">        <span class="comment">//具体的执行的程序 - 比如向控制台输出一句话</span></span><br><span class="line">        <span class="comment">//sout</span></span><br><span class="line">        <span class="comment">//PrintStream out = System.out;</span></span><br><span class="line">        <span class="comment">//out.println("HelloWorld");</span></span><br><span class="line">        System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="包的概念"><a href="#包的概念" class="headerlink" title="包的概念"></a>包的概念</h1><p>包就是用来管理类文件的,包之于类的作用就是相当于目录之于文件的作用.</p>
-<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
-<li><p>个人发布的,但是非独立完成的.</p>
-<p>indi.发起者的名称.项目的名称.模块名称</p>
-</li>
-<li><p>个人发布的,并且是个人独立完成的</p>
-<p>pers.个人名称.项目的名称.模块的名称</p>
-</li>
-<li><p>个人的,并且是私有的,没有对外公开的</p>
-<p>priv.个人名称.项目名称.模块名称</p>
-</li>
-<li><p>团队的项目</p>
-<p>team.团队名称.项目名称.模块名称</p>
-</li>
-<li><p><strong>公司的项目</strong></p>
-<p>公司域名倒置.项目代号.模块名称</p>
-<p><a href="http://www.aistar.tech" target="_blank" rel="noopener">www.aistar.tech</a></p>
-<p>tech.aistar.corejava.day01</p>
-</li>
-</ul>
-<p><strong>必须全部采用小写字母,并且以.隔开.每个部分在磁盘中都是对应一个具体的目录</strong></p>
-<p>千万不要使用java开头</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.corejava.day01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>此处的HelloWorld仅仅是类的名称的简称</p>
-</li>
-<li><p><strong>类的全限定名[类的全称] - 包名.类名</strong></p>
-<p>此处的HelloWorld的类的全称是tech.aistar.corejava.day01.HelloWorld</p>
-</li>
-</ul>
-<h1 id="关于Java的内置的包"><a href="#关于Java的内置的包" class="headerlink" title="关于Java的内置的包"></a>关于Java的内置的包</h1><p>java.xx开头的</p>
-<ul>
-<li>java.lang - java语言的核心包[System类就是在这个包中]</li>
-<li>java.util - java的工具包[java封装的一些工具类的存在的包]</li>
-<li>java.io - java的io相关的api所在的包</li>
-<li>java.net - socket存放的位置</li>
-<li>java.text - java格式化相关的处理类所在的包</li>
-<li><p>java.sql - 操作db相关的api</p>
-<p>javax.xx开头的 - java的拓展的包</p>
-</li>
-</ul>
-<h1 id="关于输出"><a href="#关于输出" class="headerlink" title="关于输出"></a>关于输出</h1><ol>
-<li>System.out.println() - 输出完毕之后,换行</li>
-<li>System.out.print() - 输出完毕之后,不换行</li>
-</ol>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
-<li>\n - 输出完毕之后再进行换行,并且光标是停在下一行的起始位置.</li>
-<li>\r - 回车,输出完毕之后,光标是停在当前行的起始的位置.</li>
-</ul>
-<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>\</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
-<li><p>单行注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">//TODO</span></span><br><span class="line"><span class="comment">//具体的单行注释</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多行注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 注释2</span></span><br><span class="line"><span class="comment">* 注释3</span></span><br><span class="line"><span class="comment">* 注释4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p>共同点:都是对具体的某行[多行]的代码进行注释的</p>
-</li>
-</ul>
-<ul>
-<li><p>文档注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 加在类上 - 对类的作用的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 加在方法上 - 对方法的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 可以通过javadoc.exe命令来生成文档树</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>编程从变量开始!编程的核心就是对Data数据进行CRUD操作.</p>
-<p>数据存储的介质?</p>
-<ul>
-<li>内存 - 读取效率比较高,但是容易丢失![并没有进行持久化操作]</li>
-<li>文件</li>
-<li>关系型数据库和非关系型数据库</li>
-</ul>
-<p>用什么东西存放?</p>
-<p>java中使用的是数据类型和变量[或者常量]来存储</p>
-<p>总结:变量就是用来在内存中存放数据的”容器”.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>数据类型 变量名 [= 初始值];</p>
-<ul>
-<li><p>基本数据类型 - 八大种</p>
-<p>|            |              |               |                    | 默认值[OO属性才能去看] |<br>| ———- | ———— | ————- | —————— | ———————- |<br>| byte       | 字节         | 1字节占8位    | -128~127           | 0                      |<br>| short      | 短整型       | 2个字节占16位 | -2^15 ~2^15-1      | 0                      |<br>| int        | 整型         | 4个字节占32位 | -2^31~2^31-1       | 0                      |<br>| long       | 长整型       | 8个字节占64位 | -2^63~2^63-1       | 0                      |<br>| float      | 单精度浮点数 | 4个字节占32位 | 1.4*10^-45~3.8E38  | 0.0                    |<br>| <strong>double</strong> | 双精度浮点数 | 8个字节占64位 | 4.9E-324~1.798E308 | 0.0                    |<br>| char       | 字符         | 2个字节16位   | 0~65535            | ‘\u0000’               |<br>| boolean    | 布尔类型     | 1个字节8位    | true/false         | false                  |</p>
-</li>
-</ul>
-<h2 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h2><p>标识符命名 - 变量 - 参考类名[大驼峰改成小驼峰,studentName]</p>
-<h2 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;<span class="comment">//将整数10赋值给一个int类型的变量a里面</span></span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">20</span>;</span><br><span class="line"><span class="comment">//==永远比较的是内存地址</span></span><br><span class="line">System.out.println(a == b);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>背后 - 在内存中是如何进行存放的?</p>
-<p>JVM简单分成栈,堆,方法区…</p>
-<p>所有的基本的数据类型存放在栈里面 - 读取效率非常高[优点],一旦确定了,那么它的空间大小就确定了 - “以空间换时间”</p>
-<p>当程序执行到int a = 10的时候,那么就会在栈里面,开辟一块区域[int],保存10这个数字.变量本质上是10这个数字在栈里面的内存地址.</p>
-<p>当程序执行到int b = 10;会优先到JVM的栈里面去看看有没有10.直接将b指向10的空间..</p>
-<h2 id="变量赋值的方式"><a href="#变量赋值的方式" class="headerlink" title="变量赋值的方式"></a>变量赋值的方式</h2><ul>
-<li><p>定义变量的同时进行赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>先定义或者声明一个变量,然后进行赋值[初始化]</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="comment">//变量在使用之前,一定要先进行赋值操作.</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">a = <span class="number">20</span>;</span><br><span class="line">System.out.println(a);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过合法的表达式进行赋值</p>
-<p>表达式 - 由变量或者常量或者字面量以及运算符组成的合法的语句.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> result = a + b;</span><br><span class="line"><span class="keyword">int</span> z = <span class="number">10</span> + b;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以通过链式赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x,y,z = <span class="number">100</span>;<span class="comment">//此处的x,y并没有被赋值,只有z被赋值了.</span></span><br><span class="line">x=y=<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以通过方法进行赋值[先不了解].</p>
-</li>
-</ul>
-<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><p>在java中,看到一个整数,默认的都是int类型</p>
-<p>看到一个小数,默认的都是double类型.</p>
-<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>低字节的数据类型可以自动转换成高字节的数据类型.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 因为100是在byte类型的范围</span></span><br><span class="line"><span class="comment">//2. 因为100是一个字面量 - JVM就可以精确确定它必然是在byte范围</span></span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">100</span>;<span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line"><span class="comment">//由于t是一个变量,JVM只会认为t是可以在int类型区间内变化的量</span></span><br><span class="line"><span class="comment">//不能精确判断出变量t究竟有没有超出byte类型的范围</span></span><br><span class="line"><span class="keyword">byte</span> a = t;<span class="comment">//error - 需要进行类型的强制转换!</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. 各个类型的范围</span><br><span class="line"><span class="number">2</span>. 字面量和变量的区别!</span><br></pre></td></tr></table></figure>
-<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>高字节的数据类型转换成低字节的数据类型的时候,会有精度的丢失,需要进行强制类型转换.</p>
-<p>小数据类型 变量 = (小数据类型)大的数据类型的变量或者字面量.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t = <span class="number">128</span>;</span><br><span class="line"><span class="keyword">byte</span> a = (<span class="keyword">byte</span>)t;</span><br><span class="line">System.out.println(a);<span class="comment">//100</span></span><br></pre></td></tr></table></figure>
-
+<li>前身是oak语言[原因是商标被提前注册了]
+        
       
 
       
-    </div>
+    </li></ul></div>
     <div class="article-info article-info-index">
       
       
@@ -1373,11 +1069,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1401,7 +1097,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
+                <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1409,11 +1105,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1421,15 +1113,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">搭建Redis和环境</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1441,10 +1137,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring Security</a>
               </li>
              
@@ -1453,11 +1145,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1465,11 +1157,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1481,7 +1181,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1489,15 +1189,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
               </li>
              
               <li class="article-tag-list-item">
