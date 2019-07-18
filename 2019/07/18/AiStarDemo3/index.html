@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>AiStarDemo3 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="while循环while循环和for循环都是属于前置循环. 前置循环 - 先判断循环是否成立的条件,然后再决定是否进入循环体中执行.  语法 123456789101112131415161718192021222324252627while(表达式)&amp;#123;    //循环体.&amp;#125;死循环:while(true)&amp;#123;    //...&amp;#125;//比如:int i = 0;w">
+  <meta name="description" content="while循环">
 <meta name="keywords" content="while循环&amp;方法&amp;数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AiStarDemo3">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/AiStarDemo3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="while循环while循环和for循环都是属于前置循环. 前置循环 - 先判断循环是否成立的条件,然后再决定是否进入循环体中执行.  语法 123456789101112131415161718192021222324252627while(表达式)&amp;#123;    //循环体.&amp;#125;死循环:while(true)&amp;#123;    //...&amp;#125;//比如:int i = 0;w">
+<meta property="og:description" content="while循环">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-18T00:14:10.923Z">
+<meta property="og:updated_time" content="2019-07-18T00:18:58.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AiStarDemo3">
-<meta name="twitter:description" content="while循环while循环和for循环都是属于前置循环. 前置循环 - 先判断循环是否成立的条件,然后再决定是否进入循环体中执行.  语法 123456789101112131415161718192021222324252627while(表达式)&amp;#123;    //循环体.&amp;#125;死循环:while(true)&amp;#123;    //...&amp;#125;//比如:int i = 0;w">
+<meta name="twitter:description" content="while循环">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,20 +179,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><p>while循环和for循环都是属于前置循环.</p>
-<p>前置循环 - 先判断循环是否成立的条件,然后再决定是否进入循环体中执行.</p>
-<ul>
-<li><p>语法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(表达式)&#123;</span><br><span class="line">    <span class="comment">//循环体.</span></span><br><span class="line">&#125;</span><br><span class="line">死循环:</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//比如:</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">    i++;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">11</span>)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打破循环第二种方式</span></span><br><span class="line"><span class="comment">//标记位</span></span><br><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(flag)&#123;</span><br><span class="line">    System.out.println(n);</span><br><span class="line">    n++;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">11</span>)&#123;</span><br><span class="line">        flag = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>应用场景:不知道循环的次数,但是知道循环退出的条件!</p>
-<p>练习1:定义两个变量,a = 20,b = 12.输出俩个变量的最大公约数!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来保存余数</span></span><br><span class="line">        <span class="keyword">int</span> left = -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            left = a % b;<span class="comment">//left = 20 % 12 = 8</span></span><br><span class="line">            a = b;<span class="comment">//a = 12</span></span><br><span class="line">            <span class="comment">//当余数是0的时候</span></span><br><span class="line">            <span class="keyword">if</span>(left == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            b = left;<span class="comment">//b = 8</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>练习2:定义一个变量,写一个程序,求出它对应的二进制的数[最精简]</p>
-<p>​          比如:10 -&gt; 1010    2-&gt;  10</p>
-<p>​    拓展:求出最全的二进制[针对正整数]</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.corejava.day03;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:本类用来演示:Binary - 二进制</span></span><br><span class="line"><span class="comment"> *                             HexString - 十六进制</span></span><br><span class="line"><span class="comment"> *                             OctalString - 八进制</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/17 0017</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个字符串,用来拼接余数</span></span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来统计二进制最精简的位数</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//求出商</span></span><br><span class="line">            <span class="keyword">int</span> s = a / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">//求出余数</span></span><br><span class="line">            <span class="keyword">int</span> y = a % <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//计数</span></span><br><span class="line">            count++;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//0 1 0 1</span></span><br><span class="line">            str = y + str;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//循环退出的条件</span></span><br><span class="line">            <span class="keyword">if</span>(s == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//下一次的a是上一次的商</span></span><br><span class="line">            a = s;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        System.out.println(<span class="string">"位数:"</span>+count);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个字符串,用来拼接"0"</span></span><br><span class="line">        String zero = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来判断每8个,加一个空格的计数器</span></span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//拼接0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">32</span> - count; i++) &#123;</span><br><span class="line">            zero+=<span class="string">"0"</span>;<span class="comment">//zero = zero + "0";</span></span><br><span class="line"></span><br><span class="line">            m++;</span><br><span class="line"></span><br><span class="line"><span class="comment">//            if(m%8 == 0)&#123;</span></span><br><span class="line"><span class="comment">//                zero+=" ";</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="keyword">if</span>(m == <span class="number">8</span>)&#123;</span><br><span class="line">                zero+=<span class="string">" "</span>;</span><br><span class="line">                m = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(zero+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h1 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h1><a id="more"></a>while循环和for循环都是属于前置循环.<br><br>前置循环 - 先判断循环是否成立的条件,然后再决定是否进入循环体中执行.<br><br>- 语法<br><br>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(表达式)&#123;</span><br><span class="line">    <span class="comment">//循环体.</span></span><br><span class="line">&#125;</span><br><span class="line">死循环:</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//比如:</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">    i++;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">11</span>)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//打破循环第二种方式</span></span><br><span class="line"><span class="comment">//标记位</span></span><br><span class="line"><span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(flag)&#123;</span><br><span class="line">    System.out.println(n);</span><br><span class="line">    n++;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">11</span>)&#123;</span><br><span class="line">        flag = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  应用场景:不知道循环的次数,但是知道循环退出的条件!</p>
+<p>  练习1:定义两个变量,a = 20,b = 12.输出俩个变量的最大公约数!</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来保存余数</span></span><br><span class="line">        <span class="keyword">int</span> left = -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            left = a % b;<span class="comment">//left = 20 % 12 = 8</span></span><br><span class="line">            a = b;<span class="comment">//a = 12</span></span><br><span class="line">            <span class="comment">//当余数是0的时候</span></span><br><span class="line">            <span class="keyword">if</span>(left == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            b = left;<span class="comment">//b = 8</span></span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>  练习2:定义一个变量,写一个程序,求出它对应的二进制的数[最精简]</p>
+<p>  ​          比如:10 -&gt; 1010    2-&gt;  10</p>
+<p>  ​    拓展:求出最全的二进制[针对正整数]</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.corejava.day03;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:本类用来演示:Binary - 二进制</span></span><br><span class="line"><span class="comment"> *                             HexString - 十六进制</span></span><br><span class="line"><span class="comment"> *                             OctalString - 八进制</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/17 0017</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个字符串,用来拼接余数</span></span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来统计二进制最精简的位数</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="comment">//求出商</span></span><br><span class="line">            <span class="keyword">int</span> s = a / <span class="number">2</span>;</span><br><span class="line">            <span class="comment">//求出余数</span></span><br><span class="line">            <span class="keyword">int</span> y = a % <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//计数</span></span><br><span class="line">            count++;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//0 1 0 1</span></span><br><span class="line">            str = y + str;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//循环退出的条件</span></span><br><span class="line">            <span class="keyword">if</span>(s == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//下一次的a是上一次的商</span></span><br><span class="line">            a = s;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">        System.out.println(<span class="string">"位数:"</span>+count);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个字符串,用来拼接"0"</span></span><br><span class="line">        String zero = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个变量,用来判断每8个,加一个空格的计数器</span></span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//拼接0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">32</span> - count; i++) &#123;</span><br><span class="line">            zero+=<span class="string">"0"</span>;<span class="comment">//zero = zero + "0";</span></span><br><span class="line"></span><br><span class="line">            m++;</span><br><span class="line"></span><br><span class="line"><span class="comment">//            if(m%8 == 0)&#123;</span></span><br><span class="line"><span class="comment">//                zero+=" ";</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="keyword">if</span>(m == <span class="number">8</span>)&#123;</span><br><span class="line">                zero+=<span class="string">" "</span>;</span><br><span class="line">                m = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(zero+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="补充break"><a href="#补充break" class="headerlink" title="补充break"></a>补充break</h2><p>break - 出现在switch块和循环块.跳出它所在的那一层循环.</p>
 <p>​           - 打破循环.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;=<span class="number">9</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">9</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(i+<span class="string">":"</span>+j)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -507,15 +501,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+                <a href="javascript:void(0)" class="js-tag color5">变量&常量&运算符</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,11 +509,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +517,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">前缀 中缀 后缀表达式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">八皇后问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis学习第一天</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Redis命令</a>
+                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +561,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java简介&变量</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">while循环&方法&数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">搭建Redis和环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,10 +605,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spring Security</a>
               </li>
              
@@ -587,7 +613,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">搭建Redis和环境</a>
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,7 +621,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,11 +629,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前缀 中缀 后缀表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,47 +649,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">while循环&方法&数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java简介</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
               </li>
              
               <li class="article-tag-list-item">
