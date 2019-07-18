@@ -6,23 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SpringBoot高级-检索-3 | Hexo</title>
+  <title>Tag: while循环&amp;方法&amp;数组 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="整合ElasticSearch测试SpringBoot默认使用SpringData ElasticSearch模块进行操作">
-<meta name="keywords" content="整合ElasticSearch">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot高级-检索-3">
-<meta property="og:url" content="http://yoursite.com/2019/06/17/SpringBoot高级-检索-3/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/while循环-方法-数组/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="整合ElasticSearch测试SpringBoot默认使用SpringData ElasticSearch模块进行操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/06/17/5d07481717b7878367.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/17/5d074a54511b235589.png">
-<meta property="og:updated_time" content="2019-06-17T09:16:38.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot高级-检索-3">
-<meta name="twitter:description" content="整合ElasticSearch测试SpringBoot默认使用SpringData ElasticSearch模块进行操作">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/17/5d07481717b7878367.png">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,226 +154,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SpringBoot高级-检索-3" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      SpringBoot高级-检索-3
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/18/AiStarDemo3/" class="archive-article-date">
+  	<time datetime="2019-07-18T00:13:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/18/AiStarDemo3/">AiStarDemo3</a>
     </h1>
   
 
-        
-        <a href="/2019/06/17/SpringBoot高级-检索-3/" class="archive-article-date">
-  	<time datetime="2019-06-17T06:37:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="整合ElasticSearch测试"><a href="#整合ElasticSearch测试" class="headerlink" title="整合ElasticSearch测试"></a>整合ElasticSearch测试</h1><p>SpringBoot默认使用SpringData ElasticSearch模块进行操作<a id="more"></a></p>
-<p>SpringBoot默认支持两种技术来和ES交互<br> 1.Jest（默认不生效）<br> 需要导入jest的工具包（io.searchboc.client.JestClient)<br> 2.SpringData ElasticSearch</p>
-<p>​    1)Client 节点信息：clusterNodes;clusterName</p>
-<p>​    2）ElasticSearchTemplate操作ES</p>
-<p>​    3）编写一个ElasticSearchRepository的子接口来操作ES</p>
-<h2 id="使用Jest与ES交互"><a href="#使用Jest与ES交互" class="headerlink" title="使用Jest与ES交互"></a>使用Jest与ES交互</h2><h3 id="依赖包"><a href="#依赖包" class="headerlink" title="依赖包"></a>依赖包</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.searchbox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jest<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>默认是本机的9200端口，需要设置虚拟机的9200端口</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.elasticsearch.jest.uris=http://192.168.10.128:9200/</span><br></pre></td></tr></table></figure>
-<h3 id="索引一篇文章"><a href="#索引一篇文章" class="headerlink" title="索引一篇文章"></a>索引一篇文章</h3><p>声明Ariticle类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ariticle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@JestId</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String content;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String title)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContent</span><span class="params">(String content)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.content = content;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>索引测试</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">JestClient jestClient;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="comment">//1.给ES中索引一个文档</span></span><br><span class="line">   Ariticle ariticle = <span class="keyword">new</span> Ariticle();</span><br><span class="line">   ariticle.setId(<span class="number">1</span>);</span><br><span class="line">   ariticle.setTitle(<span class="string">"好消息"</span>);</span><br><span class="line">   ariticle.setAuthor(<span class="string">"zhangsan"</span>);</span><br><span class="line">   ariticle.setContent(<span class="string">"Hello World"</span>);</span><br><span class="line">   <span class="comment">//构建一个索引功能</span></span><br><span class="line">   Index index = <span class="keyword">new</span> Index.Builder(ariticle).index(<span class="string">"atguigu"</span>).type(<span class="string">"news"</span>).build();</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">      <span class="comment">//执行</span></span><br><span class="line">      jestClient.execute(index);</span><br><span class="line">   &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/06/17/5d07481717b7878367.png" alt></p>
-<h3 id="搜索测试"><a href="#搜索测试" class="headerlink" title="搜索测试"></a>搜索测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试搜索</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">search</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   String json = <span class="string">"&#123;\n"</span> +</span><br><span class="line">         <span class="string">"    \"query\" : &#123;\n"</span> +</span><br><span class="line">         <span class="string">"        \"match\" : &#123;\n"</span> +</span><br><span class="line">         <span class="string">"            \"content\" : \"hello\"\n"</span> +</span><br><span class="line">         <span class="string">"        &#125;\n"</span> +</span><br><span class="line">         <span class="string">"    &#125;\n"</span> +</span><br><span class="line">         <span class="string">"&#125;"</span>;</span><br><span class="line">   <span class="comment">//构建搜索功能</span></span><br><span class="line">   Search search = <span class="keyword">new</span> Search.Builder(json).addIndex(<span class="string">"atguigu"</span>).addType(<span class="string">"news"</span>).build();</span><br><span class="line"></span><br><span class="line">   <span class="comment">//执行</span></span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">      SearchResult searchResult = jestClient.execute(search);</span><br><span class="line">      System.out.println(searchResult.getJsonString());</span><br><span class="line">   &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2019/06/17/5d074a54511b235589.png" alt></p>
-<h2 id="使用SpringData与ES交互"><a href="#使用SpringData与ES交互" class="headerlink" title="使用SpringData与ES交互"></a>使用SpringData与ES交互</h2><p>Es版本可能不适配</p>
-<p>版本适配说明<a href="https://github.com/spring-projects/spring-data-elasticsearch" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-elasticsearch</a></p>
-<table>
-<thead>
-<tr>
-<th>Spring Data Elasticsearch</th>
-<th>Elasticsearch</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3.2.x</td>
-<td>6.7.2</td>
-</tr>
-<tr>
-<td>3.1.x</td>
-<td>6.2.2</td>
-</tr>
-<tr>
-<td>3.0.x</td>
-<td>5.5.0</td>
-</tr>
-<tr>
-<td>2.1.x</td>
-<td>2.4.0</td>
-</tr>
-<tr>
-<td>2.0.x</td>
-<td>2.2.0</td>
-</tr>
-<tr>
-<td>1.3.x</td>
-<td>1.5.2</td>
-</tr>
-</tbody>
-</table>
-<p>如果版本不适配：</p>
-<p>​        1）升级SpringBoot版本</p>
-<p>​        2）安排对应版本的ES</p>
-<p>SpringData ElasticSearch两种用法：<a href="https://github.com/spring-projects/spring-data-elasticsearch" target="_blank" rel="noopener">https://github.com/spring-projects/spring-data-elasticsearch</a></p>
-<h3 id="编写一个ElasticSearchRepository的子接口来操作ES"><a href="#编写一个ElasticSearchRepository的子接口来操作ES" class="headerlink" title="编写一个ElasticSearchRepository的子接口来操作ES"></a>编写一个ElasticSearchRepository的子接口来操作ES</h3><p><strong>声明Book类</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Document</span>(indexName = <span class="string">"atguigu"</span>,type = <span class="string">"book"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String bookName;</span><br><span class="line">    <span class="keyword">private</span> String author;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getBookName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bookName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBookName</span><span class="params">(String bookName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.bookName = bookName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.author = author;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Book&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", bookName='"</span> + bookName + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", author='"</span> + author + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">BookRepository bookRepository;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span></span>&#123;</span><br><span class="line">   Book book = <span class="keyword">new</span> Book();</span><br><span class="line">   book.setId(<span class="number">1</span>);</span><br><span class="line">   book.setBookName(<span class="string">"西游记"</span>);</span><br><span class="line">   book.setAuthor(<span class="string">"吴承恩"</span>);</span><br><span class="line">   bookRepository.index(book);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>自定义查找<a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.0.3.RELEASE/reference/html/#elasticsearch.repositories" target="_blank" rel="noopener">https://docs.spring.io/spring-data/elasticsearch/docs/3.0.3.RELEASE/reference/html/#elasticsearch.repositories</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">整合ElasticSearch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">while循环&方法&数组</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/17/SpringBoot高级-检索-3/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/06/17/SpringBoot与任务-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SpringBoot与任务-1
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/06/16/学期作业-XML实验报告/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">学期作业-XML实验报告</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#整合ElasticSearch测试"><span class="toc-number">1.</span> <span class="toc-text">整合ElasticSearch测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Jest与ES交互"><span class="toc-number">1.1.</span> <span class="toc-text">使用Jest与ES交互</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖包"><span class="toc-number">1.1.1.</span> <span class="toc-text">依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">1.1.2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引一篇文章"><span class="toc-number">1.1.3.</span> <span class="toc-text">索引一篇文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索测试"><span class="toc-number">1.1.4.</span> <span class="toc-text">搜索测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用SpringData与ES交互"><span class="toc-number">1.2.</span> <span class="toc-text">使用SpringData与ES交互</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编写一个ElasticSearchRepository的子接口来操作ES"><span class="toc-number">1.2.1.</span> <span class="toc-text">编写一个ElasticSearchRepository的子接口来操作ES</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -404,9 +230,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
