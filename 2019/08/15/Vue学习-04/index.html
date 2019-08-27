@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>AiStarDemo2 | Hexo</title>
+  <title>Vue学习-04 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="变量的分类 局部变量">
-<meta name="keywords" content="变量&amp;常量&amp;运算符">
+  <meta name="description" content="Vue中的动画Vue中的动画的目的:提高用户的体验,帮助用户更好的理解页面中的功能 使用过渡类名123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172&amp;lt;!DOCTYPE html">
+<meta name="keywords" content="Vue中的动画">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AiStarDemo2">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/AiStarDemo2/index.html">
+<meta property="og:title" content="Vue学习-04">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/Vue学习-04/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="变量的分类 局部变量">
+<meta property="og:description" content="Vue中的动画Vue中的动画的目的:提高用户的体验,帮助用户更好的理解页面中的功能 使用过渡类名123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172&amp;lt;!DOCTYPE html">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-18T00:19:51.953Z">
+<meta property="og:updated_time" content="2019-08-17T00:16:28.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AiStarDemo2">
-<meta name="twitter:description" content="变量的分类 局部变量">
+<meta name="twitter:title" content="Vue学习-04">
+<meta name="twitter:description" content="Vue中的动画Vue中的动画的目的:提高用户的体验,帮助用户更好的理解页面中的功能 使用过渡类名123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172&amp;lt;!DOCTYPE html">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,113 +159,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AiStarDemo2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Vue学习-04" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      AiStarDemo2
+      Vue学习-04
     </h1>
   
 
         
-        <a href="/2019/07/17/AiStarDemo2/" class="archive-article-date">
-  	<time datetime="2019-07-17T00:14:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+        <a href="/2019/08/15/Vue学习-04/" class="archive-article-date">
+  	<time datetime="2019-08-15T00:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="变量的分类"><a href="#变量的分类" class="headerlink" title="变量的分类"></a>变量的分类</h1><ul>
-<li><p>局部变量<a id="more"></a></p>
-<p>出现在方法体中的,或者方法的声明中的变量 - 局部变量</p>
-</li>
-<li><p>全局变量</p>
-</li>
-</ul>
-<h1 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h1><p>仅仅存在于它所在的{}中.</p>
-<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p>不可变的量</p>
-<p>命名 - 全部采用大写,并且出现多个单词使用下划线隔开.</p>
-<p>对应在API手册中的字段.</p>
-<p>语法:</p>
-<p>final - 关键字,修饰符</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> MAX_DAY = <span class="number">1</span>;</span><br><span class="line">MAX_DAY = <span class="number">20</span>;<span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
-<p>应用场景:为了提高程序的可读性.</p>
-<h1 id="运算符-快速过"><a href="#运算符-快速过" class="headerlink" title="运算符[快速过]"></a>运算符[快速过]</h1><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ - * =  +=  -= /= %= *=</span><br></pre></td></tr></table></figure>
-<p>/ - 取整   10/3 = 3</p>
-<p>% - 取余[模] 10%3 = 1</p>
-<p>/和%应用场景:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">可以用来取出某个数字任何一位上面的数字</span><br><span class="line"><span class="keyword">int</span> year = <span class="number">2019</span>;</span><br><span class="line">System.out.println(<span class="string">"千位:"</span>+year/<span class="number">1000</span>%<span class="number">10</span>);<span class="comment">//2</span></span><br><span class="line">System.out.println(<span class="string">"百位:"</span>+year/<span class="number">100</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"十位:"</span>+year/<span class="number">10</span>%<span class="number">10</span>);<span class="comment">//0</span></span><br><span class="line">System.out.println(<span class="string">"个位:"</span>+year%<span class="number">10</span>);<span class="comment">//9</span></span><br></pre></td></tr></table></figure>
-<p>+=</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">a+=<span class="number">1</span>;<span class="comment">//a = a + 1;//可能会进行窄化操作</span></span><br><span class="line"><span class="comment">//short题目</span></span><br></pre></td></tr></table></figure>
-<p>++和– </p>
-<ul>
-<li><p>前++和前–</p>
-<p>++出现在变量的前面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//++i;//i = i + 1;</span></span><br><span class="line"><span class="keyword">int</span> result = ++i;<span class="comment">//通过表达式进行赋值</span></span><br><span class="line"><span class="comment">//i = ?     2</span></span><br><span class="line"><span class="comment">//result = ? 2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>后++和后–</p>
-<p>++出现在变量的后边</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i= <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> result = i++;<span class="comment">//i++ -&gt; i = i + 1</span></span><br><span class="line"><span class="comment">//i = ?    2</span></span><br><span class="line"><span class="comment">//result = ?  1</span></span><br></pre></td></tr></table></figure>
-<p>总结:前++代表的是变量i和++i表达式的结果都会自增1</p>
-<p>​         后++代表的是变量i会自增1,并且将i自增之前的值先赋值给了变量result</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = a++ + ++a + --b + b--;</span><br><span class="line"><span class="keyword">int</span> result = c-- + a-- + c++;</span><br><span class="line"><span class="comment">//result = ?</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt; &gt;= &lt;= != ==</span><br></pre></td></tr></table></figure>
-<p>比较之后的结果是boolean类型</p>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>通常是用来进行计算的.但是可以用来进行连接判断条件的[不推荐使用]</p>
-<p>位运算符的性能是最高的.</p>
-<p>笔试题:请您以最高性能的方式计算出2的3次方!</p>
-<ul>
-<li><p>&amp; - 按位与 </p>
-<p>都是1,结果才是1</p>
-<p>10 &amp; 8 = 8</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">8</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>| - 按位或</p>
-<p>只要出现1个1,结果就是1</p>
-<p>10 | 8 = 10</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>异或^</p>
-<p>相同为0,不同为1 </p>
-<p>10 ^ 8 = 2</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">-------</span><br><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> - 二进制 -&gt; 十进制<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>10 ^ 8 ^ 8 = </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </span><br><span class="line">--------</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> -&gt; 十进制<span class="number">10</span></span><br></pre></td></tr></table></figure>
-<p>总结:一个数连续异或同一个数俩次,结果是它本身!!!</p>
-<p>应用场景:加密和解密.</p>
-<p>笔试题:</p>
-<p>交换俩个变量的值?</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1. 传统的方式 - 使用第三方变量</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//        int temp = a;</span></span><br><span class="line">    <span class="comment">//        a = b;</span></span><br><span class="line">    <span class="comment">//        b = temp;</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//不允许使用第三方变量</span></span><br><span class="line">    <span class="comment">//总结:一个数连续异或同一个数俩次,结果是它本身!!!</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20</span></span><br><span class="line">    <span class="comment">// b = a ^ b;//b = 10 ^ 20 ^ 20 = 10</span></span><br><span class="line">    <span class="comment">// a = a ^ b;//a = 10 ^ 20 ^ 10 = 20</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//自创的</span></span><br><span class="line">    <span class="comment">//b = 10^20^20 = 10</span></span><br><span class="line">    b = a^(a=b)^b;</span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="string">"a:"</span>+a);<span class="comment">//20</span></span><br><span class="line">    System.out.println(<span class="string">"b:"</span>+b);<span class="comment">//10</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>负数的二进制表现形式</p>
-<p>负数在计算机中是以补码的形式!</p>
-<p><strong>正数的原码,补码,反码都是它本身!</strong></p>
-<p>Java中的数据都是有符号的,最高位代表符号位,1代表的是负数,0代表的是正数!</p>
-<p><strong>针对负数:</strong></p>
-<p>补码 = 反码 + 1;</p>
-<p>反码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反]</p>
-<p>补码 = 原码<strong>取反</strong>[符号位不变,其余位按位取反] + 1</p>
-</li>
-</ul>
-<p>​     -10的二进制?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~java</span><br></pre></td></tr></table></figure>
-<p>-10的原码:10000000 00000000 00000000 00001010<br>-10的反码:11111111 11111111 11111111 11110101</p>
-<pre><code>+                                       1
-------------------------------------------
-     11111111 11111111 11111111 11110110
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~~</span><br></pre></td></tr></table></figure>
-<p>取反的符号~</p>
-<p>~9 = ~00000000 00000000 00000000 0000100 1</p>
-<p>​          11111111  11111111 1111111111110110</p>
-<p><strong>-10 = ~9 - 总结出: ~x = -(x+1)</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt; - 左位移</span><br><span class="line"><span class="number">2</span>&lt;&lt;<span class="number">2</span> = <span class="number">8</span></span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; 无符号的位移,移动多少位,那么就在最高位补几个<span class="number">0</span></span><br><span class="line"></span><br><span class="line">-<span class="number">10</span>&gt;&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt;&gt; <span class="number">2</span></span><br><span class="line">          <span class="number">0011111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> - &gt;二进制-&gt;十进制</span><br><span class="line">          =<span class="number">1073741821</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; 带符号的位移.移动多少位,那么最高位就是补几个符号位!</span><br><span class="line">-<span class="number">10</span>&gt;&gt;<span class="number">2</span> = <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">11110110</span> &gt;&gt; <span class="number">2</span></span><br><span class="line">    	 <span class="number">1111111111</span> <span class="number">11111111</span> <span class="number">11111111</span> <span class="number">111101</span> = ~<span class="number">2</span> = -<span class="number">3</span></span><br><span class="line">    	 </span><br><span class="line">         <span class="number">0000000000</span> <span class="number">000</span>...   ....     <span class="number">000010</span> = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Vue中的动画"><a href="#Vue中的动画" class="headerlink" title="Vue中的动画"></a>Vue中的动画</h1><p><strong>Vue中的动画的目的:</strong>提高用户的体验,帮助用户更好的理解页面中的功能</p>
+<h2 id="使用过渡类名"><a href="#使用过渡类名" class="headerlink" title="使用过渡类名"></a>使用过渡类名</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-resource-1.3.4.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--2.自定义两组样式,来控制transition内部的元素实现动画--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">            /* v-enter 是进入之前[这是一个时间节点],元素的起始状态,此时还没有开始进入*/</span><br><span class="line">            /* v-leave-to[]是动画离开之后,离开的终止状态,此时,元素已经结束*/</span><br><span class="line">            .v-enter,</span><br><span class="line">            .v-leave-to&#123;</span><br><span class="line">                opacity: 0;</span><br><span class="line">                transform: translateX(80px)</span><br><span class="line">            &#125;</span><br><span class="line">            /* v-enter-active [入场动画的时间段]</span><br><span class="line">               v-leave-active [离场动画的时间段]*/</span><br><span class="line">            .v-enter-active,</span><br><span class="line">            .v-leave-active&#123;</span><br><span class="line">                transition:all 0.4s ease;</span><br><span class="line">            &#125;</span><br><span class="line">            .my-enter,</span><br><span class="line">            .my-leave-to&#123;</span><br><span class="line">                opacity: 0;</span><br><span class="line">                transform: translateY(80px)</span><br><span class="line">            &#125;</span><br><span class="line">            /* v-enter-active [入场动画的时间段]</span><br><span class="line">               v-leave-active [离场动画的时间段]*/</span><br><span class="line">            .my-enter-active,</span><br><span class="line">            .my-leave-active&#123;</span><br><span class="line">                transition:all 0.4s ease;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle"</span> @<span class="attr">click</span>=<span class="string">"flag=!flag"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--需求:点击按钮,让h3显示,再点击,让h3隐藏--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--1.使用transition元素,把需要被动画控制的元素,包裹起来 --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--transition元素,是Vue官方提供的--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">"flag"</span>&gt;</span>这是一个h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle"</span> @<span class="attr">click</span>=<span class="string">"flag1=!flag1"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--需求:点击按钮,让h3显示,再点击,让h3隐藏--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--1.使用transition元素,把需要被动画控制的元素,包裹起来 --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--transition元素,是Vue官方提供的--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span> = <span class="string">"my"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span>=<span class="string">"flag1"</span>&gt;</span>这是一个h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="javascript">                flag : <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">                flag1:<span class="literal">false</span></span></span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;&#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用animated类实现动画"><a href="#使用animated类实现动画" class="headerlink" title="使用animated类实现动画"></a>使用animated类实现动画</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-resource-1.3.4.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"./lib/animate.css"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--入场bounceIn 离场bounceOut--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"toggle"</span> @<span class="attr">click</span> = <span class="string">"flag = !flag"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--需求:点击按钮,让h3显示,再点击,让h3隐藏--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;transition enter-active-class="animated bounceIn" leave-active-class="animated bounceOut"&gt;</span></span><br><span class="line"><span class="comment">            &lt;h3 v-if = "flag"&gt;这是一个h3&lt;/h3&gt;</span></span><br><span class="line"><span class="comment">        &lt;/transition&gt; --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--使用:duration来统一设置入场和离场时候的动画时长--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;transition enter-active-class="bounceIn" leave-active-class="bounceOut" :duration="400"&gt;</span></span><br><span class="line"><span class="comment">            &lt;h3 v-if = "flag" class="animated"&gt;这是一个h3&lt;/h3&gt;</span></span><br><span class="line"><span class="comment">        &lt;/transition&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--使用:duration="&#123;enter:200,leave:400&#125;"来分别设置入场的时长和离场的时长--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transition</span> <span class="attr">enter-active-class</span>=<span class="string">"bounceIn"</span> <span class="attr">leave-active-class</span>=<span class="string">"bounceOut"</span> <span class="attr">:duration</span>=<span class="string">"&#123;enter:200,leave:400&#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h3</span> <span class="attr">v-if</span> = <span class="string">"flag"</span> <span class="attr">class</span>=<span class="string">"animated"</span>&gt;</span>这是一个h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="javascript">                flag : <span class="literal">false</span></span></span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;&#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用钩子函数模拟小球的半场动画"><a href="#使用钩子函数模拟小球的半场动画" class="headerlink" title="使用钩子函数模拟小球的半场动画"></a>使用钩子函数模拟小球的半场动画</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-resource-1.3.4.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">            .ball&#123;</span><br><span class="line">                width:15px;</span><br><span class="line">                height: 15px;</span><br><span class="line">                border-radius: 50%;</span><br><span class="line">                background-color: red;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"加入购物车"</span> @<span class="attr">click</span>=<span class="string">"flag=!flag"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--1.使用transition元素把小球包裹起来--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transition</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">before-enter</span>=<span class="string">"beforeEnter"</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">enter</span>=<span class="string">"enter"</span></span></span><br><span class="line"><span class="tag">         @<span class="attr">after-enter</span>=<span class="string">"afterEnter"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ball"</span> <span class="attr">v-show</span>=<span class="string">"flag"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="javascript">                flag:<span class="literal">false</span>,</span></span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line"><span class="javascript">                <span class="comment">//注意:动画钩子函数的第一个参数:el,表示要执行动画的那个DOM元素,是个原生的JS DOM对象</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">//大家可以认为,el是通过document.getElementBy('')方式获取到的原生JS DOM对象</span></span></span><br><span class="line">                beforeEnter(el)&#123;</span><br><span class="line"><span class="javascript">                    <span class="comment">//beforeEnter表示动画入场之前,此时,动画尚未开始,可以在beforeEnter中,设置原生开始动画之前的起始样式</span></span></span><br><span class="line"><span class="javascript">                    <span class="comment">//设置小球开始动画之前的起始位置</span></span></span><br><span class="line"><span class="javascript">                    el.style.transform = <span class="string">"translate(0,0)"</span></span></span><br><span class="line">                &#125;,</span><br><span class="line">                enter(el,done)&#123;</span><br><span class="line"><span class="javascript">                    <span class="comment">//这句话没有实际的作用,但是如果不写,出不来动画效果;</span></span></span><br><span class="line"><span class="javascript">                    <span class="comment">//可以认为el.offsetWidth会强制动画刷新</span></span></span><br><span class="line">                    el.offsetWidth</span><br><span class="line"><span class="javascript">                    <span class="comment">//enter表示动画开始之后的样式,这里,可以设置小球完成动画之后的,结束状态</span></span></span><br><span class="line"><span class="javascript">                    el.style.transform=<span class="string">"translate(150px,450px)"</span></span></span><br><span class="line"><span class="javascript">                    el.style.transition=<span class="string">"all 1s ease"</span></span></span><br><span class="line"><span class="javascript">                   <span class="comment">//这里的done,其实就是afterEnter这个函数,也就是说:done是afterEnter函数的引用</span></span></span><br><span class="line">                    done()</span><br><span class="line">                &#125;,</span><br><span class="line">                afterEnter(el)&#123;</span><br><span class="line"><span class="javascript">                    <span class="comment">//动画完成之后,会调用afterEnter</span></span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.flag = !<span class="keyword">this</span>.flag</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="为列表添加动画"><a href="#为列表添加动画" class="headerlink" title="为列表添加动画"></a>为列表添加动画</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-resource-1.3.4.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">        li&#123;</span><br><span class="line">            border:1px dashed #999999;</span><br><span class="line">            margin: 5px;</span><br><span class="line">            line-height: 35px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        li:hover&#123;</span><br><span class="line">            background-color:hotpink;</span><br><span class="line">            transition: all 0.8s ease;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .v-enter,</span><br><span class="line">        .v-leave-to&#123;</span><br><span class="line">            opacity:0;</span><br><span class="line">            transform:translateY(80px);</span><br><span class="line">        &#125;</span><br><span class="line">        .v-enter-active,</span><br><span class="line">        .v-leave-active&#123;</span><br><span class="line">            transition: all 0.6s ease;</span><br><span class="line">        &#125;</span><br><span class="line">        /*下面的.v-move和.v-leave-active配合使用,能够实现列表后续的元素,渐渐飘上来的效果*/</span><br><span class="line">        .v-move&#123;</span><br><span class="line">            transition: all 0.6s ease;</span><br><span class="line">        &#125;</span><br><span class="line">        .v-leave-active&#123;</span><br><span class="line">            position:absolute;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">                ID:</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">                Name:</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"添加"</span> @<span class="attr">click</span>=<span class="string">"add"</span>&gt;</span></span><br><span class="line">           </span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--在实现列表过渡的时候,如果需要过渡的元素,是通过v-for循环渲染出来的,不能使用transition包裹,需要使用transitionGroup--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--如果要为v-for循环创建的元素设为动画,必须为每一个元素设置 :key属性--&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--给transition-group添加appear属性,实现页面刚展示出来的时候的效果--&gt;</span></span><br><span class="line">        </span><br><span class="line">            <span class="comment">&lt;!-- &lt;ul&gt; --&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--通过为transition-group元素,设置tag属性,指定transition-group渲染为指定的元素,如果不指定tag属性,默认渲染为span标签--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">appear</span> <span class="attr">tag</span>=<span class="string">"ul"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item,i) in list"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span> @<span class="attr">click</span>=<span class="string">"del(i)"</span>&gt;</span></span><br><span class="line">                                &#123;&#123;item.id&#125;&#125; --- &#123;&#123;item.name&#125;&#125;</span><br><span class="line">                        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span>        </span><br><span class="line">            <span class="comment">&lt;!-- &lt;/ul&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            el: <span class="string">'#app'</span>,</span></span><br><span class="line">            data: &#123;</span><br><span class="line"><span class="javascript">                id:<span class="string">''</span>,</span></span><br><span class="line"><span class="javascript">                name:<span class="string">''</span>,</span></span><br><span class="line">                list: [</span><br><span class="line"><span class="javascript">                    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">'赵高'</span> &#125;,</span></span><br><span class="line"><span class="javascript">                    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">'秦桧'</span> &#125;,</span></span><br><span class="line"><span class="javascript">                    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">'严嵩'</span> &#125;,</span></span><br><span class="line"><span class="javascript">                    &#123; <span class="attr">id</span>: <span class="number">4</span>, <span class="attr">name</span>: <span class="string">'魏忠贤'</span> &#125;</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line">                add()&#123;</span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.list.push(&#123;<span class="attr">id</span>:<span class="keyword">this</span>.id,<span class="attr">name</span>:<span class="keyword">this</span>.name&#125;)</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.id = <span class="keyword">this</span>.name = <span class="string">''</span></span></span><br><span class="line">                &#125;,</span><br><span class="line">                del(i)&#123;</span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.list.splice(i,<span class="number">1</span>)</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -279,7 +197,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">变量&常量&运算符</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Vue中的动画</a>
         		</li>
       		
 		</ul>
@@ -335,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/17/AiStarDemo2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/15/Vue学习-04/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +267,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/18/AiStarDemo3/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/17/Vue学习-05/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          AiStarDemo3
+          Vue学习-05
         
       </div>
     </a>
   
   
-    <a href="/2019/07/15/AiStarDemo1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AiStarDemo1</div>
+    <a href="/2019/08/11/Vue学习-03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue学习-03</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -387,7 +305,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量的分类"><span class="toc-number">1.</span> <span class="toc-text">变量的分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量的作用域"><span class="toc-number">2.</span> <span class="toc-text">变量的作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常量"><span class="toc-number">3.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运算符-快速过"><span class="toc-number">4.</span> <span class="toc-text">运算符[快速过]</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算术运算符"><span class="toc-number">4.1.</span> <span class="toc-text">算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比较运算符"><span class="toc-number">4.2.</span> <span class="toc-text">比较运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#位运算符"><span class="toc-number">4.3.</span> <span class="toc-text">位运算符</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue中的动画"><span class="toc-number">1.</span> <span class="toc-text">Vue中的动画</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用过渡类名"><span class="toc-number">1.1.</span> <span class="toc-text">使用过渡类名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用animated类实现动画"><span class="toc-number">1.2.</span> <span class="toc-text">使用animated类实现动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用钩子函数模拟小球的半场动画"><span class="toc-number">1.3.</span> <span class="toc-text">使用钩子函数模拟小球的半场动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为列表添加动画"><span class="toc-number">1.4.</span> <span class="toc-text">为列表添加动画</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -499,7 +417,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">变量&常量&运算符</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,15 +425,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,10 +457,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
               </li>
              
@@ -555,31 +465,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java简介&变量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">while循环&方法&数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,11 +481,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,11 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,11 +521,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,11 +541,55 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">对ArraysList.contains()重写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vue中的动画</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">v-resource实现get,post,jsonp请求</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue介绍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue组件</a>
               </li>
              
               <li class="article-tag-list-item">

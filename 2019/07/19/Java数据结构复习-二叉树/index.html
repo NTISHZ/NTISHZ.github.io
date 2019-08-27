@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>AiStarDemo1 | Hexo</title>
+  <title>Java数据结构复习-二叉树 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java简介 前身是oak语言[原因是商标被提前注册了]">
-<meta name="keywords" content="Java简介&amp;变量">
+  <meta name="description" content="二叉树存储方式分析 数组存储方式的分析 优点:通过下标方式访问元素，速度快。对于有序数组，还可以使用二分查找提高检索速度。 缺点：如果要检索具体某个值，或者插入值（按一定顺序）会整体移动，效率较低  链式存储方式的分析 优点：在一定程度上对数组存储方式有优化（比如：插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好）。 缺点：在进行检索时，效率仍然较低，比如（检索某个值，需要从头">
+<meta name="keywords" content="二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AiStarDemo1">
-<meta property="og:url" content="http://yoursite.com/2019/07/15/AiStarDemo1/index.html">
+<meta property="og:title" content="Java数据结构复习-二叉树">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/Java数据结构复习-二叉树/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java简介 前身是oak语言[原因是商标被提前注册了]">
+<meta property="og:description" content="二叉树存储方式分析 数组存储方式的分析 优点:通过下标方式访问元素，速度快。对于有序数组，还可以使用二分查找提高检索速度。 缺点：如果要检索具体某个值，或者插入值（按一定顺序）会整体移动，效率较低  链式存储方式的分析 优点：在一定程度上对数组存储方式有优化（比如：插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好）。 缺点：在进行检索时，效率仍然较低，比如（检索某个值，需要从头">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-18T00:20:20.842Z">
+<meta property="og:updated_time" content="2019-07-22T00:04:34.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AiStarDemo1">
-<meta name="twitter:description" content="Java简介 前身是oak语言[原因是商标被提前注册了]">
+<meta name="twitter:title" content="Java数据结构复习-二叉树">
+<meta name="twitter:description" content="二叉树存储方式分析 数组存储方式的分析 优点:通过下标方式访问元素，速度快。对于有序数组，还可以使用二分查找提高检索速度。 缺点：如果要检索具体某个值，或者插入值（按一定顺序）会整体移动，效率较低  链式存储方式的分析 优点：在一定程度上对数组存储方式有优化（比如：插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好）。 缺点：在进行检索时，效率仍然较低，比如（检索某个值，需要从头">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -159,247 +159,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-AiStarDemo1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java数据结构复习-二叉树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      AiStarDemo1
+      Java数据结构复习-二叉树
     </h1>
   
 
         
-        <a href="/2019/07/15/AiStarDemo1/" class="archive-article-date">
-  	<time datetime="2019-07-15T04:51:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
+        <a href="/2019/07/19/Java数据结构复习-二叉树/" class="archive-article-date">
+  	<time datetime="2019-07-19T12:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h1><ul>
-<li>前身是oak语言[原因是商标被提前注册了]<a id="more"></a></li>
-<li>java之父 - James Gosling 詹姆斯,高斯林</li>
-<li>2009年被oracle公司[甲骨文]收购</li>
-<li>是1995年5月23日正式推出</li>
-</ul>
-<h2 id="发展方向"><a href="#发展方向" class="headerlink" title="发展方向"></a>发展方向</h2><ul>
-<li>传统的web开发</li>
-<li>分布式的微服务</li>
-<li>大数据</li>
-</ul>
-<h1 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h1><p><a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/cn/java/javase/downloads/java-archive-javase8-2177648-zhs.html</a></p>
-<p>JDK版本1.1[96年推出] - JDK1.4 - JDK5.0[巨变] -… - JDK8.x</p>
-<ul>
-<li>安装路径不要出现中文</li>
-<li>所有的路径中不要出现特殊的字符[比如Program Files(x86)].</li>
-<li>保证jdk1.8.0_66和jre1.8.0_66俩个目录必须要在同一个目录中.</li>
-</ul>
-<h2 id="JDK目录结构"><a href="#JDK目录结构" class="headerlink" title="JDK目录结构"></a>JDK目录结构</h2><ul>
-<li>bin - 存放java的开发工具</li>
-<li>db - 100%利用java语言开发的derdy,开源的关系型数据库</li>
-<li>include - 存放的是c的一些头文件[JVM就是采用C语言实现的]</li>
-<li>jre - java程序运行时需要的环境的根目录</li>
-<li>lib - 存放java程序开发需要的核心的类库</li>
-<li>src.zip - 归档的java的源代码.</li>
-</ul>
-<h1 id="人机交互的方式"><a href="#人机交互的方式" class="headerlink" title="人机交互的方式"></a>人机交互的方式</h1><ul>
-<li><p>CLI - Command Line Interface - 命令行方式[DOS系统Disk Opera System - 磁盘操作系统]</p>
-<p>DOS命令</p>
+        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="存储方式分析"><a href="#存储方式分析" class="headerlink" title="存储方式分析"></a>存储方式分析</h2><ol>
+<li><p>数组存储方式的分析</p>
+<p>优点:通过下标方式访问元素，速度快。对于有序数组，还可以使用二分查找提高检索速度。</p>
+<p>缺点：如果要检索具体某个值，或者插入值（按一定顺序）会整体移动，效率较低</p>
 </li>
-<li><p>GUI - Graphic User Interface - 图形化用户界面方式[傻瓜式操作,基于鼠标操作]</p>
+<li><p>链式存储方式的分析</p>
+<p>优点：在一定程度上对数组存储方式有优化（比如：插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好）。</p>
+<p>缺点：在进行检索时，效率仍然较低，比如（检索某个值，需要从头节点开始遍历）</p>
 </li>
-</ul>
-<h2 id="JDK的环境变量的配置"><a href="#JDK的环境变量的配置" class="headerlink" title="JDK的环境变量的配置"></a>JDK的环境变量的配置</h2><p>打开终端 - cmd - 输入notepad的时候,就是欧通过CLI的方式唤醒打开记事本的程序.</p>
-<p>当执行这个命令的时候,windows操作系统会优先到当前目录中去寻找是否存在该命令notepad.exe</p>
-<p><strong>那么windows操作系统会继续到系统的环境变量中的path中配置的路径中从左到右的顺序进行查找</strong>.</p>
-<p>如果存在,则顺利执行,否则抛出错误</p>
-<h2 id="系统的环境变量"><a href="#系统的环境变量" class="headerlink" title="系统的环境变量"></a>系统的环境变量</h2><p>右击计算机 - 属性 - 高级 - 环境变量 - 系统变量</p>
-<p>直接通过终端输入path命令.</p>
-<h2 id="具体的步骤"><a href="#具体的步骤" class="headerlink" title="具体的步骤"></a>具体的步骤</h2><p>在系统变量区域进行如下配置:</p>
-<ul>
-<li><p>新建</p>
-<p>变量名:JAVA_HOME</p>
-<p>变量值:D:\Program Files\Java\jdk1.8.0_66</p>
+<li><p>树存储方式的分析</p>
+<p>能提供数据存储，读取的效率，比如利用二叉排序数（Binary Sort Tree），既可以保证数据的检索速度，同时也可以保证数据的插入，删除，修改的速度</p>
 </li>
-<li><p>找到path,点击编辑 - 推荐放在最左边或者最上边.</p>
-<p>%JAVA_HOME%\bin;</p>
-</li>
-</ul>
-<p>注意点:一旦环境变量修改之后,那么终端一定是需要重启之后才会有效果的.</p>
-<h3 id="检测配置成功"><a href="#检测配置成功" class="headerlink" title="检测配置成功"></a>检测配置成功</h3><p>通过终端在任何一个目录中输入java -version</p>
-<h1 id="Java三个体系"><a href="#Java三个体系" class="headerlink" title="Java三个体系"></a>Java三个体系</h1><ul>
-<li>JavaSE - Java Standard Edition - Java标准版</li>
-<li>JavaEE - Java Enterprise Edition - Java企业版[不是一门具体的技术,而是一套技术的规范]</li>
-<li>JavaME - Java Micro Edition - Java微型版</li>
-</ul>
-<h1 id="JDK-JRE-JVM"><a href="#JDK-JRE-JVM" class="headerlink" title="JDK,JRE,JVM"></a>JDK,JRE,JVM</h1><p>JRE - Java Runtime Environment - Java运行时环境,针对使用java程序的用户.</p>
-<p>​      - JRE中包含了程序执行时需要的核心的内库以及JVM.</p>
-<p>JDK - Java Developement Kit - Java开发工具包 - 针对程序员使用的.</p>
-<p>​         因为JDK中包含开发工具以及JRE.</p>
-<p>JVM - Java Vitrual Machine - Java虚拟机[跨平台的核心] - Java程序并不是直接在操作系统上执行的,而是在jvm上面执行的.</p>
-<h1 id="语言的分类"><a href="#语言的分类" class="headerlink" title="语言的分类"></a>语言的分类</h1><p>C - 编译型语言 - 执行效率比较高</p>
-<p>​    - “中文书” - 一次性翻译成 - “日本书”</p>
-<p>Java - 解释型语言</p>
-<p>​    - 配一个”翻译官”,只要日本人需要看,就随时翻译.</p>
-<h1 id="Java程序的执行原理"><a href="#Java程序的执行原理" class="headerlink" title="Java程序的执行原理"></a>Java程序的执行原理</h1><p>所有的文件的编码统一使用utf-8格式的.</p>
-<p>编写 - 编译 - 执行</p>
-<ul>
-<li>源码 - 放在.java为后缀的文件</li>
-</ul>
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ul>
-<li><p>编写</p>
-</li>
-<li><p>进入到.java文件所在的目录中,执行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
-<p>会出现一个.class字节码文件</p>
-</li>
-<li><p>运行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java HelloWorld</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>.java源文件 - 经过jdk中的编译器编译成了.class字节码文件 - 经过jvm中的解释器,逐行解释 - 解释成底层的机器语言[二进制].</p>
-<h2 id="跨平台性"><a href="#跨平台性" class="headerlink" title="跨平台性"></a>跨平台性</h2><p>注意:java语言是跨平台[与平台无关性] - 一次编译,多次执行.</p>
-<p>JVM不跨平台的.每个操作系统都是拥有自己独立的一个jvm的.</p>
-<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>命名[工程的名称,类的名称,包的名称,变量的名称,方法的名称等]</p>
-<h2 id="关于类的命名规则"><a href="#关于类的命名规则" class="headerlink" title="关于类的命名规则"></a>关于类的命名规则</h2><ul>
-<li><p>类名必须要保证和.java文件的名称高度保持一致.</p>
-</li>
-<li><p>类名推荐使用大驼峰命名规则[首字母要求大写,其余单词的每个首字母也要大写,其余字母全部采用小写,比如HelloWorld]</p>
-</li>
-<li><p>类名由数字,字母,下划线或者$符号组成,但是不能由数字开头.</p>
-</li>
-<li><p>类名不能是java的关键字.[java赋予了单词具有语法的意义的单词]</p>
-<p>public class void main byte short int long double float char boolean final try if while do..while..</p>
-</li>
-<li><p>类名不能是java中的保留的关键字[goto , const]</p>
-</li>
-<li><p>类名不能是以下三个字面量,true,false,null</p>
-</li>
-<li><p>类名可以使用中文,但是不推荐使用,原因是中文可能会出现乱码.</p>
-</li>
-<li><p>类名不推荐使用中文的拼音.</p>
-</li>
-<li><p>类名不能是java的内置的对象类型</p>
-</li>
-<li><p>类名提倡”见名知意”.</p>
-</li>
-</ul>
-<h1 id="HelloWorld案例"><a href="#HelloWorld案例" class="headerlink" title="HelloWorld案例"></a>HelloWorld案例</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:本类用来演示:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/15 0015</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//使用class来定义一个类</span></span><br><span class="line">    <span class="comment">//程序的主入口 - main方法</span></span><br><span class="line">    <span class="comment">//psvm</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//tab不要随便使用 - 编辑器 - 需要设置tab相当于四个空格[手动设置]</span></span><br><span class="line">        <span class="comment">//具体的执行的程序 - 比如向控制台输出一句话</span></span><br><span class="line">        <span class="comment">//sout</span></span><br><span class="line">        <span class="comment">//PrintStream out = System.out;</span></span><br><span class="line">        <span class="comment">//out.println("HelloWorld");</span></span><br><span class="line">        System.out.println(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="包的概念"><a href="#包的概念" class="headerlink" title="包的概念"></a>包的概念</h1><p>包就是用来管理类文件的,包之于类的作用就是相当于目录之于文件的作用.</p>
-<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
-<li><p>个人发布的,但是非独立完成的.</p>
-<p>indi.发起者的名称.项目的名称.模块名称</p>
-</li>
-<li><p>个人发布的,并且是个人独立完成的</p>
-<p>pers.个人名称.项目的名称.模块的名称</p>
-</li>
-<li><p>个人的,并且是私有的,没有对外公开的</p>
-<p>priv.个人名称.项目名称.模块名称</p>
-</li>
-<li><p>团队的项目</p>
-<p>team.团队名称.项目名称.模块名称</p>
-</li>
-<li><p><strong>公司的项目</strong></p>
-<p>公司域名倒置.项目代号.模块名称</p>
-<p><a href="http://www.aistar.tech" target="_blank" rel="noopener">www.aistar.tech</a></p>
-<p>tech.aistar.corejava.day01</p>
-</li>
-</ul>
-<p><strong>必须全部采用小写字母,并且以.隔开.每个部分在磁盘中都是对应一个具体的目录</strong></p>
-<p>千万不要使用java开头</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.corejava.day01;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>此处的HelloWorld仅仅是类的名称的简称</p>
-</li>
-<li><p><strong>类的全限定名[类的全称] - 包名.类名</strong></p>
-<p>此处的HelloWorld的类的全称是tech.aistar.corejava.day01.HelloWorld</p>
-</li>
-</ul>
-<h1 id="关于Java的内置的包"><a href="#关于Java的内置的包" class="headerlink" title="关于Java的内置的包"></a>关于Java的内置的包</h1><p>java.xx开头的</p>
-<ul>
-<li>java.lang - java语言的核心包[System类就是在这个包中]</li>
-<li>java.util - java的工具包[java封装的一些工具类的存在的包]</li>
-<li>java.io - java的io相关的api所在的包</li>
-<li>java.net - socket存放的位置</li>
-<li>java.text - java格式化相关的处理类所在的包</li>
-<li><p>java.sql - 操作db相关的api</p>
-<p>javax.xx开头的 - java的拓展的包</p>
-</li>
-</ul>
-<h1 id="关于输出"><a href="#关于输出" class="headerlink" title="关于输出"></a>关于输出</h1><ol>
-<li>System.out.println() - 输出完毕之后,换行</li>
-<li>System.out.print() - 输出完毕之后,不换行</li>
 </ol>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
-<li>\n - 输出完毕之后再进行换行,并且光标是停在下一行的起始位置.</li>
-<li>\r - 回车,输出完毕之后,光标是停在当前行的起始的位置.</li>
-</ul>
-<h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><p>\</p>
-<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
-<li><p>单行注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">//TODO</span></span><br><span class="line"><span class="comment">//具体的单行注释</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>多行注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 注释2</span></span><br><span class="line"><span class="comment">* 注释3</span></span><br><span class="line"><span class="comment">* 注释4</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p>共同点:都是对具体的某行[多行]的代码进行注释的</p>
-</li>
-</ul>
-<ul>
-<li><p>文档注释</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 加在类上 - 对类的作用的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 加在方法上 - 对方法的说明</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 可以通过javadoc.exe命令来生成文档树</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>编程从变量开始!编程的核心就是对Data数据进行CRUD操作.</p>
-<p>数据存储的介质?</p>
-<ul>
-<li>内存 - 读取效率比较高,但是容易丢失![并没有进行持久化操作]</li>
-<li>文件</li>
-<li>关系型数据库和非关系型数据库</li>
-</ul>
-<p>用什么东西存放?</p>
-<p>java中使用的是数据类型和变量[或者常量]来存储</p>
-<p>总结:变量就是用来在内存中存放数据的”容器”.</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>数据类型 变量名 [= 初始值];</p>
-<ul>
-<li><p>基本数据类型 - 八大种</p>
-<p>|            |              |               |                    | 默认值[OO属性才能去看] |<br>| ———- | ———— | ————- | —————— | ———————- |<br>| byte       | 字节         | 1字节占8位    | -128~127           | 0                      |<br>| short      | 短整型       | 2个字节占16位 | -2^15 ~2^15-1      | 0                      |<br>| int        | 整型         | 4个字节占32位 | -2^31~2^31-1       | 0                      |<br>| long       | 长整型       | 8个字节占64位 | -2^63~2^63-1       | 0                      |<br>| float      | 单精度浮点数 | 4个字节占32位 | 1.4*10^-45~3.8E38  | 0.0                    |<br>| <strong>double</strong> | 双精度浮点数 | 8个字节占64位 | 4.9E-324~1.798E308 | 0.0                    |<br>| char       | 字符         | 2个字节16位   | 0~65535            | ‘\u0000’               |<br>| boolean    | 布尔类型     | 1个字节8位    | true/false         | false                  |</p>
-</li>
-</ul>
-<h2 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h2><p>标识符命名 - 变量 - 参考类名[大驼峰改成小驼峰,studentName]</p>
-<h2 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值"></a>变量的赋值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;<span class="comment">//将整数10赋值给一个int类型的变量a里面</span></span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">b = <span class="number">20</span>;</span><br><span class="line"><span class="comment">//==永远比较的是内存地址</span></span><br><span class="line">System.out.println(a == b);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>背后 - 在内存中是如何进行存放的?</p>
-<p>JVM简单分成栈,堆,方法区…</p>
-<p>所有的基本的数据类型存放在栈里面 - 读取效率非常高[优点],一旦确定了,那么它的空间大小就确定了 - “以空间换时间”</p>
-<p>当程序执行到int a = 10的时候,那么就会在栈里面,开辟一块区域[int],保存10这个数字.变量本质上是10这个数字在栈里面的内存地址.</p>
-<p>当程序执行到int b = 10;会优先到JVM的栈里面去看看有没有10.直接将b指向10的空间..</p>
-<h2 id="变量赋值的方式"><a href="#变量赋值的方式" class="headerlink" title="变量赋值的方式"></a>变量赋值的方式</h2><ul>
-<li><p>定义变量的同时进行赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>先定义或者声明一个变量,然后进行赋值[初始化]</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="comment">//变量在使用之前,一定要先进行赋值操作.</span></span><br><span class="line">System.out.println(a);</span><br><span class="line">a = <span class="number">10</span>;</span><br><span class="line">a = <span class="number">20</span>;</span><br><span class="line">System.out.println(a);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过合法的表达式进行赋值</p>
-<p>表达式 - 由变量或者常量或者字面量以及运算符组成的合法的语句.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> result = a + b;</span><br><span class="line"><span class="keyword">int</span> z = <span class="number">10</span> + b;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以通过链式赋值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x,y,z = <span class="number">100</span>;<span class="comment">//此处的x,y并没有被赋值,只有z被赋值了.</span></span><br><span class="line">x=y=<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以通过方法进行赋值[先不了解].</p>
-</li>
-</ul>
-<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><p>在java中,看到一个整数,默认的都是int类型</p>
-<p>看到一个小数,默认的都是double类型.</p>
-<h2 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h2><p>低字节的数据类型可以自动转换成高字节的数据类型.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 因为100是在byte类型的范围</span></span><br><span class="line"><span class="comment">//2. 因为100是一个字面量 - JVM就可以精确确定它必然是在byte范围</span></span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">100</span>;<span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line"><span class="comment">//由于t是一个变量,JVM只会认为t是可以在int类型区间内变化的量</span></span><br><span class="line"><span class="comment">//不能精确判断出变量t究竟有没有超出byte类型的范围</span></span><br><span class="line"><span class="keyword">byte</span> a = t;<span class="comment">//error - 需要进行类型的强制转换!</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. 各个类型的范围</span><br><span class="line"><span class="number">2</span>. 字面量和变量的区别!</span><br></pre></td></tr></table></figure>
-<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>高字节的数据类型转换成低字节的数据类型的时候,会有精度的丢失,需要进行强制类型转换.</p>
-<p>小数据类型 变量 = (小数据类型)大的数据类型的变量或者字面量.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t = <span class="number">128</span>;</span><br><span class="line"><span class="keyword">byte</span> a = (<span class="keyword">byte</span>)t;</span><br><span class="line">System.out.println(a);<span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+<h2 id="二叉树的概念"><a href="#二叉树的概念" class="headerlink" title="二叉树的概念"></a>二叉树的概念</h2><ol>
+<li>树有很多种，每个节点<strong>最多只能有两个子节点</strong>的一种形式称为二叉树</li>
+<li>二叉树的子节点分为左节点和右节点</li>
+<li>如果该二叉树的<strong>所有叶子节点都在最后一层</strong>，并且节点总数=2^n-1，n为层数，则我们称为满二叉树</li>
+<li>如果该二叉树的所有叶子节点都在最后一层或者倒数第二层，而且最后一层的叶子节点在左边连续，倒数第二层的叶子节点在右边连续，我们称为完全二叉树。</li>
+</ol>
+<h2 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h2><p>前序遍历：<strong>先输出父节点</strong>，再遍历左子树和右子树</p>
+<p>中序遍历：先遍历左子树，<strong>再输出父节点</strong>，再遍历右节点</p>
+<p>后序遍历：先遍历左子树，在遍历右子树，<strong>最后输出父节点</strong></p>
+<p>ps：看输出父节点的顺序，就确定是前序，中序还是后序</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tree;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@BelongsProject</span>: Data-structure</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@BelongsPackage</span>: tree</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: HZ</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>: 2019-07-20</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: $&#123;Description&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//先创建一颗二叉树</span></span><br><span class="line">        BinaryTree binaryTree = <span class="keyword">new</span> BinaryTree();</span><br><span class="line">        <span class="comment">//创建需要的节点</span></span><br><span class="line">        HeroNode root = <span class="keyword">new</span> HeroNode(<span class="number">1</span>, <span class="string">"宋江"</span>);</span><br><span class="line">        HeroNode node2 = <span class="keyword">new</span> HeroNode(<span class="number">2</span>, <span class="string">"吴用"</span>);</span><br><span class="line">        HeroNode node3 = <span class="keyword">new</span> HeroNode(<span class="number">3</span>, <span class="string">"卢俊义"</span>);</span><br><span class="line">        HeroNode node4 = <span class="keyword">new</span> HeroNode(<span class="number">4</span>, <span class="string">"林冲"</span>);</span><br><span class="line">        HeroNode node5 = <span class="keyword">new</span> HeroNode(<span class="number">5</span>, <span class="string">"关胜"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//说明我们先手动创建二叉树,后面我们学习递归的方式创建二叉树</span></span><br><span class="line">        root.setLeft(node2);</span><br><span class="line">        root.setRight(node3);</span><br><span class="line">        node3.setRight(node4);</span><br><span class="line">        node3.setLeft(node5);</span><br><span class="line">        binaryTree.setRoot(root);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//前序遍历</span></span><br><span class="line">        System.out.println(<span class="string">"前序遍历"</span>);</span><br><span class="line">        binaryTree.preOrder();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        System.out.println(<span class="string">"中序遍历"</span>);</span><br><span class="line">        binaryTree.infixOrder();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//后序遍历</span></span><br><span class="line">        System.out.println(<span class="string">"后序遍历"</span>);</span><br><span class="line">        binaryTree.postOrder();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//定义一个BinaryTree二叉树</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> HeroNode root;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoot</span><span class="params">(HeroNode root)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.root = root;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//前序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.root.preOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">infixOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.root.infixOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//后序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.root.postOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先创建HeroNode 节点</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">HeroNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> no;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> HeroNode left;  <span class="comment">//默认null</span></span><br><span class="line">        <span class="keyword">private</span> HeroNode right; <span class="comment">//默认null</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">HeroNode</span><span class="params">(<span class="keyword">int</span> no, String name)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.no = no;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> no;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNo</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.no = no;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">getLeft</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeft</span><span class="params">(HeroNode left)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.left = left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">getRight</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRight</span><span class="params">(HeroNode right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.right = right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">final</span> StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"HeroNode&#123;"</span>);</span><br><span class="line">            sb.append(<span class="string">"no="</span>).append(no);</span><br><span class="line">            sb.append(<span class="string">", name='"</span>).append(name).append(<span class="string">'\''</span>);</span><br><span class="line">            sb.append(<span class="string">'&#125;'</span>);</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//编写前序遍历的方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>);   <span class="comment">//先输出父节点</span></span><br><span class="line">            <span class="comment">//递归向左子树前序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.preOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//递归向右子树前序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.getRight() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.preOrder();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">infixOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">//递归向左子树中序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.infixOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//输出父节点</span></span><br><span class="line">            System.out.println(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.infixOrder();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//后续遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.postOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.postOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查找指定节点"><a href="#查找指定节点" class="headerlink" title="查找指定节点"></a>查找指定节点</h2><p><strong>前序查找思路:</strong></p>
+<ol>
+<li>先判断当前结点的no是否等于要查找的</li>
+<li>如果相等,则返回当前节点</li>
+<li>如果不等,则判断当前结点的左节点是否为空,如果不为空,则递归查找</li>
+<li>如果左递归前序查找,找到结点,则返回,否则继续判断,当前阶段的右结点是否为空,如果不空,则继续向右递归查找</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前序遍历查找</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> no    查找no</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>  如果找到就返回该Node,如果没有找到返回null</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> HeroNode <span class="title">preOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">    <span class="comment">//比较当前节点是不是</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断当前结点的左子节点是否为空,如果不为空,则递归前序查找</span></span><br><span class="line">    <span class="comment">//如果左递归前序查找,找到结点,则返回</span></span><br><span class="line">    HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">        resNode = <span class="keyword">this</span>.left.preOrderSearch(no);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123; <span class="comment">//说明我们左子树找到</span></span><br><span class="line">        <span class="keyword">return</span>  resNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果左递归前序查找,找到结点,则返回,否则继续判断,</span></span><br><span class="line">    <span class="comment">// 当前阶段的右结点是否为空,如果不空,则继续向右递归查找</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.right !=<span class="keyword">null</span>)&#123;</span><br><span class="line">        resNode =<span class="keyword">this</span>.right.preOrderSearch(no);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>中序查找思路:</strong></p>
+<ol>
+<li>判断当前结点的左节点是否为空,如果不空,则递归中序查找</li>
+<li>如果找到,则返回,如果没有找到,就和当前结点比较,如果是则返回当前节点,否则进行右递归的中序查找</li>
+<li>如果右递归中序查找,找到就返回,否则返回null</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> HeroNode <span class="title">infixOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">    <span class="comment">//判断当前结点的左节点是否为空,如果不空,则递归中序查找</span></span><br><span class="line">    HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        resNode =<span class="keyword">this</span>.left.infixOrderSearch(no);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果找到,则返回,</span></span><br><span class="line">    <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> resNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果没有找到,就和当前结点比较,如果是则返回当前节点,否则进行右递归的中序查找</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        resNode = <span class="keyword">this</span>.right.infixOrderSearch(no);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>后序查找思路:</strong></p>
+<ol>
+<li>判断当前结点的左子节点是否为空,如果不为空,则递归后序查找</li>
+<li>如果找到,就返回,如果没有找到,就判断当前结点的右结点是否为空,如果不为空,则右递归进行后序查找,如果找到,就返回</li>
+<li>就和当前结点进行,比如,如果是则返回,否则返回null</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后序遍历查找</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> HeroNode <span class="title">postOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">           HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">           <span class="comment">//判断当前结点的左子节点是否为空,如果不为空,则递归后序查找</span></span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">               resNode = <span class="keyword">this</span>.left.postOrderSearch(no);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">//如果找到,则返回,</span></span><br><span class="line">           <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123;</span><br><span class="line">               <span class="keyword">return</span> resNode;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           <span class="comment">//如果没有找到,就判断当前结点的右结点是否为空,</span></span><br><span class="line">           <span class="comment">// 如果不为空,则右递归进行后序查找,如果找到,就返回</span></span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">               resNode = <span class="keyword">this</span>.right.postOrderSearch(no);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123;</span><br><span class="line">              <span class="keyword">return</span> resNode;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> resNode;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二叉树删除结点"><a href="#二叉树删除结点" class="headerlink" title="二叉树删除结点"></a>二叉树删除结点</h2><p><strong>完成删除结点的操作</strong></p>
+<p>规定:</p>
+<ol>
+<li>如果删除的节点是叶子节点,则删除该节点</li>
+<li>如果删除的结点是非叶子节点,则删除该子树</li>
+</ol>
+<p>思路:</p>
+<p>首先先处理</p>
+<p>考虑如果树是空树root,如果只有一个root结点,则等价将二叉树置空</p>
+<p>//然后进行下面的步骤</p>
+<ol>
+<li>因为我们的二叉树是单向的,所以我们是判断当前结点的子结点是否需要删除节点,而不能去判断当前这个结点是不是需要删除结点</li>
+<li>如果当前结点的左子树不为空,并且左子结点编号就是需要删除的结点,就将this.left = null;并且就返回(结束递归并删除)</li>
+<li>如果当前结点的右子结点不为空,并且左子结点就是要删除结点,就将this.right = null;并且就返回(结束递归并删除)</li>
+<li>如果第二步和第三步都没有删除结点,那么我们就需要向左子树进行递归删除</li>
+<li>如果第四步也没有删除结点,则应当向右子树进行递归删除</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delNode</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果当前结点的左子树不为空,并且左子结点编号就是需要删除的结点,</span></span><br><span class="line">    <span class="comment">// 就将this.left = null;并且就返回(结束递归并删除)</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>&amp;&amp;<span class="keyword">this</span>.left.no ==no)&#123;</span><br><span class="line">        <span class="keyword">this</span>.left =<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果当前结点的右子结点不为空,并且左子结点就是要删除结点,</span></span><br><span class="line">    <span class="comment">// 就将this.right = null;并且就返回(结束递归并删除)</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>&amp;&amp;<span class="keyword">this</span>.right.no == no)&#123;</span><br><span class="line">        <span class="keyword">this</span>.right = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//我们就需要向左子树进行递归删除</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.left.delNode(no);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//向右子树进行递归删除</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.right.delNode(no);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>完整代码:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tree;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@BelongsProject</span>: Data-structure</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@BelongsPackage</span>: tree</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: HZ</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>: 2019-07-20</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: $&#123;Description&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinaryTreeDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//先创建一颗二叉树</span></span><br><span class="line">        BinaryTree binaryTree = <span class="keyword">new</span> BinaryTree();</span><br><span class="line">        <span class="comment">//创建需要的节点</span></span><br><span class="line">        HeroNode root = <span class="keyword">new</span> HeroNode(<span class="number">1</span>, <span class="string">"宋江"</span>);</span><br><span class="line">        HeroNode node2 = <span class="keyword">new</span> HeroNode(<span class="number">2</span>, <span class="string">"吴用"</span>);</span><br><span class="line">        HeroNode node3 = <span class="keyword">new</span> HeroNode(<span class="number">3</span>, <span class="string">"卢俊义"</span>);</span><br><span class="line">        HeroNode node4 = <span class="keyword">new</span> HeroNode(<span class="number">4</span>, <span class="string">"林冲"</span>);</span><br><span class="line">        HeroNode node5 = <span class="keyword">new</span> HeroNode(<span class="number">5</span>, <span class="string">"关胜"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//说明我们先手动创建二叉树,后面我们学习递归的方式创建二叉树</span></span><br><span class="line">        root.setLeft(node2);</span><br><span class="line">        root.setRight(node3);</span><br><span class="line">        node3.setRight(node4);</span><br><span class="line">        node3.setLeft(node5);</span><br><span class="line">        binaryTree.setRoot(root);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        //前序遍历</span></span><br><span class="line"><span class="comment">//        System.out.println("前序遍历");</span></span><br><span class="line"><span class="comment">//        binaryTree.preOrder();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //中序遍历</span></span><br><span class="line"><span class="comment">//        System.out.println("中序遍历");</span></span><br><span class="line"><span class="comment">//        binaryTree.infixOrder();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        //后序遍历</span></span><br><span class="line"><span class="comment">//        System.out.println("后序遍历");</span></span><br><span class="line"><span class="comment">//        binaryTree.postOrder();</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        System.out.println("前序遍历查找");</span></span><br><span class="line"><span class="comment">//        HeroNode heroNode = binaryTree.postOrderSearch(2);</span></span><br><span class="line"><span class="comment">//        System.out.println(heroNode);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除结点</span></span><br><span class="line">        System.out.println(<span class="string">"删除前,前序遍历"</span>);</span><br><span class="line">        binaryTree.preOrder();</span><br><span class="line">        binaryTree.delNode(<span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="string">"删除后,前序遍历"</span>);</span><br><span class="line">        binaryTree.preOrder();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//定义一个BinaryTree二叉树</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">BinaryTree</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> HeroNode root;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoot</span><span class="params">(HeroNode root)</span></span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.root = root;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除结点</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delNode</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (root!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(root.getNo() == no)&#123;</span><br><span class="line">                    root = <span class="keyword">null</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//进行递归删除</span></span><br><span class="line">                    root.delNode(no);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"空树,不能删除"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//前序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.root.preOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">infixOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.root.infixOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//后序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.root != <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.root.postOrder();</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"当前二叉树为空,无法遍历!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//前序遍历查找</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">preOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (root!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> root.preOrderSearch(no);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">infixOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (root!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> root.infixOrderSearch(no);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="function"><span class="keyword">public</span> HeroNode <span class="title">postOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (root!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> root.postOrderSearch(no);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先创建HeroNode 节点</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">HeroNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> no;</span><br><span class="line">        <span class="keyword">private</span> String name;</span><br><span class="line">        <span class="keyword">private</span> HeroNode left;  <span class="comment">//默认null</span></span><br><span class="line">        <span class="keyword">private</span> HeroNode right; <span class="comment">//默认null</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">HeroNode</span><span class="params">(<span class="keyword">int</span> no, String name)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.no = no;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> no;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNo</span><span class="params">(<span class="keyword">int</span> no)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.no = no;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">getLeft</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeft</span><span class="params">(HeroNode left)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.left = left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">getRight</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRight</span><span class="params">(HeroNode right)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.right = right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">final</span> StringBuilder sb = <span class="keyword">new</span> StringBuilder(<span class="string">"HeroNode&#123;"</span>);</span><br><span class="line">            sb.append(<span class="string">"no="</span>).append(no);</span><br><span class="line">            sb.append(<span class="string">", name='"</span>).append(name).append(<span class="string">'\''</span>);</span><br><span class="line">            sb.append(<span class="string">'&#125;'</span>);</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delNode</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="comment">//如果当前结点的左子树不为空,并且左子结点编号就是需要删除的结点,</span></span><br><span class="line">            <span class="comment">// 就将this.left = null;并且就返回(结束递归并删除)</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>&amp;&amp;<span class="keyword">this</span>.left.no ==no)&#123;</span><br><span class="line">                <span class="keyword">this</span>.left =<span class="keyword">null</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果当前结点的右子结点不为空,并且左子结点就是要删除结点,</span></span><br><span class="line">            <span class="comment">// 就将this.right = null;并且就返回(结束递归并删除)</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>&amp;&amp;<span class="keyword">this</span>.right.no == no)&#123;</span><br><span class="line">                <span class="keyword">this</span>.right = <span class="keyword">null</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//我们就需要向左子树进行递归删除</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.left.delNode(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//向右子树进行递归删除</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.right.delNode(no);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//编写前序遍历的方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>);   <span class="comment">//先输出父节点</span></span><br><span class="line">            <span class="comment">//递归向左子树前序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.preOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//递归向右子树前序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.getRight() != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.preOrder();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">infixOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">//递归向左子树中序遍历</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.infixOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//输出父节点</span></span><br><span class="line">            System.out.println(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.infixOrder();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//后续遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.left.postOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.right.postOrder();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//前序遍历查找</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span> no    查找no</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span>  如果找到就返回该Node,如果没有找到返回null</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">preOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="comment">//比较当前节点是不是</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//判断当前结点的左子节点是否为空,如果不为空,则递归前序查找</span></span><br><span class="line">            <span class="comment">//如果左递归前序查找,找到结点,则返回</span></span><br><span class="line">            HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode = <span class="keyword">this</span>.left.preOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123; <span class="comment">//说明我们左子树找到</span></span><br><span class="line">                <span class="keyword">return</span>  resNode;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果左递归前序查找,找到结点,则返回,否则继续判断,</span></span><br><span class="line">            <span class="comment">// 当前阶段的右结点是否为空,如果不空,则继续向右递归查找</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right !=<span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode =<span class="keyword">this</span>.right.preOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> resNode;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//中序遍历</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">infixOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            <span class="comment">//判断当前结点的左节点是否为空,如果不空,则递归中序查找</span></span><br><span class="line">            HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode =<span class="keyword">this</span>.left.infixOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果找到,则返回,</span></span><br><span class="line">            <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> resNode;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果没有找到,就和当前结点比较,如果是则返回当前节点,否则进行右递归的中序查找</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode = <span class="keyword">this</span>.right.infixOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> resNode;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//后序遍历查找</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> HeroNode <span class="title">postOrderSearch</span><span class="params">(<span class="keyword">int</span> no)</span></span>&#123;</span><br><span class="line">            HeroNode resNode = <span class="keyword">null</span>;</span><br><span class="line">            <span class="comment">//判断当前结点的左子节点是否为空,如果不为空,则递归后序查找</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode = <span class="keyword">this</span>.left.postOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果找到,则返回,</span></span><br><span class="line">            <span class="keyword">if</span> (resNode!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> resNode;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//如果没有找到,就判断当前结点的右结点是否为空,</span></span><br><span class="line">            <span class="comment">// 如果不为空,则右递归进行后序查找,如果找到,就返回</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                resNode = <span class="keyword">this</span>.right.postOrderSearch(no);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="comment">//            if (resNode!=null)&#123;</span></span><br><span class="line"><span class="comment">//                return resNode;</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.no == no)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> resNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="顺序存储二叉树"><a href="#顺序存储二叉树" class="headerlink" title="顺序存储二叉树"></a>顺序存储二叉树</h2><p>从数据存储来看,数据存储方式和树的存储方式可以互相转化,即数组可以转为数,数也可以转换为数组.</p>
+<p><strong>顺序存储二叉树的特点</strong></p>
+<ol>
+<li>顺序二叉树通常只考虑完全二叉树</li>
+<li>第n个元素的左子节点为2^n+1</li>
+<li>第n个元素的右子节点为2^n+2</li>
+<li>第n个元素的父节点为(n-1)/2</li>
+<li>n:表示二叉树的第n个元素(按0开始编号)</li>
+</ol>
 
       
 
@@ -413,7 +268,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java简介&变量</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
         		</li>
       		
 		</ul>
@@ -469,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/15/AiStarDemo1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/19/Java数据结构复习-二叉树/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -483,18 +338,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/17/AiStarDemo2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/22/SpringCloud-微服务简介/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          AiStarDemo2
+          SpringCloud-微服务简介
         
       </div>
     </a>
   
   
-    <a href="/2019/07/13/Java数据结构复习-哈希表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java数据结构复习-哈希表</div>
+    <a href="/2019/07/19/编程问题集-List中的contains方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">编程问题集-List中的contains方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -521,7 +376,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java简介"><span class="toc-number">1.</span> <span class="toc-text">Java简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#发展方向"><span class="toc-number">1.1.</span> <span class="toc-text">发展方向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装JDK"><span class="toc-number">2.</span> <span class="toc-text">安装JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK目录结构"><span class="toc-number">2.1.</span> <span class="toc-text">JDK目录结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#人机交互的方式"><span class="toc-number">3.</span> <span class="toc-text">人机交互的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK的环境变量的配置"><span class="toc-number">3.1.</span> <span class="toc-text">JDK的环境变量的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统的环境变量"><span class="toc-number">3.2.</span> <span class="toc-text">系统的环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体的步骤"><span class="toc-number">3.3.</span> <span class="toc-text">具体的步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#检测配置成功"><span class="toc-number">3.3.1.</span> <span class="toc-text">检测配置成功</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java三个体系"><span class="toc-number">4.</span> <span class="toc-text">Java三个体系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JDK-JRE-JVM"><span class="toc-number">5.</span> <span class="toc-text">JDK,JRE,JVM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#语言的分类"><span class="toc-number">6.</span> <span class="toc-text">语言的分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java程序的执行原理"><span class="toc-number">7.</span> <span class="toc-text">Java程序的执行原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体步骤"><span class="toc-number">7.1.</span> <span class="toc-text">具体步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过程"><span class="toc-number">7.2.</span> <span class="toc-text">过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨平台性"><span class="toc-number">7.3.</span> <span class="toc-text">跨平台性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标识符"><span class="toc-number">8.</span> <span class="toc-text">标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于类的命名规则"><span class="toc-number">8.1.</span> <span class="toc-text">关于类的命名规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HelloWorld案例"><span class="toc-number">9.</span> <span class="toc-text">HelloWorld案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#包的概念"><span class="toc-number">10.</span> <span class="toc-text">包的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">10.1.</span> <span class="toc-text">命名规则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于Java的内置的包"><span class="toc-number">11.</span> <span class="toc-text">关于Java的内置的包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于输出"><span class="toc-number">12.</span> <span class="toc-text">关于输出</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符"><span class="toc-number">12.1.</span> <span class="toc-text">特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#转义字符"><span class="toc-number">12.1.1.</span> <span class="toc-text">转义字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注释"><span class="toc-number">13.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量"><span class="toc-number">14.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">14.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量-1"><span class="toc-number">14.2.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的赋值"><span class="toc-number">14.3.</span> <span class="toc-text">变量的赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量赋值的方式"><span class="toc-number">14.4.</span> <span class="toc-text">变量赋值的方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据类型的转换"><span class="toc-number">15.</span> <span class="toc-text">数据类型的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自动类型转换"><span class="toc-number">15.1.</span> <span class="toc-text">自动类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强制类型转换"><span class="toc-number">15.2.</span> <span class="toc-text">强制类型转换</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二叉树"><span class="toc-number">1.</span> <span class="toc-text">二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储方式分析"><span class="toc-number">1.1.</span> <span class="toc-text">存储方式分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树的概念"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树遍历"><span class="toc-number">1.3.</span> <span class="toc-text">二叉树遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找指定节点"><span class="toc-number">1.4.</span> <span class="toc-text">查找指定节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉树删除结点"><span class="toc-number">1.5.</span> <span class="toc-text">二叉树删除结点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序存储二叉树"><span class="toc-number">1.6.</span> <span class="toc-text">顺序存储二叉树</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -633,7 +488,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">变量&常量&运算符</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,15 +496,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">哈希表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,10 +528,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Redis数据类型</a>
               </li>
              
@@ -689,31 +536,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis的数据类型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java简介&变量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">while循环&方法&数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -725,11 +552,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
+                <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -749,11 +576,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -765,11 +592,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
+                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -781,11 +612,55 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">对ArraysList.contains()重写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">查找算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vue中的动画</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">v-resource实现get,post,jsonp请求</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">冒泡排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue介绍</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Vue组件</a>
               </li>
              
               <li class="article-tag-list-item">
