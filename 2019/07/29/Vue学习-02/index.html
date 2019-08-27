@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Vue学习-02 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="过滤器概念:Vue.js允许你自定义过滤器,可被用作一些常见的文本格式,过滤器可以用在两个地方:mustache插值和v-bind表达式,过滤器应该被添加在JavaScript表达式的尾部,由”管道”符指示: 12345678910111213141516171819202122232425262728293031323334353637&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;">
+  <meta name="description" content="过滤器概念:">
 <meta name="keywords" content="Vue学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue学习-02">
 <meta property="og:url" content="http://yoursite.com/2019/07/29/Vue学习-02/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="过滤器概念:Vue.js允许你自定义过滤器,可被用作一些常见的文本格式,过滤器可以用在两个地方:mustache插值和v-bind表达式,过滤器应该被添加在JavaScript表达式的尾部,由”管道”符指示: 12345678910111213141516171819202122232425262728293031323334353637&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;">
+<meta property="og:description" content="过滤器概念:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-11T13:50:21.397Z">
+<meta property="og:updated_time" content="2019-08-27T10:37:49.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue学习-02">
-<meta name="twitter:description" content="过滤器概念:Vue.js允许你自定义过滤器,可被用作一些常见的文本格式,过滤器可以用在两个地方:mustache插值和v-bind表达式,过滤器应该被添加在JavaScript表达式的尾部,由”管道”符指示: 12345678910111213141516171819202122232425262728293031323334353637&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;">
+<meta name="twitter:description" content="过滤器概念:">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p><strong>概念:</strong>Vue.js允许你自定义过滤器,可被用作一些常见的文本格式,过滤器可以用在两个地方:mustache插值和v-bind表达式,过滤器应该被添加在JavaScript表达式的尾部,由”管道”符指示:</p>
+        <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p><strong>概念:</strong><a id="more"></a>Vue.js允许你自定义过滤器,可被用作一些常见的文本格式,过滤器可以用在两个地方:mustache插值和v-bind表达式,过滤器应该被添加在JavaScript表达式的尾部,由”管道”符指示:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'app'</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg | msgFormat('疯狂','123')|test&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">			<span class="comment">//定义一个Vue全局的过滤器,名字叫做msgFormat</span></span></span><br><span class="line"><span class="javascript">			Vue.filter(<span class="string">'msgFormat'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">msg,arg,arg2</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="comment">//字符串的replace方法,第一个参数,除了可以下一个字符串意外,还可以定义一个正则</span></span></span><br><span class="line"><span class="javascript">				<span class="comment">//过滤器可以传多参</span></span></span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> msg.replace(<span class="regexp">/单纯/g</span>,arg+arg2)</span></span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line"><span class="javascript">			Vue.filter(<span class="string">'test'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				<span class="comment">//字符串的replace方法,第一个参数,除了可以下一个字符串意外,还可以定义一个正则</span></span></span><br><span class="line"><span class="javascript">				<span class="comment">//过滤器可以传多参</span></span></span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> msg+<span class="string">'========'</span></span></span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line"><span class="javascript">			<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">				el:<span class="string">'#app'</span>,</span></span><br><span class="line">				data:&#123;</span><br><span class="line"><span class="javascript">					msg:<span class="string">'曾经,我也是一个单纯的少年,单纯的我,傻傻的问,谁是世界上最单纯的男人!'</span></span></span><br><span class="line">					&#125;,</span><br><span class="line">				methods:&#123;&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><ul>
 <li>HTML元素:</li>
@@ -538,6 +538,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">搭建Redis和环境</a>
               </li>
              
@@ -546,15 +550,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">分布式应用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">任务简介</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,15 +558,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ安装</a>
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,19 +582,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
+                <a href="javascript:void(0)" class="js-tag color3">整合SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">开发热部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,19 +626,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Vue中的动画</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">v-resource实现get,post,jsonp请求</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Vue学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vue中的动画</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
