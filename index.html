@@ -156,33 +156,51 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Vue学习-06" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot-密码加密" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/27/Vue学习-06/">Vue学习-06</a>
+      <a class="article-title" href="/2019/10/05/SpringBoot-密码加密/">SpringBoot-密码加密</a>
     </h1>
   
 
         
-        <a href="/2019/08/27/Vue学习-06/" class="archive-article-date">
-  	<time datetime="2019-08-26T23:42:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+        <a href="/2019/10/05/SpringBoot-密码加密/" class="archive-article-date">
+  	<time datetime="2019-10-05T01:24:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h1><ol>
-<li><strong>后端路由</strong>：
-        
+        <h1 id="BCryptPasswordEncoder加密方法"><a href="#BCryptPasswordEncoder加密方法" class="headerlink" title="BCryptPasswordEncoder加密方法"></a>BCryptPasswordEncoder加密方法</h1><p>SpringSecurity中的BCryptPasswordEncoder方法对密码进行加密(encode)与密码匹配(matches)。BCryptPasswordEncoder方法采用SHA-256 +随机盐+密钥对密码进行加密。SHA系列是Hash算法，不是加密算法，使用加密算法意味着可以解密（这个与编码/解码一样），但是采用Hash处理，其过程是不可逆的。</p>
+<ol>
+<li>加密(encode)：注册用户时，使用SHA-256+随机盐+密钥把用户输入的密码进行hash处理，得到密码的hash值，然后将其存入数据库中。</li>
+<li>密码匹配(matches)：用户登录时，密码匹配阶段并没有进行密码解密（因为密码经过Hash处理，是不可逆的），而是使用相同的算法把用户输入的密码进行hash处理，得到密码的hash值，然后将其与从数据库中查询到的密码hash值进行比较。如果两者相同，说明用户输入的密码正确。</li>
+</ol>
+<h2 id="BCrypt密码加密"><a href="#BCrypt密码加密" class="headerlink" title="BCrypt密码加密"></a>BCrypt密码加密</h2><ol>
+<li><p>引入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring‐boot‐starter‐security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加配置类</p>
+<p>我们在添加了spring security依赖后，所有的地址都被spring security所控制了，我们目<br>前只是需要用到BCrypt密码加密的部分，所以我们要添加一个配置类，配置为所有地址<br>都可以匿名访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecurityBootConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        http.authorizeRequests()</span><br><span class="line">                .antMatchers(<span class="string">"/**"</span>).permitAll()</span><br><span class="line">                .anyRequest().authenticated()</span><br><span class="line">                .and().csrf().disable();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置bean</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeansConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> BCryptPasswordEncoder <span class="title">bCryptPasswordEncoder</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BCryptPasswordEncoder();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用BCryptPasswordEncoder中的方法完成加密/解密操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">加密:</span><br><span class="line">bcryptPasswordEncoder.encoder(password)</span><br><span class="line">解密:</span><br><span class="line"><span class="comment">//rawPassword是前端传过来的密码</span></span><br><span class="line"><span class="comment">//encodePassword是从数据库提取出来的经过加密的密码</span></span><br><span class="line">bcrytPasswordEncoder.matches(rawPassword,encodedPassword)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
 
       
-    </li></ol></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -191,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">路由</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">BCryptPasswordEncoder</a>
         		</li>
       		
 		</ul>
@@ -201,7 +219,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/27/Vue学习-06/">Read More >></a>
+          <a class="article-more-a" href="/2019/10/05/SpringBoot-密码加密/">Read More >></a>
         </p>
       
 
@@ -231,27 +249,27 @@
 
 
   
-    <article id="post-Vue学习-05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Mybatis-Plus学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/17/Vue学习-05/">Vue学习-05</a>
+      <a class="article-title" href="/2019/09/21/Mybatis-Plus学习/">Mybatis Plus学习</a>
     </h1>
   
 
         
-        <a href="/2019/08/17/Vue学习-05/" class="archive-article-date">
-  	<time datetime="2019-08-17T04:49:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
+        <a href="/2019/09/21/Mybatis-Plus学习/" class="archive-article-date">
+  	<time datetime="2019-09-21T00:02:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Vue组件的概念"><a href="#Vue组件的概念" class="headerlink" title="Vue组件的概念"></a>Vue组件的概念</h2><p>组件是为了拆分Vue实例的代码量的
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Mybatis Plus(简称MP),
         
       
 
@@ -265,7 +283,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vue组件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MybatisPlus</a>
         		</li>
       		
 		</ul>
@@ -275,7 +293,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/17/Vue学习-05/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/21/Mybatis-Plus学习/">Read More >></a>
         </p>
       
 
@@ -305,27 +323,27 @@
 
 
   
-    <article id="post-Vue学习-04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Hadoop学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/Vue学习-04/">Vue学习-04</a>
+      <a class="article-title" href="/2019/09/20/Hadoop学习/">Hadoop学习</a>
     </h1>
   
 
         
-        <a href="/2019/08/15/Vue学习-04/" class="archive-article-date">
-  	<time datetime="2019-08-15T00:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+        <a href="/2019/09/20/Hadoop学习/" class="archive-article-date">
+  	<time datetime="2019-09-20T13:54:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vue中的动画"><a href="#Vue中的动画" class="headerlink" title="Vue中的动画"></a>Vue中的动画</h1><p><strong>Vue中的动画的目的:</strong>
+        <h1 id="大数据的概念"><a href="#大数据的概念" class="headerlink" title="大数据的概念"></a>大数据的概念</h1><p>大数据(Big Data):指无法在一定时间范围内常用常规软件工具进行捕捉、
         
       
 
@@ -339,7 +357,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Vue中的动画</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Hadoop学习</a>
         		</li>
       		
 		</ul>
@@ -349,7 +367,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/15/Vue学习-04/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/20/Hadoop学习/">Read More >></a>
         </p>
       
 
@@ -379,27 +397,27 @@
 
 
   
-    <article id="post-Vue学习-03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot-短信验证码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/11/Vue学习-03/">Vue学习-03</a>
+      <a class="article-title" href="/2019/09/20/SpringBoot-短信验证码/">SpringBoot-短信验证码</a>
     </h1>
   
 
         
-        <a href="/2019/08/11/Vue学习-03/" class="archive-article-date">
-  	<time datetime="2019-08-11T14:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+        <a href="/2019/09/20/SpringBoot-短信验证码/" class="archive-article-date">
+  	<time datetime="2019-09-20T08:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="v-resource"><a href="#v-resource" class="headerlink" title="v-resource"></a>v-resource</h1><p>v-resource实现get,post,jsonp请求
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在进行登录注册功能实现的时候,需要调用第三方的接口来进行短信验证
         
       
 
@@ -413,7 +431,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">v-resource实现get,post,jsonp请求</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">短信验证码</a>
         		</li>
       		
 		</ul>
@@ -423,7 +441,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/11/Vue学习-03/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/20/SpringBoot-短信验证码/">Read More >></a>
         </p>
       
 
@@ -453,32 +471,32 @@
 
 
   
-    <article id="post-Vue学习-02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Zookeeper学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/Vue学习-02/">Vue学习-02</a>
+      <a class="article-title" href="/2019/09/13/Zookeeper学习/">Zookeeper学习</a>
     </h1>
   
 
         
-        <a href="/2019/07/29/Vue学习-02/" class="archive-article-date">
-  	<time datetime="2019-07-28T23:46:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+        <a href="/2019/09/13/Zookeeper学习/" class="archive-article-date">
+  	<time datetime="2019-09-13T13:10:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p><strong>概念:</strong>
+        <h1 id="Zookeeper入门"><a href="#Zookeeper入门" class="headerlink" title="Zookeeper入门"></a>Zookeeper入门</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述
         
       
 
       
-    </p></div>
+    </h2></div>
     <div class="article-info article-info-index">
       
       
@@ -487,7 +505,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vue学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Zookeeper入门</a>
         		</li>
       		
 		</ul>
@@ -497,7 +515,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/Vue学习-02/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/13/Zookeeper学习/">Read More >></a>
         </p>
       
 
@@ -527,178 +545,28 @@
 
 
   
-    <article id="post-Vue-简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java实现分页操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/Vue-简介/">Vue-简介</a>
+      <a class="article-title" href="/2019/09/13/Java实现分页操作/">Java实现分页操作</a>
     </h1>
   
 
         
-        <a href="/2019/07/24/Vue-简介/" class="archive-article-date">
-  	<time datetime="2019-07-24T13:41:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2019/09/13/Java实现分页操作/" class="archive-article-date">
+  	<time datetime="2019-09-13T12:22:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vue简介"><a href="#Vue简介" class="headerlink" title="Vue简介"></a>Vue简介</h1><h2 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h2><ul>
-<li>Vue.js是
-        
-      
-
-      
-    </li></ul></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vue介绍</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/24/Vue-简介/">Read More >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringCloud-微服务简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/SpringCloud-微服务简介/">SpringCloud-微服务简介</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/22/SpringCloud-微服务简介/" class="archive-article-date">
-  	<time datetime="2019-07-22T13:32:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h1><h2 id="微服务特性"><a href="#微服务特性" class="headerlink" title="微服务特性"></a>微服务特性</h2><ol>
-<li>每个微服务可独立运行在自己的进程里
-        
-      
-
-      
-    </li></ol></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微服务简介</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/22/SpringCloud-微服务简介/">Read More >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java数据结构复习-二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/Java数据结构复习-二叉树/">Java数据结构复习-二叉树</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/19/Java数据结构复习-二叉树/" class="archive-article-date">
-  	<time datetime="2019-07-19T12:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="存储方式分析"><a href="#存储方式分析" class="headerlink" title="存储方式分析"></a>存储方式分析</h2><ol>
-<li><p>数组存储方式的分析
+        <h1 id="Java实现数据分页"><a href="#Java实现数据分页" class="headerlink" title="Java实现数据分页"></a>Java实现数据分页</h1><ol>
+<li><p>导包
         
       
 
@@ -712,7 +580,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">实现分页操作</a>
         		</li>
       		
 		</ul>
@@ -722,7 +590,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/19/Java数据结构复习-二叉树/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/13/Java实现分页操作/">Read More >></a>
         </p>
       
 
@@ -752,32 +620,33 @@
 
 
   
-    <article id="post-编程问题集-List中的contains方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue学习-09" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/编程问题集-List中的contains方法/">编程问题集-List中的contains方法</a>
+      <a class="article-title" href="/2019/09/09/Vue学习-09/">Vue学习-09</a>
     </h1>
   
 
         
-        <a href="/2019/07/19/编程问题集-List中的contains方法/" class="archive-article-date">
-  	<time datetime="2019-07-19T11:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+        <a href="/2019/09/09/Vue学习-09/" class="archive-article-date">
+  	<time datetime="2019-09-09T14:50:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天练习ArraysList时突然发现contains()方法对自定义数据类型的判断出现错误!
+        <h1 id="Webpack的作用"><a href="#Webpack的作用" class="headerlink" title="Webpack的作用"></a>Webpack的作用</h1><h2 id="网页中引入的静态资源多了以后会出现哪些问题"><a href="#网页中引入的静态资源多了以后会出现哪些问题" class="headerlink" title="网页中引入的静态资源多了以后会出现哪些问题?"></a>网页中引入的静态资源多了以后会出现哪些问题?</h2><ol>
+<li>网页加载速度慢
         
       
 
       
-    </p></div>
+    </li></ol></div>
     <div class="article-info article-info-index">
       
       
@@ -786,7 +655,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">对ArraysList.contains()重写</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
         		</li>
       		
 		</ul>
@@ -796,7 +665,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/19/编程问题集-List中的contains方法/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/09/Vue学习-09/">Read More >></a>
         </p>
       
 
@@ -826,32 +695,33 @@
 
 
   
-    <article id="post-Java数据结构复习-哈希表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot-自定义starter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/13/Java数据结构复习-哈希表/">Java数据结构复习-哈希表</a>
+      <a class="article-title" href="/2019/09/09/SpringBoot-自定义starter/">SpringBoot-自定义starter</a>
     </h1>
   
 
         
-        <a href="/2019/07/13/Java数据结构复习-哈希表/" class="archive-article-date">
-  	<time datetime="2019-07-13T08:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
+        <a href="/2019/09/09/SpringBoot-自定义starter/" class="archive-article-date">
+  	<time datetime="2019-09-08T23:53:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><h2 id="哈希表的基本介绍"><a href="#哈希表的基本介绍" class="headerlink" title="哈希表的基本介绍"></a>哈希表的基本介绍</h2>
+        <h2 id="starter"><a href="#starter" class="headerlink" title="starter"></a>starter</h2><ol>
+<li><p>这个场景需要使用的依赖是什么?
         
       
 
       
-    </div>
+    </p></li></ol></div>
     <div class="article-info article-info-index">
       
       
@@ -860,7 +730,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">哈希表</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">自定义starter</a>
         		</li>
       		
 		</ul>
@@ -870,7 +740,156 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/13/Java数据结构复习-哈希表/">Read More >></a>
+          <a class="article-more-a" href="/2019/09/09/SpringBoot-自定义starter/">Read More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue学习-08" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/Vue学习-08/">Vue学习-08</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/08/Vue学习-08/" class="archive-article-date">
+  	<time datetime="2019-09-08T10:46:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h1><h2 id="名词简析"><a href="#名词简析" class="headerlink" title="名词简析"></a>名词简析
+        
+      
+
+      
+    </h2></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nrm的安装使用</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/08/Vue学习-08/">Read More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-IDEA配置Tomcat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/04/IDEA配置Tomcat/">IDEA配置Tomcat</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/04/IDEA配置Tomcat/" class="archive-article-date">
+  	<time datetime="2019-09-04T13:21:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="IDEA中集成Tomcat"><a href="#IDEA中集成Tomcat" class="headerlink" title="IDEA中集成Tomcat"></a>IDEA中集成Tomcat</h1><ol>
+<li><p>创建一个web工程
+        
+      
+
+      
+    </p></li></ol></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IDEA集成Tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/04/IDEA配置Tomcat/">Read More >></a>
         </p>
       
 
@@ -902,7 +921,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -997,11 +1016,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">中缀转后缀表达式</a>
+                <a href="javascript:void(0)" class="js-tag color4">Hadoop学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IDEA集成Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">实现分页操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">中缀转后缀表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,6 +1045,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">前缀 中缀 后缀表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,10 +1076,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">爬虫入门</a>
               </li>
              
@@ -1053,7 +1084,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">缓存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自定义starter</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1061,11 +1096,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spring Security</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color4">安装Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1073,15 +1104,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">前缀 中缀 后缀表达式</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
+                <a href="javascript:void(0)" class="js-tag color1">短信验证码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color2">BCryptPasswordEncoder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Spring Security</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1093,15 +1136,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JMS和AMQP简介</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">RabbitMQ简介</a>
+                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1109,23 +1144,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AmqpAdmin管理组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">监控管理</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微服务简介</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">缓存的基本概念</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">watch、computed和methods之间的对比</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nrm的安装使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Zookeeper入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">对ArraysList.contains()重写</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">整合ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">检索简介</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1137,11 +1192,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单链表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color4">v-resource实现get,post,jsonp请求</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1149,7 +1208,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">v-resource实现get,post,jsonp请求</a>
+                <a href="javascript:void(0)" class="js-tag color3">路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">队列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1161,7 +1224,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">队列</a>
+                <a href="javascript:void(0)" class="js-tag color2">MybatisPlus</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1169,11 +1232,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Vue组件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Vue介绍</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Vue介绍</a>
+                <a href="javascript:void(0)" class="js-tag color1">Vue组件</a>
               </li>
              
               <li class="article-tag-list-item">
